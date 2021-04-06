@@ -3,6 +3,10 @@ const express = require('express');
 const massive = require('massive');
 const session = require('express-session');
 
+const authCtrl = require('./controllers/authCtrl');
+const productCtrl = require('./controllers/productsCtrl');
+const adminCtrl = require('./controllers/adminCtrl');
+
 const app = express();
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
@@ -19,21 +23,20 @@ app.use(session({
 }));
 
 //Auth Endpoints 
-app.post('/api/auth/register',)
-app.post('/api/auth/login',)
-app.get('/api/auth/user',)
-app.delete('/api/auth/logout',)
+app.post('/api/auth/register', authCtrl.register);
+app.post('/api/auth/login', authCtrl.login);
+app.get('/api/auth/user', authCtrl.getUser);
+app.delete('/api/auth/logout', authCtrl.logout);
 
 //Product Endpoints 
-app.get('/api/product',)
-app.get('/api/product') //query for filter
-app.get('/api/product/:product_id')
+app.get('/api/product', productCtrl.getProducts);
+app.get('/api/product/:product_id', productCtrl.getProduct);
 
 //Admin Endpoints 
 //reuse get Product Endpoints for admin page
-app.post('/api/product',) //body required
-app.put('/api/product/:product_id',) //body required
-app.delete('/api/product/:product_id')
+app.post('/api/product', adminCtrl.addProduct); //body required
+app.put('/api/product/:product_id', adminCtrl.editProduct); //body required
+app.delete('/api/product/:product_id', adminCtrl.deleteProduct);
 
 //User Endpoints 
 app.get('/api/userproduct',)
