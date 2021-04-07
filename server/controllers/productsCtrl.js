@@ -1,4 +1,5 @@
 module.exports = {
+
     getProducts: async (req, res) => {
         const db = req.app.get('db');
         if (req.query.search) {
@@ -13,7 +14,8 @@ module.exports = {
     getProduct: async (req, res) => {
         const db = req.app.get('db');
         const { product_id } = req.params;
-        const product = db.product.get_product(product_id);
+        const product = await db.product.get_product(product_id);
         res.status(200).send(product)
     }
+
 }

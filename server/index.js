@@ -6,6 +6,7 @@ const session = require('express-session');
 const authCtrl = require('./controllers/authCtrl');
 const productCtrl = require('./controllers/productsCtrl');
 const adminCtrl = require('./controllers/adminCtrl');
+const cartCtrl = require('./controllers/cartCtrl');
 
 const app = express();
 
@@ -21,6 +22,16 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 24 * 7 * 52
     }
 }));
+
+app.use((req, res, next) => {
+    if (!req.session.cart) {
+        req.session.cart = {
+            items: [],
+            total: 0
+        }
+    }
+    next();
+})
 
 //Auth Endpoints 
 app.post('/api/auth/register', authCtrl.register);
@@ -40,12 +51,12 @@ app.delete('/api/product/:product_id', adminCtrl.deleteProduct);
 
 //User Endpoints 
 app.get('/api/userproduct',)
-app.delete('/api/userproduct/:product_id',)
+app.post('/api/userproduct',) //need to figure out
 app.get('/api/userproduct/download/:product_id',)
 
 //Cart Endpoints 
-app.get('/api/cart',)
-app.post('/api/cart/:product_id',)
+app.get('/api/cart', cartCtrl.getCart)
+app.post('/api/cart/:product_id',) //body?
 app.delete('/api/cart/:product_id',)
 app.delete('/api/cart')
 
@@ -53,7 +64,7 @@ app.delete('/api/cart')
 massive({
     connectionString: CONNECTION_STRING,
     ssl: {
-        rejectUauthoried: false
+        rejectUnauthorized: false
     }
 })
     .then(dbInstance => {
