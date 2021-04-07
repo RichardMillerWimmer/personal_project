@@ -2,6 +2,7 @@
   "name": "personal_project",
   "version": "0.1.0",
   "private": true,
+  "main": "server/index",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -19,6 +20,7 @@
     "react-scripts": "4.0.3",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.9",
+    "redux-promise-middleware": "^6.1.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

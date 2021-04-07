@@ -11,6 +11,7 @@ module.exports = {
     purchaseProduct: (req, res) => {
         const db = req.app.get('db');
         const cart = req.session.cart;
+        //setup with cart and stripe?
 
     },
 
