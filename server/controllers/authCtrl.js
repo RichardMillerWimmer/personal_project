@@ -4,9 +4,11 @@ module.exports = {
 
     register: async (req, res) => {
         const db = req.app.get('db');
+        console.log(req.body);
         const { email, first_name, last_name, password } = req.body;
 
-        const result = await db.user.find_user_by_email(email);
+        const result = await db.auth.find_user_by_email(email);
+        console.log(result)
         const user = result[0];
         if (user) {
             return res.status(400).send('email already registered')
@@ -15,7 +17,7 @@ module.exports = {
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(password, salt);
 
-        const newUser = await db.user.create_user(email, first_name, last_name, hash);
+        const newUser = await db.auth.create_user(email, first_name, last_name, hash);
 
         req.session.user = newUser[0];
 
@@ -26,13 +28,17 @@ module.exports = {
         const db = req.app.get('db');
         const { email, password } = req.body;
 
-        const existingUser = await db.user.find_user_by_email(email);
-        const user = existingUser
-        if (user) {
+        const existingUser = await db.auth.find_user_by_email(email);
+        const user = existingUser[0]
+        if (!user) {
             return res.status(400).send('email not registered');
         }
 
-        const isAuthenticated = bcrypt.compareSync(password, user.password);
+        // console.log(user)
+        // console.log(password)
+        // console.log(user.hash)
+        // console.log(user.email)
+        const isAuthenticated = bcrypt.compareSync(password, user.hash);
         //check 
         if (!isAuthenticated) {
             return res.status(400).send('incorrect password');

@@ -6,6 +6,7 @@ const session = require('express-session');
 const authCtrl = require('./controllers/authCtrl');
 const productCtrl = require('./controllers/productsCtrl');
 const adminCtrl = require('./controllers/adminCtrl');
+const userCtrl = require('./controllers/userCtrl')
 const cartCtrl = require('./controllers/cartCtrl');
 
 const app = express();
@@ -50,15 +51,15 @@ app.put('/api/product/:product_id', adminCtrl.editProduct); //body required
 app.delete('/api/product/:product_id', adminCtrl.deleteProduct);
 
 //User Endpoints 
-app.get('/api/userproduct',)
-app.post('/api/userproduct',) //need to figure out
-app.get('/api/userproduct/download/:product_id',)
+app.get('/api/userproduct', userCtrl.getUserProducts);
+app.post('/api/userproduct', userCtrl.purchaseProduct) //need to figure out;
+app.get('/api/userproduct/download/:product_id', userCtrl.downloadProduct);
 
 //Cart Endpoints 
-app.get('/api/cart', cartCtrl.getCart)
-app.post('/api/cart/:product_id',) //body?
-app.delete('/api/cart/:product_id',)
-app.delete('/api/cart')
+app.get('/api/cart', cartCtrl.getCart);
+app.post('/api/cart/:product_id', cartCtrl.addToCart); //body?
+app.delete('/api/cart/:product_id', cartCtrl.removeFromCart);
+app.delete('/api/cart', cartCtrl.clearCart);
 
 
 massive({
