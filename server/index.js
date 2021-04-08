@@ -52,7 +52,7 @@ app.delete('/api/product/:product_id', adminCtrl.deleteProduct);
 
 //User Endpoints 
 app.get('/api/userproduct', userCtrl.getUserProducts);
-app.post('/api/userproduct', userCtrl.purchaseProduct) //need to figure out;
+app.post('/api/userproduct', userCtrl.purchaseProduct, cartCtrl.clearCart)
 app.get('/api/userproduct/download/:product_id', userCtrl.downloadProduct);
 
 //Cart Endpoints 

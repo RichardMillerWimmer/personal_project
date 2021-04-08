@@ -51,7 +51,8 @@ module.exports = {
 
     clearCart: (req, res) => {
         let cart = req.session.cart;
-        cart = [];
+
+        cart.items = [];
         res.status(200).send(cart)
     }
 
