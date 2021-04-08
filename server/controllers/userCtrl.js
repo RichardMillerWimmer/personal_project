@@ -1,3 +1,6 @@
+const AWS = require('aws-sdk');
+const s3 = new AWS.S3();
+
 module.exports = {
 
     getUserProducts: async (req, res) => {
@@ -44,4 +47,51 @@ module.exports = {
         res.status(200).send(link);
     }
 
+    // downloadProduct: async (req, res) => {
+    //     const db = req.app.get('db');
+    //     const { product_id } = req.params;
+
+    // const bucketKey = await db.user.download_product(product_id);
+
+    // const {bucket, objectKey} = bucketKey;
+
+    // const bucketKey = {
+    //     Bucket: 'polymathbucket',
+    //     Key: 'Materials-Stone.jpg'
+    // }
+
+    // const data = await s3.getObject(bucketKey, (data, error) => {
+    //     if (error) {
+    //         console.log(error)
+    //     } else {
+    //         console.log(data)
+    //     }
+
+    // })
+
+    // console.log(data)
+
+    // const download = data.Body.toString('utf-8');
+
+    // console.log(download)
+
+    // res.status(200).send(download)
+    // }
+
+    // downloadProduct: async (bucket, objectKey) => {
+    //     try {
+    //         const params = {
+    //             Bucket: bucket,
+    //             Key: objectKey
+    //         }
+
+    //         const data = await s3.getObject(params).promise();
+
+    //         return data.Body.toString('utf-8');
+    //     } catch (e) {
+    //         throw new Error(`Could not retrieve file from S3: ${e.message}`)
+    //     }
+
+    // }
 }
+// getObject('polymathbucket', 'Materials-Stones.jpg');
