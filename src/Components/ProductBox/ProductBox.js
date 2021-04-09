@@ -1,13 +1,23 @@
+
 import React from 'react';
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
 
 
 
-function ProductBox() {
+function ProductBox(props) {
+
+    console.log(props.product)
+
     return (
         <div className="App">
-            <h1>ProductBox Component</h1>
+            <Link to={`/product/${props.product.product_id}`}>
+                <h3>{props.product.name}</h3>
+            </Link>
         </div>
     );
 }
 
-export default ProductBox;
+const mapStateToProps = (reduxState) => reduxState;
+
+export default connect(mapStateToProps)(ProductBox);

@@ -16,13 +16,13 @@ function Header(props) {
     function getUser() {
         axios.get('/api/auth/user')
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 const { first_name } = res.data
                 props.updateUser({ first_name })
             })
     }
 
-    console.log(props)
+    // console.log(props)
 
     return (
         <div className="App">

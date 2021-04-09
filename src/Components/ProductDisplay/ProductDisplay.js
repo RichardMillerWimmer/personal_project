@@ -1,13 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 
 
-function ProductDisplay() {
+function ProductDisplay(props) {
+
+    console.log(props.products.productList)
     return (
         <div className="App">
-            <h1>ProductDisplay Component</h1>
+            <h1>{props.product.name}</h1>
         </div>
     );
 }
 
-export default ProductDisplay;
+const mapStateToProps = (reduxState) => reduxState;
+
+export default connect(mapStateToProps)(ProductDisplay);
