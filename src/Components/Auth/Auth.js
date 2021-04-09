@@ -4,11 +4,13 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';;
 
 
-function RegisterLogin(props) {
+function Auth(props) {
     const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [password, setPassword] = useState('');
+    const [loginEmail, setLoginEmail] = useState('');
+    const [loginPassword, setLoginPassword] = useState('');
 
 
     function register() {
@@ -23,9 +25,12 @@ function RegisterLogin(props) {
     }
 
     function login() {
+        console.log('hit login')
         axios.post('/api/auth/login', { email, password })
             .then(res => {
+                console.log(res.data)
                 const { firstName } = res.data
+
                 props.updateUser({ firstName })
             })
             .catch(err => console.log(err))
@@ -59,12 +64,12 @@ function RegisterLogin(props) {
                 <h2>Login</h2>
                 <p>email:</p>
                 <input
-                    onChange={event => setEmail(event.target.value)}
-                    value={email}
+                    onChange={event => setLoginEmail(event.target.value)}
+                    value={loginEmail}
                 />
                 <p>password:</p>
-                <input onChange={event => setPassword(event.target.value)}
-                    value={password} />
+                <input onChange={event => setLoginPassword(event.target.value)}
+                    value={loginPassword} />
                 <br></br>
                 <button onClick={login}>Login</button>
             </div>
@@ -72,4 +77,4 @@ function RegisterLogin(props) {
     );
 }
 
-export default connect(null, { updateUser })(RegisterLogin);
+export default connect(null, { updateUser })(Auth);
