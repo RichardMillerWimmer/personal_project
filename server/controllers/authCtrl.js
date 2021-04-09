@@ -25,10 +25,11 @@ module.exports = {
     },
 
     login: async (req, res) => {
+        // console.log('server login hit')
         const db = req.app.get('db');
-        const { email, password } = req.body;
+        const { loginEmail, loginPassword } = req.body;
 
-        const existingUser = await db.auth.find_user_by_email(email);
+        const existingUser = await db.auth.find_user_by_email(loginEmail);
         const user = existingUser[0]
         if (!user) {
             return res.status(400).send('email not registered');
@@ -38,7 +39,7 @@ module.exports = {
         // console.log(password)
         // console.log(user.hash)
         // console.log(user.email)
-        const isAuthenticated = bcrypt.compareSync(password, user.hash);
+        const isAuthenticated = bcrypt.compareSync(loginPassword, user.hash);
         //check 
         if (!isAuthenticated) {
             return res.status(400).send('incorrect password');

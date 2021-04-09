@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Components/Header/Header'
-import Auth from './Components/Auth/Auth'
 import routes from './routes'
 import './App.css';
 

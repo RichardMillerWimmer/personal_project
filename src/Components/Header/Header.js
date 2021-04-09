@@ -17,17 +17,17 @@ function Header(props) {
         axios.get('/api/auth/user')
             .then(res => {
                 console.log(res.data)
-                const { firstName } = res.data
-                props.updateUser({ firstName })
+                const { first_name } = res.data
+                props.updateUser({ first_name })
             })
     }
 
-
+    console.log(props)
 
     return (
         <div className="App">
             <h1>Header Component</h1>
-            <h4>{props.firstName}</h4>
+            <h4>User:{props.firstName}</h4>
             <Link to='/auth'><button>register/login</button></Link>
         </div>
     );

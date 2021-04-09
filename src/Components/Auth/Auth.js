@@ -16,22 +16,25 @@ function Auth(props) {
     function register() {
         axios.post('/api/auth/register', { email, firstName, lastName, password })
             .then(res => {
-                const { firstName } = res.data
+                const { first_name } = res.data
 
-                // this.props.history.push()
-                props.updateUser({ firstName })
+                props.history.push('/')
+                props.updateUser({ first_name })
             })
             .catch(err => console.log(err))
     }
 
     function login() {
-        console.log('hit login')
-        axios.post('/api/auth/login', { email, password })
+        // console.log('hit login')
+        // console.log(loginEmail)
+        // console.log(loginPassword)
+        axios.post('/api/auth/login', { loginEmail, loginPassword })
             .then(res => {
-                console.log(res.data)
-                const { firstName } = res.data
+                // console.log(res.data)
+                const { first_name } = res.data
 
-                props.updateUser({ firstName })
+                props.history.push('/')
+                props.updateUser({ first_name })
             })
             .catch(err => console.log(err))
     }
@@ -77,4 +80,6 @@ function Auth(props) {
     );
 }
 
-export default connect(null, { updateUser })(Auth);
+const mapStateToProps = (reduxState) => reduxState;
+
+export default connect(mapStateToProps, { updateUser })(Auth);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { updateProducts } from '../../redux/productsReducer';
+import productsReducer, { updateProducts } from '../../redux/productsReducer';
 
 
 import Filter from '../Filter/Filter';
@@ -19,7 +19,8 @@ function Products(props) {
     }, [])
 
     function getProducts() {
-        axios.get('api/product')
+        // console.log('get products hit')
+        axios.get('/api/product')
             .then(res => {
                 props.updateProducts(res.data)
             })
@@ -27,18 +28,19 @@ function Products(props) {
     }
 
 
-    let mappedProducts = props.productList.map((product) => {
-        return <div key={product.product_id}><Link to={`/product/${product.product_id}`} >
-            <img src={product.image_one} />
-        </Link>
-        </div>
-    })
+    // let mappedProducts = props.productList.map((product) => {
+    //     return <div key={product.product_id}><Link to={`/product/${product.product_id}`} >
+    //         <img src={product.image_one} />
+    //         <h3>{product.name}</h3>
+    //     </Link>
+    //     </div>
+    // })
 
     return (
         <div className="App">
             <h1>Products Component</h1>
             <Filter />
-            {mappedProducts}
+            {/* {mappedProducts} */}
 
         </div>
     );
