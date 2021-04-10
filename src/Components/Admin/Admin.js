@@ -15,7 +15,7 @@ function Admin(props) {
 
 
     function addProduct() {
-        axios.post('/api/admin/product', { name, description, price, imageOne, imageTwo, imageThree, downloadLink })
+        axios.post('/api/product', { name, description, price, imageOne, imageTwo, imageThree, downloadLink })
             .then(res => {
                 console.log(`Product: ${name} added.`)
                 resetFields()
@@ -24,7 +24,7 @@ function Admin(props) {
     }
 
     function editProduct() {
-        axios.put(`/api/admin/product/${props.product_id}`, { name, description, price, imageOne, imageTwo, imageThree, downloadLink })
+        axios.put(`/api/product/${props.product_id}`, { name, description, price, imageOne, imageTwo, imageThree, downloadLink })
             .then(res => {
                 console.log(`Product: ${name} edited.`)
                 resetFields()

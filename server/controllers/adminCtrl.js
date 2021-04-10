@@ -3,9 +3,11 @@ module.exports = {
     addProduct: async (req, res) => {
         const db = req.app.get('db');
         // const { user_id, admin } = req.session.user;
-        const { name, description, price, image_one, image_two, image_three, download_link } = req.body;
+        // console.log(req.body)
+        const { name, description, price, imageOne, imageTwo, imageThree, downloadLink } = req.body;
 
-        await db.admin.add_product(name, description, price, image_one, image_two, image_three, download_link);
+
+        await db.admin.add_product(name, description, price, imageOne, imageTwo, imageThree, downloadLink);
 
         res.sendStatus(200);
     },
@@ -13,10 +15,10 @@ module.exports = {
     editProduct: async (req, res) => {
         const db = req.app.get('db');
         // const { user_id, admin } = req.session.user;
-        const { name, description, price, image_one, image_two, image_three, download_link } = req.body;
+        const { name, description, price, imageOne, imageTwo, imageThree, downloadLink } = req.body;
         const { product_id } = req.params;
 
-        await db.admin.edit_product(product_id, name, description, price, image_one, image_two, image_three, download_link);
+        await db.admin.edit_product(product_id, name, description, price, imageOne, imageTwo, imageThree, downloadLink);
 
         res.sendStatus(200);
     },

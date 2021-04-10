@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 
 
+
 function Header(props) {
 
     useEffect(() => {
@@ -22,6 +23,15 @@ function Header(props) {
             })
     }
 
+    function logoutUser() {
+        axios.delete('/api/auth/logout')
+            .then(res => {
+                props.logoutUser()
+                props.history.push('/')
+            })
+            .catch(err => console.log(err))
+    }
+
     // console.log(props)
 
     return (
@@ -29,6 +39,7 @@ function Header(props) {
             <h1>Header Component</h1>
             <h4>User:{props.firstName}</h4>
             <Link to='/auth'><button>register/login</button></Link>
+            <button onClick={logoutUser}>logout</button>
         </div>
     );
 }

@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 
 function ProductDisplay(props) {
 
-    console.log(props.products.productList)
+    console.log(props.product)
     return (
         <div className="App">
-            <h1>{props.product.name}</h1>
+            <h1>{props.products.productList.name}</h1>
         </div>
     );
 }

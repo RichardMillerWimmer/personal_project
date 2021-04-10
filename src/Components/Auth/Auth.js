@@ -18,8 +18,8 @@ function Auth(props) {
             .then(res => {
                 const { first_name } = res.data
 
-                props.history.push('/')
                 props.updateUser({ first_name })
+                props.history.push('/')
             })
             .catch(err => console.log(err))
     }

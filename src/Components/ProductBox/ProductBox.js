@@ -7,12 +7,12 @@ import { connect } from 'react-redux';
 
 function ProductBox(props) {
 
-    console.log(props.product)
+    console.log(props.product.image_one)
 
     return (
         <div className="App">
-            <Link to={`/product/${props.product.product_id}`}>
-                <h3>{props.product.name}</h3>
+            <Link product={props.product} to={`/product/${props.product.product_id}`}>
+                <img scr={'https://i.imgur.com/oAFivns.jpg'} alt={props.product.name} />
             </Link>
         </div>
     );
