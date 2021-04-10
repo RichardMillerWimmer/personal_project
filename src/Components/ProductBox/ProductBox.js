@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { Image } from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
@@ -12,7 +12,7 @@ function ProductBox(props) {
     return (
         <div className="App">
             <Link product={props.product} to={`/product/${props.product.product_id}`}>
-                <img scr={'https://i.imgur.com/oAFivns.jpg'} alt={props.product.name} />
+                <img src={props.product.image_one} alt={props.product.name} />
             </Link>
         </div>
     );
