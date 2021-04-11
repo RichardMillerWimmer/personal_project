@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom';
 
 function Header(props) {
 
+    console.log(props)
+
     useEffect(() => {
         getUser()
     }, [])
@@ -35,11 +37,10 @@ function Header(props) {
     // console.log(props)
 
     return (
-        <div className="App">
-            <h1>Header Component</h1>
-            <h4>User:{props.firstName}</h4>
-            <Link to='/auth'><button>register/login</button></Link>
-            <button onClick={logoutUser}>logout</button>
+        <div className="headerContainer">
+            <h4 className='logo' >LOGO</h4>
+            <h4 className='userName' >User:{props.firstName}</h4>
+            { props.auth.firstName.length === 0 ? <Link to='/auth'><button className='loginBtn'>register/login</button></Link> : <button className='logoutBtn' onClick={logoutUser}>logout</button>}
         </div>
     );
 }

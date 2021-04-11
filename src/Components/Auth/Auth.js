@@ -40,22 +40,24 @@ function Auth(props) {
     }
 
     return (
-        <div className="App">
-            <h1>RegisterLogin Component</h1>
-            <div>
+        <div className="authContainer">
+            <div className='register box'>
                 <h2>Register</h2>
                 <p>email:</p>
                 <input
                     onChange={event => setEmail(event.target.value)}
                     value={email} />
+                <br></br>
                 <p>first name:</p>
                 <input
                     onChange={event => setFirstName(event.target.value)}
                     value={firstName} />
+                <br></br>
                 <p>last name:</p>
                 <input
                     onChange={event => setLastName(event.target.value)}
                     value={lastName} />
+                <br></br>
                 <p>password:</p>
                 <input
                     onChange={event => setPassword(event.target.value)}
@@ -63,13 +65,14 @@ function Auth(props) {
                 <br></br>
                 <button onClick={register}>Register</button>
             </div>
-            <div>
+            <div className='login box'>
                 <h2>Login</h2>
                 <p>email:</p>
                 <input
                     onChange={event => setLoginEmail(event.target.value)}
                     value={loginEmail}
                 />
+                <br></br>
                 <p>password:</p>
                 <input onChange={event => setLoginPassword(event.target.value)}
                     value={loginPassword} />
