@@ -79,6 +79,7 @@ function Auth(props) {
                 <br></br>
                 <button onClick={login}>Login</button>
             </div>
+
         </div>
     );
 }

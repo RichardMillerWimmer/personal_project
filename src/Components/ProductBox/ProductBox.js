@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 
 function ProductBox(props) {
 
-    console.log(props)
+    // console.log(props)
 
     return (
         <div className="App">
