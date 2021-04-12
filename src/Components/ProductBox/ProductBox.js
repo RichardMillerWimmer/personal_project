@@ -1,5 +1,5 @@
 
-import React, { Image } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
@@ -7,12 +7,12 @@ import { connect } from 'react-redux';
 
 function ProductBox(props) {
 
-    // console.log(props)
+    console.log(props)
 
     return (
-        <div className="App">
-            <Link product={props.product} to={`/product/${props.product.product_id}`}>
-                <img src={props.product.image_one} alt={props.product.name} />
+        <div className="productBox">
+            <Link to={`/product/${props.product.product_id}`}>
+                <img products={props.products} src={props.product.image_one} alt={props.product.name} />
             </Link>
         </div>
     );

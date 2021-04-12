@@ -1,0 +1,23 @@
+.productBox
+    display: flex
+    flex-direction: column
+    img
+        display: block
+        height: 350px
+        object-fit: cover
+        margin: 0 auto
+        cursor: pointer
+
+@media (min-width: $bp-mobile)
+    .productBox
+
+        flex-flow: row wrap
+        margin: 0
+
+@media (min-width: $bp-tablet)
+
+    img
+        transition: .5s
+        filter: brightness(60%) grayscale(50%)
+        &:hover
+            filter: brightness(100%) grayscale(0%)

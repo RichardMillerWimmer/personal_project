@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 
-import productsReducer, { updateProducts } from '../../redux/productsReducer';
+import { updateProducts } from '../../redux/productsReducer';
 
 
 import Filter from '../Filter/Filter';
@@ -11,8 +11,6 @@ import ProductBox from '../ProductBox/ProductBox';
 
 
 function Products(props) {
-
-
 
     useEffect(() => {
         getProducts()

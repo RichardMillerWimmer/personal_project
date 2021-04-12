@@ -21,7 +21,6 @@ CREATE TABLE products(
   price FLOAT NOT NULL,
   image_one TEXT NOT NULL,
   image_two TEXT NOT NULL,
-  image_three TEXT NOT NULL,
   download_link VARCHAR(255) NOT NULL
 );
 
@@ -36,7 +35,7 @@ CREATE TABLE order_items (
   product_id INTEGER REFERENCES products(product_id)
 );
 
-CREATE TABLE cart (
-  user_id INTEGER REFERENCES users(user_id),
-  product_id INTEGER REFERENCES products(product_id)
-);
+-- CREATE TABLE cart (
+--   user_id INTEGER REFERENCES users(user_id),
+--   product_id INTEGER REFERENCES products(product_id)
+-- );
