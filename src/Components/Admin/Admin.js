@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import productsReducer, { updateProducts } from '../../redux/productsReducer';
+import AdminBox from '../AdminBox/AdminBox';
 
 
 
@@ -49,32 +50,27 @@ function Admin(props) {
         setDownloadLink('')
     }
 
-    function editProduct(product_id) {
-        console.log(product_id)
-        axios.put(`/api/product/${product_id}`, { name, description, price, imageOne, imageTwo, imageThree, downloadLink })
-            .then(res => {
-                console.log(`Product: ${name} edited.`)
-                switchEditing()
-            })
-            .catch(err => console.log(err))
-    }
+    // function editProduct(product_id) {
+    //     console.log(product_id)
+    //     axios.put(`/api/product/${product_id}`, { name, description, price, imageOne, imageTwo, imageThree, downloadLink })
+    //         .then(res => {
+    //             console.log(`Product: ${name} edited.`)
+    //         })
+    //         .catch(err => console.log(err))
+    // }
 
-    function deleteProduct(product_id) {
-        console.log(product_id)
-        axios.delete(`/api/product/${product_id}`)
-            .then(res => {
-                console.log('Product deleted.')
-                getProducts()
-            })
-            .catch(err => console.log(err))
-    }
+    // function deleteProduct(product_id) {
+    //     console.log(product_id)
+    //     axios.delete(`/api/product/${product_id}`)
+    //         .then(res => {
+    //             console.log('Product deleted.')
+    //             getProducts()
+    //         })
+    //         .catch(err => console.log(err))
+    // }
 
 
-    function switchEditing() {
-        console.log(isEditing)
-        setIsEditing(!isEditing)
-        console.log(isEditing)
-    }
+
 
     // console.log(props)
 
@@ -123,6 +119,11 @@ function Admin(props) {
     //     </div>
     // })
 
+    let mappedProducts = props.products.productList.map((product) => {
+        console.log(product)
+        return <div key={product.product_id}><AdminBox product={product}></AdminBox></div>
+    })
+
     return (
         <div className="Admin">
             <h1>Admin Component</h1>
@@ -168,7 +169,7 @@ function Admin(props) {
             </div>
             <div className='editDeleteList'>
                 <h2>Edit Current Products</h2>
-                {/* {mappedProducts} */}
+                {mappedProducts}
             </div>
         </div>
     );
