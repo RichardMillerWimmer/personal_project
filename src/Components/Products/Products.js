@@ -37,7 +37,7 @@ function Products(props) {
 
     return (
         <div className="App">
-            <h1>Products Component</h1>
+            {/* <h1>Products Component</h1> */}
             <Filter />
             {mappedProducts}
 

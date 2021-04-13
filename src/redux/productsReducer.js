@@ -5,7 +5,7 @@ const initialState = {
 const UPDATE_PRODUCTS = 'UPDATE_PRODUCTS';
 
 export function updateProducts(productList) {
-    console.log(productList)
+    // console.log(productList)
     return {
         type: UPDATE_PRODUCTS,
         payload: productList

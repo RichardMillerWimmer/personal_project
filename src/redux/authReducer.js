@@ -1,5 +1,6 @@
 const initialState = {
-    firstName: ''
+    firstName: '',
+    userId: null
 }
 
 const UPDATE_USER = 'UPDATE_USER';
@@ -26,7 +27,8 @@ export default function authReducer(state = initialState, action) {
         case UPDATE_USER:
             return {
                 ...state,
-                firstName: action.payload.first_name
+                firstName: action.payload.first_name,
+                userId: action.payload.id
             }
         case LOGOUT:
             return initialState;

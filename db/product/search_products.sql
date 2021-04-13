@@ -1,2 +1,2 @@
 SELECT * FROM products
-WHERE description ILIKE '%' || $1 || '%';
+WHERE description ILIKE '%' || $1 || '%'; 

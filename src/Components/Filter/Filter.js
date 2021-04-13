@@ -10,24 +10,36 @@ function Filter(props) {
 
 
     function searchProducts() {
-        console.log(searchText)
-        axios.get('/api/product', { searchText })
+        // console.log(searchText)
+        axios.get(`/api/product?description=${searchText}`)
             .then(res => {
                 props.updateProducts(res.data)
             })
             .catch(err => console.log(err))
     }
 
+    function clearSearch() {
+        axios.get('/api/product')
+            .then(res => {
+                // console.log(res.data)
+                props.updateProducts(res.data)
+                setSearchText('')
+            })
+            .catch(err => console.log(err))
+    }
+
 
     return (
-        <div className="App">
-            <h3>Filter Component</h3>
+        <div className="filter">
+            {/* <h3>Filter Component</h3> */}
             <div>
                 <input
+                    placeholder='search products'
                     onChange={event => setSearchText(event.target.value)}
                     value={searchText}
                 />
                 <button onClick={searchProducts} >search</button>
+                <button onClick={clearSearch}>clear</button>
             </div>
         </div>
     );

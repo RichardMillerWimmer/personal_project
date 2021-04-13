@@ -16,9 +16,9 @@ function Auth(props) {
     function register() {
         axios.post('/api/auth/register', { email, firstName, lastName, password })
             .then(res => {
-                const { first_name } = res.data
+                const { first_name, id } = res.data
 
-                props.updateUser({ first_name })
+                props.updateUser({ first_name, id })
                 props.history.push('/')
             })
             .catch(err => console.log(err))
@@ -31,10 +31,10 @@ function Auth(props) {
         axios.post('/api/auth/login', { loginEmail, loginPassword })
             .then(res => {
                 // console.log(res.data)
-                const { first_name } = res.data
+                const { first_name, id } = res.data
 
                 props.history.push('/')
-                props.updateUser({ first_name })
+                props.updateUser({ first_name, id })
             })
             .catch(err => console.log(err))
     }

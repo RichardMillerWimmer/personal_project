@@ -2,8 +2,9 @@ module.exports = {
 
     getProducts: async (req, res) => {
         const db = req.app.get('db');
-        if (req.query.search) {
-            const filteredProducts = await db.product.search_products(req.query.search)
+        // console.log(req.query)
+        if (req.query.description) {
+            const filteredProducts = await db.product.search_products(req.query.description)
             res.status(200).send(filteredProducts);
         } else {
             const products = await db.product.get_all_products();
