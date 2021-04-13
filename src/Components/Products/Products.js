@@ -30,8 +30,8 @@ function Products(props) {
 
     let mappedProducts = props.products.productList.map((product) => {
         // console.log(product)
-        return <div key={product.product_id}><ProductBox product={product}>
-        </ProductBox>
+        return <div key={product.product_id}>
+            <ProductBox product={product}></ProductBox>
         </div>
     })
 

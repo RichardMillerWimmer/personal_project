@@ -39,7 +39,7 @@ function Header(props) {
 
     return (
         <div className="headerContainer">
-            <h4 className='logo' >LOGO</h4>
+            <Link to='/'><h4 className='logo' >LOGO</h4></Link>
             <div className='authBtn'>
                 <Link to='/user'><button>{!props.auth.firstName ? '' : props.auth.firstName}</button></Link>
                 <Link to='/cart'><button>cart</button></Link>

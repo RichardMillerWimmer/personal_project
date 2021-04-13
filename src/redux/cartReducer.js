@@ -1,12 +1,13 @@
 const initialState = {
-    cart: []
+    items: [],
+    total: 0
 };
 
 const UPDATE_CART = 'UPDATE_CART';
 const CLEAR_CART = 'CLEAR_CART';
 
 export function updateCart(cartArray) {
-    // console.log(productList)
+    console.log(cartArray)
     return {
         type: UPDATE_CART,
         payload: cartArray
@@ -17,7 +18,7 @@ export function clearCart() {
     return {
         type: CLEAR_CART,
     }
-}
+};
 
 export default function cartReducer(state = initialState, action) {
     console.log(action)
@@ -25,10 +26,11 @@ export default function cartReducer(state = initialState, action) {
         case UPDATE_CART:
             return {
                 ...state,
-                cart: action.payload
+                items: action.payload.items,
+                total: action.payload.total
             }
         case CLEAR_CART:
-            return initialState
+            return initialState;
         default: return state
     }
-}
+};

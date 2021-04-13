@@ -9,7 +9,7 @@ import { updateCart } from '../../redux/cartReducer';
 function ProductDisplay(props) {
     const [product, setProduct] = useState({})
 
-    console.log(product)
+    // console.log(product)
 
     useEffect(() => {
         getProduct()
@@ -27,8 +27,8 @@ function ProductDisplay(props) {
     function addToCart() {
         axios.post(`/api/cart/${product.product_id}`)
             .then(res => {
-                console.log(res.data)
-                updateCart(res.data)
+                // console.log(res.data)
+                props.updateCart(res.data)
             })
     }
 

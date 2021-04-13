@@ -13,7 +13,7 @@ export function updateProducts(productList) {
 };
 
 export default function productsReducer(state = initialState, action) {
-    // console.log(action)
+    console.log(action)
     switch (action.type) {
         case UPDATE_PRODUCTS:
             return {

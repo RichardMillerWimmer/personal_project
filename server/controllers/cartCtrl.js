@@ -4,7 +4,9 @@ const { decodeBase64 } = require("bcryptjs");
 module.exports = {
 
     getCart: (req, res) => {
+        // console.log('getCart hit')
         const cart = req.session.cart;
+        // console.log(cart)
         res.status(200).send(cart);
     },
 
