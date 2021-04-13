@@ -34,6 +34,7 @@ function Admin(props) {
         axios.post('/api/product', { name, description, price, imageOne, imageTwo, imageThree, downloadLink })
             .then(res => {
                 console.log(`Product: ${name} added.`)
+                props.updateProducts(res.data)
                 resetFields()
             })
             .catch(err => console.log(err))

@@ -33,6 +33,7 @@ function Admin(props) {
         console.log(product_id)
         axios.put(`/api/product/${product_id}`, { name, description, price, imageOne, imageTwo, imageThree, downloadLink })
             .then(res => {
+                props.updateProducts(res.data)
                 // console.log(`Product: ${name} edited.`)
                 switchEditing()
             })
@@ -43,6 +44,7 @@ function Admin(props) {
         console.log(product_id)
         axios.delete(`/api/product/${product_id}`)
             .then(res => {
+                props.updateProducts(res.data)
                 console.log('Product deleted.')
             })
             .catch(err => console.log(err))

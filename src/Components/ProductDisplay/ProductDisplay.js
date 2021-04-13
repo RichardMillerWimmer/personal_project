@@ -1,12 +1,15 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { updateCart } from '../../redux/cartReducer';
 
 
 
 
 function ProductDisplay(props) {
     const [product, setProduct] = useState({})
+
+    console.log(product)
 
     useEffect(() => {
         getProduct()
@@ -15,10 +18,18 @@ function ProductDisplay(props) {
     function getProduct() {
         axios.get(`/api/product/${props.match.params.id}`)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 setProduct(res.data[0])
             })
             .catch(err => console.log(err))
+    }
+
+    function addToCart() {
+        axios.post(`/api/cart/${product.product_id}`)
+            .then(res => {
+                console.log(res.data)
+                updateCart(res.data)
+            })
     }
 
     // console.log(props.products)
@@ -33,7 +44,10 @@ function ProductDisplay(props) {
                 <p>{product.description}</p>
                 <p>Works with Octane, Redshift, Arnold, Standard, and Cycles.</p>
                 <p>{product.price}.00</p>
-                <button className='addBtn'>add</button>
+                <button
+                    className='addBtn'
+                    onClick={addToCart}
+                >add</button>
             </div>
             <div className='images'>
                 <img />
@@ -44,4 +58,4 @@ function ProductDisplay(props) {
 
 const mapStateToProps = (reduxState) => reduxState;
 
-export default connect(mapStateToProps)(ProductDisplay);
+export default connect(mapStateToProps, { updateCart })(ProductDisplay);

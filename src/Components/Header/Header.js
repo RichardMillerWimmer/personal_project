@@ -17,7 +17,7 @@ function Header(props) {
     }, [])
 
     function getUser() {
-        console.log('getUser hit')
+        // console.log('getUser hit')
         axios.get('/api/auth/user')
             .then(res => {
                 console.log(res.data)
@@ -42,6 +42,7 @@ function Header(props) {
             <h4 className='logo' >LOGO</h4>
             <div className='authBtn'>
                 <Link to='/user'><button>{!props.auth.firstName ? '' : props.auth.firstName}</button></Link>
+                <Link to='/cart'><button>cart</button></Link>
                 {!props.auth.firstName ? <Link to='/auth'><button className='loginBtn'>register/login</button></Link> : <button className='logoutBtn' onClick={logoutUser}>logout</button>}
             </div>
         </div>
