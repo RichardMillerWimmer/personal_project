@@ -22,20 +22,22 @@ function ProductDisplay(props) {
     }
 
     // console.log(props.products)
-    console.log(props.match.params.id)
+    // console.log(props.match.params.id)
     return (
-        <div className="App">
-            <div>
+        <div className="productDisplay">
+            <div className='boxDisplay'>
                 <img src={product.image_one} />
             </div>
-            <div>
+            <div className='infoDisplay'>
                 <h1>{product.name}</h1>
                 <p>{product.description}</p>
                 <p>Works with Octane, Redshift, Arnold, Standard, and Cycles.</p>
                 <p>{product.price}.00</p>
-                <button>add</button>
+                <button className='addBtn'>add</button>
             </div>
-
+            <div className='images'>
+                <img />
+            </div>
         </div >
     );
 }
