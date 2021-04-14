@@ -37,40 +37,40 @@ module.exports = {
         //figure this out with stripe and getUserProducts
     },
 
-    downloadProduct: async (req, res) => {
-        const db = req.app.get('db');
-        const { product_id } = req.params;
-        // const user = req.session.user
-        //setup with AWS S3//
-
-        const link = await db.user.download_product(product_id);
-        console.log(link)
-
-        res.status(200).send(link);
-    }
-
     // downloadProduct: async (req, res) => {
     //     const db = req.app.get('db');
     //     const { product_id } = req.params;
+    //     // const user = req.session.user
+    //     //setup with AWS S3//
 
-    // const bucketKey = await db.user.download_product(product_id);
+    //     const link = await db.user.download_product(product_id);
+    //     console.log(link)
 
-    // const {bucket, objectKey} = bucketKey;
-
-    // const bucketKey = {
-    //     Bucket: 'polymathbucket',
-    //     Key: 'Materials-Stone.jpg'
+    //     res.status(200).send(link);
     // }
 
-    // const data = await s3.getObject(bucketKey, (data, error) => {
-    //     if (error) {
-    //         console.log(error)
-    //     } else {
-    //         console.log(data)
-    //     }
+    downloadProduct: async (req, res) => {
+        const db = req.app.get('db');
+        const { product_id } = req.params;
 
-    // })
+        const bucketParams = await db.user.download_product(product_id);
 
+        const { bucket, objectKey } = bucketParams;
+
+        const download = {
+            Bucket: 'polymathbucket',
+            Key: 'Materials-Stones.jpg'
+        }
+
+        const data = await s3.getObject(download, (data, error) => {
+            if (error) {
+                console.log(error)
+            } else {
+                // console.log(data)
+            }
+
+        })
+    }
     // console.log(data)
 
     // const download = data.Body.toString('utf-8');

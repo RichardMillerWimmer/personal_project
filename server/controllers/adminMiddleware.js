@@ -9,7 +9,7 @@ module.exports = {
         console.log(user)
 
         if (user.admin === false || null) {
-            return res.status().send('you do not have access')
+            return res.status(403).send('you do not have access')
         }
         if (user.admin === true) {
 

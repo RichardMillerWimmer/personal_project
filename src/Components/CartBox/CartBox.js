@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { connect } from 'react-redux';
 import { updateCart } from '../../redux/cartReducer';
+import { Link } from 'react-router-dom';
 
 
 
@@ -20,7 +21,9 @@ function CartBox(props) {
 
     return (
         <div className="cartBox">
-            <img src={props.product.image_one} alt={props.product.name} />
+            <Link to={`/product/${props.product.product_id}`}  >
+                <img src={props.product.image_one} alt={props.product.name} />
+            </Link>
             <div className='cartBoxInfo'>
                 <h3>{props.product.name}</h3>
                 <button onClick={removeFromCart}>remove</button>
