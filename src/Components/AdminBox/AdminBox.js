@@ -104,7 +104,7 @@ function Admin(props) {
                         onChange={event => setDownloadLink(event.target.value)}
                         value={downloadLink} />
                     <button onClick={() => editProduct(props.product.product_id)}>save</button>
-                    {/* <button className='deleteBtn' onClick={() => deleteProduct(props.product.product_id)}>delete</button> */}
+                    <button className='deleteBtn' onClick={() => deleteProduct(props.product.product_id)}>delete</button>
                     <button onClick={() => cancelChanges()}>cancel</button>
                 </div>}
         </div>

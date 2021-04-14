@@ -44,6 +44,7 @@ module.exports = {
         //setup with AWS S3//
 
         const link = await db.user.download_product(product_id);
+        console.log(link)
 
         res.status(200).send(link);
     }
