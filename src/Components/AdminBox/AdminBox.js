@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import productsReducer, { updateProducts } from '../../redux/productsReducer';
+import { updateProducts } from '../../redux/productsReducer';
+
 
 function Admin(props) {
     const [name, setName] = useState('');
@@ -9,13 +10,12 @@ function Admin(props) {
     const [price, setPrice] = useState(null);
     const [imageOne, setImageOne] = useState('');
     const [imageTwo, setImageTwo] = useState('');
-    const [imageThree, setImageThree] = useState('');
     const [downloadLink, setDownloadLink] = useState('');
 
     const [isEditing, setIsEditing] = useState(false);
 
     useEffect(() => {
-        console.log('useEffect hit')
+        // console.log('useEffect hit')
         captureCurrentProduct()
     }, [])
 
@@ -30,8 +30,8 @@ function Admin(props) {
 
 
     function editProduct(product_id) {
-        console.log(product_id)
-        axios.put(`/api/product/${product_id}`, { name, description, price, imageOne, imageTwo, imageThree, downloadLink })
+        // console.log(product_id)
+        axios.put(`/api/product/${product_id}`, { name, description, price, imageOne, imageTwo, downloadLink })
             .then(res => {
                 props.updateProducts(res.data)
                 // console.log(`Product: ${name} edited.`)
@@ -45,6 +45,7 @@ function Admin(props) {
         axios.delete(`/api/product/${product_id}`)
             .then(res => {
                 props.updateProducts(res.data)
+
                 console.log('Product deleted.')
             })
             .catch(err => console.log(err))

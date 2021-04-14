@@ -1,10 +1,19 @@
+import axios from 'axios';
 import React from 'react';
 
 
 
 function UserBox(props) {
 
-    // console.log(props)
+    console.log(props)
+
+    // function downloadProduct() {
+    //     axios.get(`/api/userproduct/download/${props.product.product_id}`)
+    //         .then(res => {
+    //             console.log(res.data)
+
+    //         })
+    // }
 
     return (
         <div className="userBox">
@@ -12,7 +21,7 @@ function UserBox(props) {
             <div className='textBox'>
                 <h2>{props.product.name}</h2>
                 <p>{props.product.description}</p>
-                <button>download</button>
+                <a href={props.product.download} download={props.product.name}><button>download</button></a>
             </div>
         </div >
     );

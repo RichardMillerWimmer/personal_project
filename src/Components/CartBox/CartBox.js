@@ -20,7 +20,7 @@ function CartBox(props) {
 
     return (
         <div className="cartBox">
-            <img src={props.product.image_one} />
+            <img src={props.product.image_one} alt={props.product.name} />
             <div className='cartBoxInfo'>
                 <h3>{props.product.name}</h3>
                 <button onClick={removeFromCart}>remove</button>

@@ -1,6 +1,6 @@
 import { updateUser } from '../../redux/authReducer';
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';;
 
 

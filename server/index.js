@@ -8,6 +8,7 @@ const productCtrl = require('./controllers/productsCtrl');
 const adminCtrl = require('./controllers/adminCtrl');
 const userCtrl = require('./controllers/userCtrl')
 const cartCtrl = require('./controllers/cartCtrl');
+const adminMiddleware = require('./controllers/adminMiddleware');
 
 const app = express();
 
@@ -46,9 +47,9 @@ app.get('/api/product/:product_id', productCtrl.getProduct);
 
 //Admin Endpoints 
 //reuse get Product Endpoints for admin page
-app.post('/api/product', adminCtrl.addProduct); //body required
-app.put('/api/product/:product_id', adminCtrl.editProduct); //body required
-app.delete('/api/product/:product_id', adminCtrl.deleteProduct);
+app.post('/api/product', adminMiddleware.adminCheck, adminCtrl.addProduct); //body required
+app.put('/api/product/:product_id', adminMiddleware.adminCheck, adminCtrl.editProduct); //body required
+app.delete('/api/product/:product_id', adminMiddleware.adminCheck, adminCtrl.deleteProduct);
 
 //User Endpoints 
 app.get('/api/userproduct', userCtrl.getUserProducts);

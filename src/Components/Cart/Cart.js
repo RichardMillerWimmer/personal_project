@@ -8,7 +8,7 @@ import CartBox from '../CartBox/CartBox';
 
 
 function Cart(props) {
-    const [cart, setCart] = useState([]);
+    // const [cart, setCart] = useState([]);
 
     console.log(props)
 

@@ -9,7 +9,9 @@ module.exports = {
 
         await db.admin.add_product(name, description, price, imageOne, imageTwo, downloadLink);
 
-        res.sendStatus(200);
+        const products = await db.product.get_all_products();
+
+        res.status(200).send(products);
     },
     // revist for editing only protions of product
     editProduct: async (req, res) => {
@@ -20,7 +22,9 @@ module.exports = {
 
         await db.admin.edit_product(product_id, name, description, price, imageOne, imageTwo, downloadLink);
 
-        res.sendStatus(200);
+        const products = await db.product.get_all_products();
+
+        res.status(200).send(products);
     },
 
     deleteProduct: async (req, res) => {
@@ -30,7 +34,9 @@ module.exports = {
 
         await db.admin.delete_product(product_id);
 
-        res.sendStatus(200);
+        const products = await db.product.get_all_products();
+
+        res.status(200).send(products);
     }
 
 }

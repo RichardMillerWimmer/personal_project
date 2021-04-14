@@ -4,5 +4,5 @@
 -- JOIN users on user.user_id = orders.user_id 
 -- WHERE product_id = $1 AND user.user_id = $2;
 
-SELECT download_link FROM products
+SELECT name, download_link FROM products
 WHERE product_id = $1;

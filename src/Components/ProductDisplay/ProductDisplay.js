@@ -37,7 +37,7 @@ function ProductDisplay(props) {
     return (
         <div className="productDisplay">
             <div className='boxDisplay'>
-                <img src={product.image_one} />
+                <img src={product.image_one} alt={product.name} />
             </div>
             <div className='infoDisplay'>
                 <h1>{product.name}</h1>
@@ -50,7 +50,7 @@ function ProductDisplay(props) {
                 >add</button>
             </div>
             <div className='images'>
-                <img />
+                <img alt={product.name} />
             </div>
         </div >
     );
