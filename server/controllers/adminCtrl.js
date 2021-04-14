@@ -4,10 +4,10 @@ module.exports = {
         const db = req.app.get('db');
         // const { user_id, admin } = req.session.user;
         // console.log(req.body)
-        const { name, description, price, imageOne, imageTwo, imageThree, downloadLink } = req.body;
+        const { name, description, price, imageOne, imageTwo, downloadLink } = req.body;
 
 
-        await db.admin.add_product(name, description, price, imageOne, imageTwo, imageThree, downloadLink);
+        await db.admin.add_product(name, description, price, imageOne, imageTwo, downloadLink);
 
         res.sendStatus(200);
     },
@@ -15,10 +15,10 @@ module.exports = {
     editProduct: async (req, res) => {
         const db = req.app.get('db');
         // const { user_id, admin } = req.session.user;
-        const { name, description, price, imageOne, imageTwo, imageThree, downloadLink } = req.body;
+        const { name, description, price, imageOne, imageTwo, downloadLink } = req.body;
         const { product_id } = req.params;
 
-        await db.admin.edit_product(product_id, name, description, price, imageOne, imageTwo, imageThree, downloadLink);
+        await db.admin.edit_product(product_id, name, description, price, imageOne, imageTwo, downloadLink);
 
         res.sendStatus(200);
     },

@@ -48,7 +48,9 @@ module.exports = {
             return res.status(400).send('incorrect password');
         }
 
-        req.session.user = { id: user.user_id, email: user.email, first_name: user.first_name, last_name: user.last_name };
+        req.session.user = { id: user.user_id, email: user.email, first_name: user.first_name, last_name: user.last_name, admin: user.admin };
+
+        console.log(req.session.user)
 
         return res.status(200).send(req.session.user);
     },

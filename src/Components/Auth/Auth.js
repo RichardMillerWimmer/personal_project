@@ -31,10 +31,10 @@ function Auth(props) {
         axios.post('/api/auth/login', { loginEmail, loginPassword })
             .then(res => {
                 // console.log(res.data)
-                const { first_name, id } = res.data
+                const { first_name, id, admin } = res.data
 
+                props.updateUser({ first_name, id, admin })
                 props.history.push('/')
-                props.updateUser({ first_name, id })
             })
             .catch(err => console.log(err))
     }

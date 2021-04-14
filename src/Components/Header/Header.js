@@ -21,8 +21,8 @@ function Header(props) {
         axios.get('/api/auth/user')
             .then(res => {
                 console.log(res.data)
-                const { first_name, id } = res.data
-                props.updateUser({ first_name, id })
+                const { first_name, id, admin } = res.data
+                props.updateUser({ first_name, id, admin })
             })
     }
 
@@ -35,14 +35,17 @@ function Header(props) {
             .catch(err => console.log(err))
     }
 
-    // console.log(props.auth)
+    useEffect(() => {
+        console.log(props)
+    }, [props.auth])
 
     return (
         <div className="headerContainer">
             <Link to='/'><h4 className='logo' >LOGO</h4></Link>
             <div className='userBtns'>
-                {!props.auth.firstName ? '' : <Link to='/user'><button className='userBtn' >{props.auth.firstName}</button></Link>}
-                {!props.auth.firstName ? '' : <Link to='/cart'><button className='cartBtn'>cart:{props.cart.items.length}</button></Link>}
+                {props.auth.admin = true ? <Link to='/admin'><button>manage</button></Link> : ''}
+                {props.auth.firstName ? <Link to='/user'><button className='userBtn' >{props.auth.firstName}</button></Link> : ''}
+                {props.auth.firstName ? <Link to='/cart'><button className='cartBtn'>cart:{props.cart.items.length}</button></Link> : ''}
                 {!props.auth.firstName ? <Link to='/auth'><button className='loginBtn'>register/login</button></Link> : <button className='logoutBtn' onClick={logoutUser}>logout</button>}
             </div>
         </div>

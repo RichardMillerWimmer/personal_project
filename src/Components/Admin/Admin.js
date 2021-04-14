@@ -12,7 +12,6 @@ function Admin(props) {
     const [price, setPrice] = useState(null);
     const [imageOne, setImageOne] = useState('');
     const [imageTwo, setImageTwo] = useState('');
-    const [imageThree, setImageThree] = useState('');
     const [downloadLink, setDownloadLink] = useState('');
 
 
@@ -31,7 +30,7 @@ function Admin(props) {
     }
 
     function addProduct() {
-        axios.post('/api/product', { name, description, price, imageOne, imageTwo, imageThree, downloadLink })
+        axios.post('/api/product', { name, description, price, imageOne, imageTwo, downloadLink })
             .then(res => {
                 console.log(`Product: ${name} added.`)
                 props.updateProducts(res.data)
@@ -46,7 +45,6 @@ function Admin(props) {
         setPrice(null)
         setImageOne('')
         setImageTwo('')
-        setImageThree('')
         setDownloadLink('')
     }
 
@@ -58,7 +56,7 @@ function Admin(props) {
 
     return (
         <div className="admin">
-            <h1>Admin Component</h1>
+            <h1>Manage Available Packages</h1>
             <div className='box'>
                 <p>Name:</p>
                 <input
@@ -84,11 +82,6 @@ function Admin(props) {
                 <input
                     onChange={event => setImageTwo(event.target.value)}
                     value={imageTwo}
-                />
-                <p>Image Three:</p>
-                <input
-                    onChange={event => setImageThree(event.target.value)}
-                    value={imageThree}
                 />
                 <p>Download Link:</p>
                 <input
