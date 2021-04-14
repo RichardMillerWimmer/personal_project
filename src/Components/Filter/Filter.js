@@ -32,7 +32,7 @@ function Filter(props) {
     return (
         <div className="filter">
             {/* <h3>Filter Component</h3> */}
-            <div>
+            <div className='searchBar'>
                 <input
                     placeholder='search products'
                     onChange={event => setSearchText(event.target.value)}

@@ -40,9 +40,9 @@ function Header(props) {
     return (
         <div className="headerContainer">
             <Link to='/'><h4 className='logo' >LOGO</h4></Link>
-            <div className='authBtn'>
-                <Link to='/user'><button>{!props.auth.firstName ? '' : props.auth.firstName}</button></Link>
-                <Link to='/cart'><button>cart</button></Link>
+            <div className='userBtns'>
+                {!props.auth.firstName ? '' : <Link to='/user'><button className='userBtn' >{props.auth.firstName}</button></Link>}
+                {!props.auth.firstName ? '' : <Link to='/cart'><button className='cartBtn'>cart:{props.cart.items.length}</button></Link>}
                 {!props.auth.firstName ? <Link to='/auth'><button className='loginBtn'>register/login</button></Link> : <button className='logoutBtn' onClick={logoutUser}>logout</button>}
             </div>
         </div>

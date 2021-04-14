@@ -20,10 +20,12 @@ function CartBox(props) {
 
     return (
         <div className="cartBox">
-            <h3>{props.product.name}</h3>
-            <button onClick={removeFromCart}>remove</button>
-            {/* <img src={props.product.image_one} alt={props.product.name} /> */}
-        </div>
+            <img src={props.product.image_one} />
+            <div className='cartBoxInfo'>
+                <h3>{props.product.name}</h3>
+                <button onClick={removeFromCart}>remove</button>
+            </div>
+        </div >
     );
 }
 

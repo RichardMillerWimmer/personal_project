@@ -42,7 +42,7 @@ function Cart(props) {
 
     return (
         <div className="cart">
-            <h1>Cart Component</h1>
+            <h1>Your Cart</h1>
             {cartMapped}
             <button onClick={checkout}>checkout</button>
         </div>

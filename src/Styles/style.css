@@ -18,8 +18,12 @@ body {
   margin: 20px;
 }
 
-.authBtn {
-  margin: 20px;
+.cartBtn {
+  margin: 0 5px;
+}
+
+.userBtn {
+  margin: 0 5px;
 }
 
 .loginBtn {
@@ -30,6 +34,7 @@ body {
   padding: 10px;
   margin: 0 10px;
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.3);
+  margin: 0 5px;
 }
 
 .logoutBtn {
@@ -40,8 +45,14 @@ body {
   padding: 10px;
   margin: 0 10px;
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.3);
+  margin: 0 5px;
 }
 
+.userBtns {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
 .authContainer {
   display: flex;
   flex-direction: column;
@@ -110,6 +121,15 @@ button {
   margin: 5px 0;
 }
 
+.products {
+  text-align: center;
+}
+.products h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 0 15px;
+}
+
 .productBox {
   display: flex;
   flex-direction: column;
@@ -158,6 +178,84 @@ button {
   padding-bottom: 5px;
   -webkit-box-shadow: 0px 10px 13px -12px #000000, 0px 28px 0px 26px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -12px #000000, 0px 28px 0px 26px rgba(0, 0, 0, 0);
+}
+
+.filter {
+  margin-top: 20px;
+  display: flex;
+}
+
+.searchBar {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 40px;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
+}
+.searchBar input {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 490px) {
+  .searchBar {
+    margin: 0 18%;
+  }
+}
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.userBox {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 20px;
+}
+.userBox img {
+  height: 250px;
+  object-fit: contain;
+}
+
+.textBox {
+  text-align: center;
+}
+.textBox h2 {
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+.textBox p {
+  margin: 20px;
+}
+.textBox button {
+  margin: 5px 45px;
+}
+
+@media (min-width: 400px) {
+  .userBox {
+    flex-direction: row;
+  }
+}
+.cart {
+  text-align: center;
+}
+.cart h1 {
+  font-size: 1.5rem;
+}
+
+.cartBox {
+  display: flex;
+  flex-direction: row;
+  margin: 30px auto;
+}
+.cartBox img {
+  height: 150px;
+  object-fit: contain;
+}
+
+.cartBoxInfo {
+  text-align: center;
+  margin: 10px auto;
 }
 
 /*# sourceMappingURL=style.css.map */

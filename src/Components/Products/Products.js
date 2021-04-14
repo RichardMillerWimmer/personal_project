@@ -36,8 +36,8 @@ function Products(props) {
     })
 
     return (
-        <div className="App">
-            {/* <h1>Products Component</h1> */}
+        <div className="products">
+            <h1>Polymath Texture Packages</h1>
             <Filter />
             {mappedProducts}
 

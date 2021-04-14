@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import UserBox from '../UserBox/UserBox';
 
 
 
@@ -27,15 +28,14 @@ function UserProfile(props) {
 
     let mappedUserProducts = userProducts.map((product) => {
         return <div key={product.product_id}>
-            <h3>{product.name}</h3>
-            <img src={product.image_one} />
+            <UserBox product={product}></UserBox>
         </div>
     })
 
 
     return (
         <div className="userProfile">
-            <h1>Your Polymath Packages Collection</h1>
+            <h1>Your Polymath Collection</h1>
             {mappedUserProducts}
         </div>
     );
