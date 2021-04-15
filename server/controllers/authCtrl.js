@@ -21,7 +21,7 @@ module.exports = {
 
         req.session.user = newUser[0];
 
-        res.status(200).send(req.session.user);
+        res.status(201).send(req.session.user);
     },
 
     login: async (req, res) => {
@@ -45,14 +45,14 @@ module.exports = {
         const isAuthenticated = bcrypt.compareSync(loginPassword, user.hash);
         //check 
         if (!isAuthenticated) {
-            return res.status(400).send('incorrect password');
+            return res.status(401).send('incorrect password');
         }
 
         req.session.user = { id: user.user_id, email: user.email, first_name: user.first_name, last_name: user.last_name, admin: user.admin };
 
         // console.log(req.session.user)
 
-        return res.status(200).send(req.session.user);
+        return res.status(201).send(req.session.user);
     },
 
 

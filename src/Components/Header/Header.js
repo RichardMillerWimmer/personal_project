@@ -16,7 +16,7 @@ function Header(props) {
     const Logo = styled.img`
         height: 80px;
         margin-left: 10px;
-        margin-top: 10px;
+        margin-top: 5px;
         transition: .4s;
         &:hover {
             -webkit-transform: scale(1.05);

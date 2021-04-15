@@ -185,11 +185,17 @@ button {
   line-height: 1.4rem;
 }
 .productDisplay .infoDisplay h1 {
+  font-family: "PT Serif";
+  display: inline-block;
   font-size: 1.5rem;
   margin-bottom: 20px;
-  padding-bottom: 5px;
-  -webkit-box-shadow: 0px 10px 13px -12px #000000, 0px 28px 0px 26px rgba(0, 0, 0, 0);
-  box-shadow: 0px 10px 13px -12px #000000, 0px 28px 0px 26px rgba(0, 0, 0, 0);
+  padding-bottom: 8px;
+  -webkit-box-shadow: 0px 10px 13px -10px #000000, 0px 28px 0px 26px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -10px #000000, 0px 28px 0px 26px rgba(0, 0, 0, 0);
+}
+.productDisplay .infoDisplay p {
+  font-family: "Raleway";
+  margin-bottom: 5px;
 }
 
 .filter {
@@ -225,6 +231,9 @@ h1 {
 .userBox {
   display: flex;
   flex-direction: column;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
+  margin: 30px;
 }
 .userBox img {
   height: 250px;

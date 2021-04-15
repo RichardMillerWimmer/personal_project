@@ -26,7 +26,7 @@ module.exports = {
         cart.total += product[0].price
         // console.log(cart)
 
-        res.status(200).send(cart);
+        res.status(201).send(cart);
 
     },
 

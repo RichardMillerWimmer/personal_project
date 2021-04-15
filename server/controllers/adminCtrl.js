@@ -11,7 +11,7 @@ module.exports = {
 
         const products = await db.product.get_all_products();
 
-        res.status(200).send(products);
+        res.status(201).send(products);
     },
     // revist for editing only protions of product
     editProduct: async (req, res) => {
@@ -24,7 +24,7 @@ module.exports = {
 
         const products = await db.product.get_all_products();
 
-        res.status(200).send(products);
+        res.status(201).send(products);
     },
 
     deleteProduct: async (req, res) => {

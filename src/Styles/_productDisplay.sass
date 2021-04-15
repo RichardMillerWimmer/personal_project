@@ -11,8 +11,12 @@
         margin: 0 20px
         line-height: 1.4rem
         h1
+            font-family: $font-serif
+            display: inline-block
             font-size: 1.5rem
             margin-bottom: 20px
-            padding-bottom: 5px
-            -webkit-box-shadow: 0px 10px 13px -12px #000000, 0px 28px 0px 26px rgba(0,0,0,0)
-            box-shadow: 0px 10px 13px -12px #000000, 0px 28px 0px 26px rgba(0,0,0,0)
+            padding-bottom: 8px
+            @include underline-shadow()
+        p
+            font-family: $font-sansserif
+            margin-bottom: 5px
