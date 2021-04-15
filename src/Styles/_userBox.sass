@@ -1,21 +1,26 @@
 .userBox
     display: flex
     flex-direction: column
-    margin: 10px 20px
+    // margin: 10px
     img
         height: 250px
         object-fit: contain
 
 .textBox
     text-align: center
+    margin-top: 30px
     h2
         font-size: 1.5rem
         margin: 20px 0
+        font-family: $font-serif
+        line-height: $line-height
     p
         margin: 20px
+        font-family: $font-sansserif
     button
         margin: 5px 45px
 
-@media (min-width: 400px)
+@media (min-width: $bp-mobile)
     .userBox
         flex-direction: row
+        justify-content: center

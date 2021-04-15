@@ -67,40 +67,45 @@ function Admin(props) {
     }
 
     return (
-        <div className='box'>
+        <div className='adminBox'>
             { !isEditing ?
-                <div>
-                    <p>{name}</p>
-                    <p>{description}</p>
-                    <p>{price}</p>
-                    <p>{imageOne}</p>
-                    <p>{imageTwo}</p>
-                    <p>{downloadLink}</p>
-                    <Button onClick={switchEditing}>edit</Button>
+                <div className='adminFlex'>
+                    <div>
+                        <img className='adminImg' src={imageOne} />
+                    </div>
+                    <div>
+                        <p>Name: {name}</p>
+                        <p>Description: {description}</p>
+                        <p>Price: {price}</p>
+                        <p>Image One: {imageOne}</p>
+                        <p>Image Two: {imageTwo}</p>
+                        <p>Download Link: {downloadLink}</p>
+                        <Button onClick={switchEditing}>edit</Button>
+                    </div>
                 </div>
                 :
                 <div>
-                    <p>name:</p>
+                    <p>Name:</p>
                     <input
                         onChange={event => setName(event.target.value)}
                         value={name} />
-                    <p>description:</p>
+                    <p>Description:</p>
                     <input
                         onChange={event => setDescription(event.target.value)}
                         value={description} />
-                    <p>price:</p>
+                    <p>Price:</p>
                     <input
                         onChange={event => setPrice(event.target.value)}
                         value={price} />
-                    <p>image one:</p>
+                    <p>Image One:</p>
                     <input
                         onChange={event => setImageOne(event.target.value)}
                         value={imageOne} />
-                    <p>image two:</p>
+                    <p>Image Two:</p>
                     <input
                         onChange={event => setImageTwo(event.target.value)}
                         value={imageTwo} />
-                    <p>download link:</p>
+                    <p>Download Link:</p>
                     <input
                         onChange={event => setDownloadLink(event.target.value)}
                         value={downloadLink} />

@@ -39,8 +39,9 @@ function Products(props) {
         <div className="products">
             <h1>Polymath Texture Packages</h1>
             <Filter />
-            {mappedProducts}
-
+            <div className='productFlex'>
+                {mappedProducts}
+            </div>
         </div>
     );
 }

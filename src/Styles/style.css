@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&family=Raleway:wght@400;800&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -15,7 +16,7 @@ body {
 }
 
 .logo {
-  margin: 20px;
+  height: 80px;
 }
 
 .cartBtn {
@@ -37,8 +38,9 @@ body {
 .userBtns {
   display: flex;
   justify-content: space-around;
-  margin: 20px;
+  margin: 30px 5px;
 }
+
 .authContainer {
   display: flex;
   flex-direction: column;
@@ -67,12 +69,26 @@ button {
   text-align: center;
 }
 
+.admin h1 {
+  font-family: "PT Serif";
+  padding: 30px;
+}
+.admin h2 {
+  font-family: "Raleway";
+  text-align: center;
+  padding-top: 30px;
+  font-size: 1.5rem;
+}
+.admin p {
+  font-family: "Raleway";
+  line-height: 1.4;
+}
 .admin input {
   width: 100%;
   margin: 5px 0;
 }
 
-.box {
+.addBox {
   text-align: left;
   width: 80%;
   margin-left: auto;
@@ -92,27 +108,43 @@ button {
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 20px 40px;
+  overflow: auto;
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
+}
+.adminBox .adminFlex {
+  display: flex;
+}
+.adminBox .adminFlex .adminImg {
+  height: 200px;
+  object-fit: contain;
+  margin-right: 5px;
 }
 .adminBox input {
   width: 100%;
   margin: 5px 0;
 }
 
+@media (max-width: 480px) {
+  .adminImg {
+    display: none;
+  }
+}
 .products {
   text-align: center;
 }
 .products h1 {
+  font-family: "PT Serif";
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 0 15px;
 }
 
-.productBox {
+.productFlex {
   display: flex;
   flex-direction: column;
 }
+
 .productBox img {
   display: block;
   height: 350px;
@@ -122,17 +154,18 @@ button {
 }
 
 @media (min-width: 480px) {
-  .productBox {
+  .productFlex {
     flex-flow: row wrap;
+    justify-content: space-around;
     margin: 0;
   }
 }
 @media (min-width: 800px) {
-  img {
+  .productBox img {
     transition: 0.5s;
     filter: brightness(60%) grayscale(50%);
   }
-  img:hover {
+  .productBox img:hover {
     filter: brightness(100%) grayscale(0%);
   }
 }
@@ -168,12 +201,13 @@ button {
   display: inline-block;
   margin: 0 auto;
   text-align: center;
-  padding: 20px 40px 12px 40px;
+  padding: 20px 40px 10px 40px;
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
 }
 .searchBar input {
   margin-bottom: 20px;
+  margin-right: 11px;
 }
 
 @media (max-width: 490px) {
@@ -183,13 +217,14 @@ button {
 }
 h1 {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-family: "PT Serif";
+  padding: 10px;
 }
 
 .userBox {
   display: flex;
   flex-direction: column;
-  margin: 10px 20px;
 }
 .userBox img {
   height: 250px;
@@ -198,34 +233,55 @@ h1 {
 
 .textBox {
   text-align: center;
+  margin-top: 30px;
 }
 .textBox h2 {
   font-size: 1.5rem;
   margin: 20px 0;
+  font-family: "PT Serif";
+  line-height: 1.4;
 }
 .textBox p {
   margin: 20px;
+  font-family: "Raleway";
 }
 .textBox button {
   margin: 5px 45px;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 480px) {
   .userBox {
     flex-direction: row;
+    justify-content: center;
   }
 }
 .cart {
   text-align: center;
 }
 .cart h1 {
+  font-family: "PT Serif";
   font-size: 1.5rem;
+  padding: 30px;
+}
+.cart h3 {
+  font-family: "Raleway";
+  font-size: 1.2rem;
+  padding: 20px;
+}
+
+.cartContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .cartBox {
   display: flex;
   flex-direction: row;
-  margin: 30px auto;
+  justify-content: center;
+  margin: 20px 10px;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
 }
 .cartBox img {
   height: 150px;
@@ -233,8 +289,19 @@ h1 {
 }
 
 .cartBoxInfo {
-  text-align: center;
-  margin: 10px auto;
+  margin-top: 20px;
+}
+
+@media (min-width: 480px) {
+  .cartBox {
+    width: 320px;
+  }
+}
+@media (min-width: 800px) {
+  .cartContainer {
+    flex-direction: row;
+    wrap: warp;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

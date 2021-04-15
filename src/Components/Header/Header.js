@@ -4,13 +4,27 @@ import { connect } from 'react-redux'
 import { updateUser, logoutUser } from '../../redux/authReducer';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
-
+import logo from '../../Polymath_Logo_White.png';
+import styled from '@emotion/styled';
 
 
 
 function Header(props) {
 
     // console.log(props)
+
+    const Logo = styled.img`
+        height: 80px;
+        margin-left: 10px;
+        margin-top: 10px;
+        transition: .4s;
+        &:hover {
+            -webkit-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            transform: scale(1.05);
+        }
+    `;
+
 
     useEffect(() => {
         getUser()
@@ -41,7 +55,7 @@ function Header(props) {
 
     return (
         <div className="headerContainer">
-            <Link to='/'><h4 className='logo' >LOGO</h4></Link>
+            <Link to='/'><Logo className='logo' src={logo} ></Logo></Link>
             <div className='userBtns'>
                 {!props.auth.firstName ? <Link to='/auth'><Button className='loginBtn'>register/login</Button></Link> : ''}
                 {props.auth.admin === true ? <Link to='/admin'><Button>manage</Button></Link> : ''}

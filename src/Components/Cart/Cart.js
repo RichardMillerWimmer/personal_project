@@ -45,6 +45,7 @@ function Cart(props) {
         <div className="cart">
             <h1>Your Cart</h1>
             {cartMapped}
+            <h3>total: ${props.cart.total}.00</h3>
             <Button onClick={checkout}>checkout</Button>
         </div>
     );

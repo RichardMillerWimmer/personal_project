@@ -21,15 +21,18 @@ function CartBox(props) {
     }
 
     return (
-        <div className="cartBox">
-            <Link to={`/product/${props.product.product_id}`}  >
-                <img src={props.product.image_one} alt={props.product.name} />
-            </Link>
-            <div className='cartBoxInfo'>
-                <h3>{props.product.name}</h3>
-                <Button onClick={removeFromCart}>remove</Button>
-            </div>
-        </div >
+        <div className='cartContainer'>
+            <div className="cartBox">
+                <div></div>
+                <Link to={`/product/${props.product.product_id}`}  >
+                    <img src={props.product.image_one} alt={props.product.name} />
+                </Link>
+                <div className='cartBoxInfo'>
+                    <h3>{props.product.name}</h3>
+                    <Button onClick={removeFromCart}>remove</Button>
+                </div>
+            </div >
+        </div>
     );
 }
 

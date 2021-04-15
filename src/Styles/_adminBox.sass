@@ -6,14 +6,20 @@
     margin-top: 30px
     margin-bottom: 30px
     padding: 20px 40px
+    overflow: auto
     @include box-shadow()
 
-    p
-        // display: inline-block
+    .adminFlex
+        display: flex
+        .adminImg
+            height: 200px
+            object-fit: contain
+            margin-right: 5px
+
     input
         width: 100%
         margin: 5px 0
 
-    // .deleteBtn
-    //     @include button()
-    //     border: 1px solid red
+@media (max-width: $bp-mobile)
+    .adminImg
+        display: none

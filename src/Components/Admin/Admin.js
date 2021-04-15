@@ -58,7 +58,8 @@ function Admin(props) {
     return (
         <div className="admin">
             <h1>Manage Available Packages</h1>
-            <div className='box'>
+            <h2>Add A New Product</h2>
+            <div className='addBox'>
                 <p>Name:</p>
                 <input
                     onChange={event => setName(event.target.value)}

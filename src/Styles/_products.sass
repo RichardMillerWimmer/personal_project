@@ -1,13 +1,16 @@
 .products
     text-align: center
     h1
+        font-family: $font-serif
         text-align: center
-        font-size: 1.5rem
+        font-size: 2rem
         margin: 0 15px
 
-.productBox
+.productFlex
     display: flex
     flex-direction: column
+
+.productBox
     img
         display: block
         height: 350px
@@ -16,15 +19,15 @@
         cursor: pointer
 
 @media (min-width: $bp-mobile)
-    .productBox
-
+    .productFlex
         flex-flow: row wrap
+        justify-content: space-around
         margin: 0
 
 @media (min-width: $bp-tablet)
-
-    img
-        transition: .5s
-        filter: brightness(60%) grayscale(50%)
-        &:hover
-            filter: brightness(100%) grayscale(0%)
+    .productBox
+        img
+            transition: .5s
+            filter: brightness(60%) grayscale(50%)
+            &:hover
+                filter: brightness(100%) grayscale(0%)

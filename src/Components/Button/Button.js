@@ -5,6 +5,8 @@ import styled from '@emotion/styled';
 const Button = styled.button`
     background: none;
     color: white;
+    font-family: Tahoma;
+    letter-spacing: 1px;
     border: 1px solid white;
     border-radius: 4px;
     padding: 10px;
@@ -16,9 +18,9 @@ const Button = styled.button`
         color: #4e3fc0;
     }
     &:hover {
-        -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        transform: scale(1.1);
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
     }
     &:after {
         content: '';
@@ -27,14 +29,14 @@ const Button = styled.button`
         left: 0;
         width: 0;
         height: 100%;
-        background-color: rgba(255,255,255,0.4);
+        background-color: #4e3fc0;
         -webkit-transition: none;
         -moz-transition: none;
         transition: none;
       }
       &:hover:after {
         width: 110%;
-        background-color: rgba(255,255,255,0);
+        background-color: transparent;
         -webkit-transition: all 0.2s ease-in-out;
         -moz-transition: all 0.2s ease-in-out;
         transition: all 0.2s ease-in-out;

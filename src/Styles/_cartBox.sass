@@ -1,11 +1,25 @@
+.cartContainer
+    display: flex
+    flex-direction: column
+    justify-content: space-around
 .cartBox
     display: flex
     flex-direction: row
-    margin: 30px auto
+    justify-content: center
+    margin: 20px 10px
+    @include box-shadow()
     img
         height: 150px
         object-fit: contain
 
 .cartBoxInfo
-    text-align: center
-    margin: 10px auto
+    margin-top: 20px
+
+@media (min-width: $bp-mobile)
+    .cartBox
+        width: 320px
+
+@media (min-width: $bp-tablet)
+    .cartContainer
+        flex-direction: row
+        wrap: warp
