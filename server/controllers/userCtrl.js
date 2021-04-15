@@ -58,7 +58,7 @@ module.exports = {
         const { bucket, objectKey } = bucketParams;
 
         const download = {
-            Bucket: 'polymathbucket',
+            Bucket: '',
             Key: 'Materials-Stones.jpg'
         }
 
@@ -66,7 +66,7 @@ module.exports = {
             if (error) {
                 console.log(error)
             } else {
-                // console.log(data)
+                console.log(data)
             }
 
         })
