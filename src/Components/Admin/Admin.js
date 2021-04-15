@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { updateProducts } from '../../redux/productsReducer';
 import AdminBox from '../AdminBox/AdminBox';
+import Button from '../Button/Button';
 
 
 
@@ -89,7 +90,7 @@ function Admin(props) {
                     value={downloadLink}
                 />
                 <br></br>
-                <button onClick={addProduct}>add</button>
+                <Button onClick={addProduct}>add</Button>
 
             </div>
             <div className='editDeleteList'>

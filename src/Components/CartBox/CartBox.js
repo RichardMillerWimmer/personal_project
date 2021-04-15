@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { updateCart } from '../../redux/cartReducer';
 import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
 
 
 
@@ -26,7 +27,7 @@ function CartBox(props) {
             </Link>
             <div className='cartBoxInfo'>
                 <h3>{props.product.name}</h3>
-                <button onClick={removeFromCart}>remove</button>
+                <Button onClick={removeFromCart}>remove</Button>
             </div>
         </div >
     );

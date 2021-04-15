@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
 import { updateUser, logoutUser } from '../../redux/authReducer';
 import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
 
 
 
@@ -42,12 +43,12 @@ function Header(props) {
         <div className="headerContainer">
             <Link to='/'><h4 className='logo' >LOGO</h4></Link>
             <div className='userBtns'>
-                {!props.auth.firstName ? <Link to='/auth'><button className='loginBtn'>register/login</button></Link> : ''}
-                {props.auth.admin === true ? <Link to='/admin'><button>manage</button></Link> : ''}
+                {!props.auth.firstName ? <Link to='/auth'><Button className='loginBtn'>register/login</Button></Link> : ''}
+                {props.auth.admin === true ? <Link to='/admin'><Button>manage</Button></Link> : ''}
                 {props.auth.firstName ? <div>
-                    {props.auth.firstName && !props.auth.admin ? <Link to='/user'><button className='userBtn' >{props.auth.firstName}</button></Link> : ''}
-                    {props.auth.firstName && !props.auth.admin ? <Link to='/cart'><button className='cartBtn'>cart:{props.cart.items.length}</button></Link> : ''}
-                    {props.auth.firstName ? <Link to='/'><button className='logoutBtn' onClick={logoutUser}>logout</button> </Link> : ''}
+                    {props.auth.firstName && !props.auth.admin ? <Link to='/user'><Button className='userBtn' >{props.auth.firstName}</Button></Link> : ''}
+                    {props.auth.firstName && !props.auth.admin ? <Link to='/cart'><Button className='cartBtn'>cart:{props.cart.items.length}</Button></Link> : ''}
+                    {props.auth.firstName ? <Link to='/'><Button className='logoutBtn' onClick={logoutUser}>logout</Button> </Link> : ''}
                 </div> : ''}
             </div>
         </div>

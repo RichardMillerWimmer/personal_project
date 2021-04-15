@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import Button from '../Button/Button';
 
 
 
@@ -21,7 +22,7 @@ function UserBox(props) {
             <div className='textBox'>
                 <h2>{props.product.name}</h2>
                 <p>{props.product.description}</p>
-                <button onClick={downloadProduct}>download</button>
+                <Button onClick={downloadProduct}>download</Button>
                 {/* <a href={props.product.download_link} download={props.product.name} target='_blank'><button>download</button></a> */}
             </div>
         </div >

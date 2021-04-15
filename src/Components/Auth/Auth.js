@@ -1,7 +1,8 @@
 import { updateUser } from '../../redux/authReducer';
 import axios from 'axios';
 import React, { useState } from 'react';
-import { connect } from 'react-redux';;
+import { connect } from 'react-redux';
+import Button from '../Button/Button';
 
 
 function Auth(props) {
@@ -63,7 +64,7 @@ function Auth(props) {
                     onChange={event => setPassword(event.target.value)}
                     value={password} />
                 <br></br>
-                <button onClick={register}>Register</button>
+                <Button onClick={register}>Register</Button>
             </div>
             <div className='login box'>
                 <h2>Login</h2>
@@ -77,7 +78,7 @@ function Auth(props) {
                 <input onChange={event => setLoginPassword(event.target.value)}
                     value={loginPassword} />
                 <br></br>
-                <button onClick={login}>Login</button>
+                <Button onClick={login}>Login</Button>
             </div>
 
         </div>

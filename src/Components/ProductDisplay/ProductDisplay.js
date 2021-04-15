@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { updateCart } from '../../redux/cartReducer';
-
+import Button from '../Button/Button';
 
 
 
@@ -44,10 +44,10 @@ function ProductDisplay(props) {
                 <p>{product.description}</p>
                 <p>Works with Octane, Redshift, Arnold, Standard, and Cycles.</p>
                 <p>{product.price}.00</p>
-                <button
+                <Button
                     className='addBtn'
                     onClick={addToCart}
-                >add</button>
+                >add</Button>
             </div>
             <div className='images'>
                 <img alt={product.name} />

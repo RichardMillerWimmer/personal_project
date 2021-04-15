@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { updateProducts } from '../../redux/productsReducer';
-
+import Button from '../Button/Button';
 
 function Admin(props) {
     const [name, setName] = useState('');
@@ -76,7 +76,7 @@ function Admin(props) {
                     <p>{imageOne}</p>
                     <p>{imageTwo}</p>
                     <p>{downloadLink}</p>
-                    <button onClick={switchEditing}>edit</button>
+                    <Button onClick={switchEditing}>edit</Button>
                 </div>
                 :
                 <div>
@@ -104,9 +104,9 @@ function Admin(props) {
                     <input
                         onChange={event => setDownloadLink(event.target.value)}
                         value={downloadLink} />
-                    <button onClick={() => editProduct(props.product.product_id)}>save</button>
-                    <button className='deleteBtn' onClick={() => deleteProduct(props.product.product_id)}>delete</button>
-                    <button onClick={() => cancelChanges()}>cancel</button>
+                    <Button onClick={() => editProduct(props.product.product_id)}>save</Button>
+                    <Button className='deleteBtn' onClick={() => deleteProduct(props.product.product_id)}>delete</Button>
+                    <Button onClick={() => cancelChanges()}>cancel</Button>
                 </div>}
         </div>
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { updateProducts } from '../../redux/productsReducer';
+import Button from '../Button/Button'
 
 
 
@@ -38,8 +39,8 @@ function Filter(props) {
                     onChange={event => setSearchText(event.target.value)}
                     value={searchText}
                 />
-                <button onClick={searchProducts} >search</button>
-                <button onClick={clearSearch}>clear</button>
+                <Button onClick={searchProducts} >search</Button>
+                <Button onClick={clearSearch}>clear</Button>
             </div>
         </div>
     );

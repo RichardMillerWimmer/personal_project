@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { updateCart } from '../../redux/cartReducer';
 import CartBox from '../CartBox/CartBox';
+import Button from '../Button/Button';
 
 
 
@@ -44,7 +45,7 @@ function Cart(props) {
         <div className="cart">
             <h1>Your Cart</h1>
             {cartMapped}
-            <button onClick={checkout}>checkout</button>
+            <Button onClick={checkout}>checkout</Button>
         </div>
     );
 }
