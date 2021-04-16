@@ -18,7 +18,7 @@ function UserBox(props) {
 
     return (
         <div className="userBox">
-            <img src={props.product.image_one} />
+            <img src={props.product.image_one} alt={props.product.name} />
             <div className='textBox'>
                 <h2>{props.product.name}</h2>
                 <p>{props.product.description}</p>

@@ -4,10 +4,11 @@
     flex-direction: column
 
     h2
+        font-family: $font-serif
         font-size: 1.5em
         margin-bottom: 10px
     p
-        // display: inline-block
+        font-family: $font-sansserif
     input
         margin: 5px 0
 
@@ -20,7 +21,14 @@
     margin-bottom: 30px
     padding: 20px 40px
     @include box-shadow()
+    Button
+        margin-top: 10px
+        margin-left: 0
 
-button
-    // @include button()
-    text-align: center
+@media (min-width: $bp-tablet)
+    .authContainer
+        flex-direction: row
+        justify-content: center
+    .box
+        width: 350px
+        margin: 30px

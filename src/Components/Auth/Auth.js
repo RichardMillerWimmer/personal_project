@@ -64,7 +64,7 @@ function Auth(props) {
                     onChange={event => setPassword(event.target.value)}
                     value={password} />
                 <br></br>
-                <Button onClick={register}>Register</Button>
+                <Button onClick={register}>register</Button>
             </div>
             <div className='login box'>
                 <h2>Login</h2>
@@ -78,7 +78,7 @@ function Auth(props) {
                 <input onChange={event => setLoginPassword(event.target.value)}
                     value={loginPassword} />
                 <br></br>
-                <Button onClick={login}>Login</Button>
+                <Button onClick={login}>login</Button>
             </div>
 
         </div>

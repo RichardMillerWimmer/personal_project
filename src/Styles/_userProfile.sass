@@ -3,3 +3,13 @@ h1
     font-size: 2rem
     font-family: $font-serif
     padding: 10px
+    margin-bottom: 15px
+
+.flexUserBox
+    display: flex
+    flex-flow: column nowrap
+
+@media (min-width: $bp-tablet)
+    .flexUserBox
+        flex-flow: row wrap
+        justify-content: center

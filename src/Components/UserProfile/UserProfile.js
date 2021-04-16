@@ -7,11 +7,10 @@ import UserBox from '../UserBox/UserBox';
 
 
 function UserProfile(props) {
-    // const [userId, setUserId] = useState('')
     const [userProducts, setUserProducts] = useState([])
 
     console.log(props)
-    // console.log(userProducts)
+    // console.log(userProducts) 
 
     useEffect(() => {
         getUserProducts()
@@ -20,7 +19,7 @@ function UserProfile(props) {
     function getUserProducts() {
         axios.get('/api/userproduct')
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 setUserProducts(res.data)
             })
             .catch(err => console.log(err))
@@ -36,7 +35,9 @@ function UserProfile(props) {
     return (
         <div className="userProfile">
             <h1>Your Polymath Collection</h1>
-            {mappedUserProducts}
+            <div className='flexUserBox'>
+                {mappedUserProducts}
+            </div>
         </div>
     );
 }

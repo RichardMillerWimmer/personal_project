@@ -46,8 +46,12 @@ body {
   flex-direction: column;
 }
 .authContainer h2 {
+  font-family: "PT Serif";
   font-size: 1.5em;
   margin-bottom: 10px;
+}
+.authContainer p {
+  font-family: "Raleway";
 }
 .authContainer input {
   margin: 5px 0;
@@ -64,11 +68,22 @@ body {
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
 }
-
-button {
-  text-align: center;
+.box Button {
+  margin-top: 10px;
+  margin-left: 0;
 }
 
+@media (min-width: 800px) {
+  .authContainer {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .box {
+    width: 350px;
+    margin: 30px;
+  }
+}
 .admin h1 {
   font-family: "PT Serif";
   padding: 30px;
@@ -199,7 +214,7 @@ button {
 }
 
 .filter {
-  margin-top: 20px;
+  margin: 20px;
   display: flex;
 }
 
@@ -226,14 +241,27 @@ h1 {
   font-size: 2rem;
   font-family: "PT Serif";
   padding: 10px;
+  margin-bottom: 15px;
 }
 
+.flexUserBox {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+@media (min-width: 800px) {
+  .flexUserBox {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+}
 .userBox {
   display: flex;
   flex-direction: column;
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
   margin: 30px;
+  padding: 10px;
 }
 .userBox img {
   height: 250px;
@@ -264,13 +292,25 @@ h1 {
     justify-content: center;
   }
 }
+@media (min-width: 800px) {
+  .userBox {
+    width: 450px;
+  }
+  .userBox img {
+    height: 300px;
+  }
+
+  .textBox {
+    margin-top: 15px;
+  }
+}
 .cart {
   text-align: center;
 }
 .cart h1 {
   font-family: "PT Serif";
   font-size: 1.5rem;
-  padding: 30px;
+  padding: 15px;
 }
 .cart h3 {
   font-family: "Raleway";
@@ -278,23 +318,31 @@ h1 {
   padding: 20px;
 }
 
-.cartContainer {
+.flexCartBox {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-flow: column;
+  justify-content: center;
 }
 
+@media (min-width: 800px) {
+  .flexCartBox {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+}
 .cartBox {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin: 20px 10px;
+  padding: 15px;
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
 }
 .cartBox img {
   height: 150px;
   object-fit: contain;
+  margin-left: 15px;
 }
 
 .cartBoxInfo {
@@ -304,12 +352,12 @@ h1 {
 @media (min-width: 480px) {
   .cartBox {
     width: 320px;
+    margin: 20px auto;
   }
 }
 @media (min-width: 800px) {
-  .cartContainer {
-    flex-direction: row;
-    wrap: warp;
+  .cartBox {
+    margin: 20px;
   }
 }
 

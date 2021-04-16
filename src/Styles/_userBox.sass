@@ -3,6 +3,7 @@
     flex-direction: column
     @include box-shadow()
     margin: 30px
+    padding: 10px
     img
         height: 250px
         object-fit: contain
@@ -25,3 +26,11 @@
     .userBox
         flex-direction: row
         justify-content: center
+
+@media (min-width: $bp-tablet)
+    .userBox
+        width: 450px
+        img
+            height: 300px
+    .textBox
+        margin-top: 15px
