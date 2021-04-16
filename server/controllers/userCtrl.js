@@ -1,5 +1,13 @@
+require('dotenv').config();
 const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
+
+const {
+    S3_BUCKET,
+    AWS_ACCESS_KEY_ID,
+    AWS_SECRET_ACCESS_KEY,
+    REGION
+} = process.env
 
 module.exports = {
 
@@ -37,40 +45,40 @@ module.exports = {
         //figure this out with stripe and getUserProducts
     },
 
-    // downloadProduct: async (req, res) => {
-    //     const db = req.app.get('db');
-    //     const { product_id } = req.params;
-    //     // const user = req.session.user
-    //     //setup with AWS S3//
-
-    //     const link = await db.user.download_product(product_id);
-    //     console.log(link)
-
-    //     res.status(200).send(link);
-    // }
-
     downloadProduct: async (req, res) => {
         const db = req.app.get('db');
         const { product_id } = req.params;
+        // const user = req.session.user
+        //setup with AWS S3//
 
-        const bucketParams = await db.user.download_product(product_id);
+        const link = await db.user.download_product(product_id);
+        console.log(link)
 
-        const { bucket, objectKey } = bucketParams;
-
-        const download = {
-            Bucket: '',
-            Key: 'Materials-Stones.jpg'
-        }
-
-        const data = await s3.getObject(download, (data, error) => {
-            if (error) {
-                console.log(error)
-            } else {
-                console.log(data)
-            }
-
-        })
+        res.status(200).send(link);
     }
+
+    // downloadProduct: async (req, res) => {
+    //     const db = req.app.get('db');
+    //     const { product_id } = req.params;
+
+    //     const bucketParams = await db.user.download_product(product_id);
+
+    //     const { bucket, objectKey } = bucketParams;
+
+    //     const download = {
+    //         Bucket: S3_BUCKET,
+    //         Key: 'Product_1_Concrete.png'
+    //     }
+
+    //     const data = await s3.getObject(download, (data, error) => {
+    //         if (error) {
+    //             console.log(error)
+    //         } else {
+    //             // console.log(data)
+    //         }
+
+    //     })
+    // }
     // console.log(data)
 
     // const download = data.Body.toString('utf-8');
