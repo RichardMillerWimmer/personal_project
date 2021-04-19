@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
 import { updateUser, logoutUser } from '../../redux/authReducer';
+import { resetProducts } from '../../redux/userProductsReducer';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import logo from '../../images/Polymath_Logo_White.png';
@@ -44,14 +45,11 @@ function Header(props) {
         axios.delete('/api/auth/logout')
             .then(res => {
                 props.logoutUser()
+                props.resetProducts()
                 // props.history.push('/')
             })
             .catch(err => console.log(err))
     }
-
-    useEffect(() => {
-        console.log(props)
-    }, [props.auth])
 
     return (
         <div className="headerContainer">
@@ -71,4 +69,4 @@ function Header(props) {
 
 const mapStateToProps = (reduxState) => reduxState;
 
-export default connect(mapStateToProps, { updateUser, logoutUser })(Header);
+export default connect(mapStateToProps, { updateUser, logoutUser, resetProducts })(Header);

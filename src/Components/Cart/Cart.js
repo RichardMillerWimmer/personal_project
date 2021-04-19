@@ -9,7 +9,6 @@ import Button from '../Button/Button';
 
 
 function Cart(props) {
-    // const [cart, setCart] = useState([]);
 
     console.log(props)
 

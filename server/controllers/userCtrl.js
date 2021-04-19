@@ -3,7 +3,7 @@ module.exports = {
     getUserProducts: async (req, res) => {
         const db = req.app.get('db');
         const user = req.session.user;
-        // console.log(user)
+        console.log(user)
 
         const userProducts = await db.user.get_user_products(user.id);
         // console.log(userProducts)

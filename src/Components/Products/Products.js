@@ -3,6 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 
 import { updateProducts } from '../../redux/productsReducer';
+import { updateUserProducts } from '../../redux/userProductsReducer';
 
 
 import Filter from '../Filter/Filter';
@@ -16,6 +17,14 @@ function Products(props) {
         getProducts()
     }, [])
 
+    useEffect(() => {
+        console.log('user products hit')
+        if (props.auth.userId) {
+            getUserProducts()
+            console.log(props.auth.userId)
+        }
+    }, [props.auth])
+
     function getProducts() {
         // console.log('get products hit')
         axios.get('/api/product')
@@ -25,6 +34,18 @@ function Products(props) {
             })
             .catch(err => console.log(err))
     }
+
+    function getUserProducts() {
+        console.log('axios hit')
+        axios.get('/api/userproduct')
+            .then(res => {
+                console.log(res.data)
+                // setUserProducts(res.data)
+                props.updateUserProducts(res.data)
+            })
+            .catch(err => console.log(err))
+    }
+
 
     // console.log(props.products.productList)
 
@@ -48,4 +69,4 @@ function Products(props) {
 
 const mapStateToProps = (reduxState) => reduxState;
 
-export default connect(mapStateToProps, { updateProducts })(Products);
+export default connect(mapStateToProps, { updateProducts, updateUserProducts })(Products);
