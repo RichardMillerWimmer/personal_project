@@ -360,5 +360,43 @@ h1 {
     margin: 20px;
   }
 }
+.footer {
+  text-align: center;
+  height: 215px;
+}
+
+h2 {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-top: 35px;
+  cursor: pointer;
+  margin-top: 35px;
+}
+h2 a {
+  text-decoration: none;
+}
+h2 a:link {
+  color: white;
+}
+h2 a:visited {
+  color: white;
+}
+
+h3 {
+  font-family: "Raleway";
+  margin-top: 15px;
+}
+
+.socialLinks {
+  margin: 15px;
+}
+
+.link {
+  margin: 10px;
+}
+.link img {
+  height: 40px;
+}
 
 /*# sourceMappingURL=style.css.map */

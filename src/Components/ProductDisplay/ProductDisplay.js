@@ -8,6 +8,7 @@ import Button from '../Button/Button';
 
 function ProductDisplay(props) {
     const [product, setProduct] = useState({})
+    const [doesOwn, setDoesOwn] = useState(false)
 
     // console.log(product)
 
