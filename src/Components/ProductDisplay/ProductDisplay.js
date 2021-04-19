@@ -32,6 +32,20 @@ function ProductDisplay(props) {
             })
     }
 
+    function duplicateCheck() {
+        let passed = true
+        for (let i = 0; i < props.cart.items.length; i++) {
+            if (props.cart.items[i].product_id === product.product_id) {
+                passed = false
+            }
+        }
+        if (passed) {
+            addToCart()
+        } else {
+            alert("this item is already in your cart")
+        }
+    }
+
     // console.log(props.products)
     // console.log(props.match.params.id)
     return (
@@ -46,7 +60,7 @@ function ProductDisplay(props) {
                 <p>{product.price}.00</p>
                 <Button
                     className='addBtn'
-                    onClick={addToCart}
+                    onClick={duplicateCheck}
                 >add</Button>
             </div>
             <div className='images'>

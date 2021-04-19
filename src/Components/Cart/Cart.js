@@ -29,8 +29,9 @@ function Cart(props) {
     function checkout() {
         axios.post('/api/userproduct')
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 props.updateCart(res.data)
+                getCart()
             })
             .catch(err => console.log(err))
     }

@@ -9,6 +9,7 @@ const adminCtrl = require('./controllers/adminCtrl');
 const userCtrl = require('./controllers/userCtrl')
 const cartCtrl = require('./controllers/cartCtrl');
 const adminMiddleware = require('./controllers/adminMiddleware');
+const duplicateMiddleware = require('./controllers/duplicateMiddleware');
 
 const app = express();
 
@@ -46,9 +47,8 @@ app.get('/api/product', productCtrl.getProducts);
 app.get('/api/product/:product_id', productCtrl.getProduct);
 
 //Admin Endpoints 
-//reuse get Product Endpoints for admin page
-app.post('/api/product', adminMiddleware.adminCheck, adminCtrl.addProduct); //body required
-app.put('/api/product/:product_id', adminMiddleware.adminCheck, adminCtrl.editProduct); //body required
+app.post('/api/product', adminMiddleware.adminCheck, adminCtrl.addProduct);
+app.put('/api/product/:product_id', adminMiddleware.adminCheck, adminCtrl.editProduct);
 app.delete('/api/product/:product_id', adminMiddleware.adminCheck, adminCtrl.deleteProduct);
 
 //User Endpoints 
@@ -58,7 +58,7 @@ app.get('/api/userproduct/download/:product_id', userCtrl.downloadProduct);
 
 //Cart Endpoints 
 app.get('/api/cart', cartCtrl.getCart);
-app.post('/api/cart/:product_id', cartCtrl.addToCart); //body?
+app.post('/api/cart/:product_id', duplicateMiddleware.userDuplicateCheck, cartCtrl.addToCart);
 app.delete('/api/cart/:product_id', cartCtrl.removeFromCart);
 app.delete('/api/cart', cartCtrl.clearCart);
 

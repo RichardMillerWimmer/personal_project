@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { updateUser, logoutUser } from '../../redux/authReducer';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
-import logo from '../../Polymath_Logo_White.png';
+import logo from '../../images/Polymath_Logo_White.png';
 import styled from '@emotion/styled';
 
 

@@ -61,6 +61,7 @@ function Auth(props) {
                 <br></br>
                 <p>password:</p>
                 <input
+                    type='password'
                     onChange={event => setPassword(event.target.value)}
                     value={password} />
                 <br></br>
@@ -75,7 +76,9 @@ function Auth(props) {
                 />
                 <br></br>
                 <p>password:</p>
-                <input onChange={event => setLoginPassword(event.target.value)}
+                <input
+                    type='password'
+                    onChange={event => setLoginPassword(event.target.value)}
                     value={loginPassword} />
                 <br></br>
                 <Button onClick={login}>login</Button>

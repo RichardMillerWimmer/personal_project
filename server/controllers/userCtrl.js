@@ -1,14 +1,3 @@
-require('dotenv').config();
-const AWS = require('aws-sdk');
-const s3 = new AWS.S3();
-
-const {
-    S3_BUCKET,
-    AWS_ACCESS_KEY_ID,
-    AWS_SECRET_ACCESS_KEY,
-    REGION
-} = process.env
-
 module.exports = {
 
     getUserProducts: async (req, res) => {
