@@ -46,7 +46,7 @@ function ProductDisplay(props) {
                 return elem
             }
         })
-        console.log(check)
+        // console.log(check)
         if (check[0]) {
             setDoesOwn(true)
         }

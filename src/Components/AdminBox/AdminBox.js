@@ -41,12 +41,12 @@ function Admin(props) {
     }
 
     function deleteProduct(product_id) {
-        console.log(product_id)
+        // console.log(product_id)
         axios.delete(`/api/product/${product_id}`)
             .then(res => {
                 props.updateProducts(res.data)
 
-                console.log('Product deleted.')
+                // console.log('Product deleted.')
             })
             .catch(err => console.log(err))
     }

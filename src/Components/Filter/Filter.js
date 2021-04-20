@@ -32,7 +32,6 @@ function Filter(props) {
 
     return (
         <div className="filter">
-            {/* <h3>Filter Component</h3> */}
             <div className='searchBar'>
                 <input
                     placeholder='search products'

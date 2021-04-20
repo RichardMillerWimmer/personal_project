@@ -63,12 +63,12 @@ module.exports = {
     //         Key: 'Product_1_Concrete.png'
     //     }
 
-    //     const data = await s3.getObject(download, (data, error) => {
-    //         if (error) {
-    //             console.log(error)
-    //         } else {
-    //             // console.log(data)
-    //         }
+    // const data = await s3.getObject(download, (data, error) => {
+    //     if (error) {
+    //         console.log(error)
+    //     } else {
+    //         // console.log(data)
+    //     }
 
     //     })
     // }

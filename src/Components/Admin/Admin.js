@@ -51,7 +51,7 @@ function Admin(props) {
 
 
     let mappedProducts = props.products.productList.map((product) => {
-        console.log(product)
+        // console.log(product)
         return <div key={product.product_id}><AdminBox product={product}></AdminBox></div>
     })
 
