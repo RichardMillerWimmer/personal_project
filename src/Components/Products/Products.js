@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-
+import { updateCart } from '../../redux/cartReducer';
 import { updateProducts } from '../../redux/productsReducer';
 import { updateUserProducts } from '../../redux/userProductsReducer';
 
@@ -18,12 +18,16 @@ function Products(props) {
     }, [])
 
     useEffect(() => {
-        console.log('user products hit')
+        // console.log('user products hit')
         if (props.auth.userId) {
             getUserProducts()
-            console.log(props.auth.userId)
+            // console.log(props.auth.userId)
         }
     }, [props.auth])
+
+    useEffect(() => {
+        getUserCart()
+    }, [])
 
     function getProducts() {
         // console.log('get products hit')
@@ -36,14 +40,20 @@ function Products(props) {
     }
 
     function getUserProducts() {
-        console.log('axios hit')
+        // console.log('axios hit')
         axios.get('/api/userproduct')
             .then(res => {
-                console.log(res.data)
-                // setUserProducts(res.data)
+                // console.log(res.data)
                 props.updateUserProducts(res.data)
             })
             .catch(err => console.log(err))
+    }
+
+    function getUserCart() {
+        axios.get('/api/cart')
+            .then(res => {
+                props.updateCart(res.data)
+            })
     }
 
 
@@ -69,4 +79,4 @@ function Products(props) {
 
 const mapStateToProps = (reduxState) => reduxState;
 
-export default connect(mapStateToProps, { updateProducts, updateUserProducts })(Products);
+export default connect(mapStateToProps, { updateProducts, updateUserProducts, updateCart })(Products);

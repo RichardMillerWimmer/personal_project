@@ -6,7 +6,7 @@ import Button from '../Button/Button';
 
 function UserBox(props) {
 
-    console.log(props)
+    // console.log(props)
 
     function downloadProduct() {
         axios.get(`/api/userproduct/download/${props.product.product_id}`)

@@ -26,7 +26,6 @@ function Header(props) {
         }
     `;
 
-
     useEffect(() => {
         getUser()
     }, [])
@@ -46,7 +45,6 @@ function Header(props) {
             .then(res => {
                 props.logoutUser()
                 props.resetProducts()
-                // props.history.push('/')
             })
             .catch(err => console.log(err))
     }

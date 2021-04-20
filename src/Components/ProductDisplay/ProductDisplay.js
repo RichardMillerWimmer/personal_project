@@ -39,7 +39,7 @@ function ProductDisplay(props) {
     }
 
     function ownershipCheck() {
-        console.log(product)
+        // console.log(product)
 
         let check = props.userProducts.userProductList.filter(function (elem) {
             if (elem.product_id === product.product_id) {
@@ -57,19 +57,19 @@ function ProductDisplay(props) {
 
 
 
-    // function duplicateCheck() {
-    //     let passed = true
-    //     for (let i = 0; i < props.cart.items.length; i++) {
-    //         if (props.cart.items[i].product_id === product.product_id) {
-    //             passed = false
-    //         }
-    //     }
-    //     if (passed) {
-    //         addToCart()
-    //     } else {
-    //         alert("this item is already in your cart")
-    //     }
-    // }
+    function duplicateCheck() {
+        let passed = true
+        for (let i = 0; i < props.cart.items.length; i++) {
+            if (props.cart.items[i].product_id === product.product_id) {
+                passed = false
+            }
+        }
+        if (passed) {
+            addToCart()
+        } else {
+            alert("this item is already in your cart")
+        }
+    }
 
 
     return (
@@ -84,7 +84,7 @@ function ProductDisplay(props) {
                 <p>{product.price}.00</p>
                 {doesOwn ? <p className='doesOwnButton'>You have already purchased this prackage</p> : <Button
                     className='addBtn'
-                    onClick={addToCart}
+                    onClick={duplicateCheck}
                 >add</Button>}
 
             </div>

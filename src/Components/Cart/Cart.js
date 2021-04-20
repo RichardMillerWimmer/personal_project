@@ -10,7 +10,7 @@ import Button from '../Button/Button';
 
 function Cart(props) {
 
-    console.log(props)
+    // console.log(props)
 
     useEffect(() => {
         getCart()
@@ -19,7 +19,7 @@ function Cart(props) {
     function getCart() {
         axios.get('/api/cart')
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 props.updateCart(res.data)
             })
             .catch(err => console.log(err))

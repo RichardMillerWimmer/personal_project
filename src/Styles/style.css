@@ -213,6 +213,19 @@ body {
   margin-bottom: 5px;
 }
 
+.doesOwnButton {
+  display: inline-block;
+  background: none;
+  color: white;
+  font-family: Tahoma;
+  letter-spacing: 1px;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 0 10px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.3);
+}
+
 .filter {
   margin: 20px;
   display: flex;
@@ -261,7 +274,7 @@ h1 {
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
   margin: 30px;
-  padding: 10px;
+  padding: 5px;
 }
 .userBox img {
   height: 250px;
@@ -270,17 +283,17 @@ h1 {
 
 .textBox {
   text-align: center;
-  margin-top: 30px;
 }
 .textBox h2 {
   font-size: 1.5rem;
-  margin: 20px 0;
+  margin: 17px 0;
   font-family: "PT Serif";
   line-height: 1.4;
 }
 .textBox p {
-  margin: 20px;
+  margin: 10px;
   font-family: "Raleway";
+  line-height: 1.4;
 }
 .textBox button {
   margin: 5px 45px;
@@ -343,10 +356,6 @@ h1 {
   height: 150px;
   object-fit: contain;
   margin-left: 15px;
-}
-
-.cartBoxInfo {
-  margin-top: 20px;
 }
 
 @media (min-width: 480px) {
