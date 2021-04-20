@@ -408,4 +408,9 @@ h3 {
   height: 40px;
 }
 
+.hero {
+  width: 100vw;
+  object-fit: cover;
+}
+
 /*# sourceMappingURL=style.css.map */

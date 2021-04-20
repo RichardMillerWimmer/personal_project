@@ -1,7 +1,7 @@
 require('dotenv').config();
-const { PinpointEmail } = require('aws-sdk');
+
+const fs = require('fs');
 const AWS = require('aws-sdk');
-const { setRandomFallback } = require('bcryptjs');
 
 
 const {
@@ -10,7 +10,11 @@ const {
     AWS_SECRET_ACCESS_KEY,
     REGION
 } = process.env
-const s3 = new AWS.S3();
+
+const s3 = new AWS.S3({
+    region: 'us-east-2'
+});
+
 
 module.exports = {
     downloadProduct: async (req, res) => {
@@ -19,7 +23,7 @@ module.exports = {
 
         const objectKey = await db.user.download_product(product_id);
 
-        const download = {
+        const params = {
             Bucket: S3_BUCKET,
             Key: 'Product_1_Concrete.png'
         }
@@ -28,13 +32,16 @@ module.exports = {
         //     .createReadStream()
         //     .pipe(res)
 
-        const data = await s3.getObject(download, (error, res) => {
+        const download = await s3.getObject(params, (error, data) => {
             if (error) {
                 console.log('error' + error)
             } else {
-                console.log(res)
-
+                console.log(data)
             }
-        }).send()
+            // res.sendFile(download)
+        })
+        console.log(download)
+        // .createReadStream()
+        // download.pipe(res)
     }
 }

@@ -8,6 +8,7 @@ import { updateUserProducts } from '../../redux/userProductsReducer';
 
 import Filter from '../Filter/Filter';
 import ProductBox from '../ProductBox/ProductBox';
+import Hero from '..//Hero/Hero';
 
 
 
@@ -68,6 +69,7 @@ function Products(props) {
 
     return (
         <div className="products">
+            {/* <Hero /> */}
             <h1>Polymath Texture Packages</h1>
             <Filter />
             <div className='productFlex'>

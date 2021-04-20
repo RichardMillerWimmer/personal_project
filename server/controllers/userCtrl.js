@@ -1,3 +1,5 @@
+const https = require('https');
+
 module.exports = {
 
     getUserProducts: async (req, res) => {
@@ -38,7 +40,7 @@ module.exports = {
         //figure this out with stripe and getUserProducts
     },
 
-    downloadProduct: async (req, res) => {
+    downloadProduct: async (req, res, next) => {
         const db = req.app.get('db');
         const { product_id } = req.params;
         // const user = req.session.user
@@ -47,8 +49,18 @@ module.exports = {
         const link = await db.user.download_product(product_id);
         console.log(link)
 
-        res.status(200).send(link);
-    }
+
+
+        next(link)
+    },
+
+    downloadFile: ((req, res) => {
+        https.get('https://www.askideas.com/media/25/American-Shorthair-Cat-Face-Picture.jpg', (response) => {
+            res.setHeader('Content-disposition', 'attachment; filename=' + 'catpicccc.jpg');
+            res.setHeader('Content-type', 'application/octet-stream');
+            response.pipe(res)
+        });
+    })
 
     // downloadProduct: async (req, res) => {
     //     const db = req.app.get('db');

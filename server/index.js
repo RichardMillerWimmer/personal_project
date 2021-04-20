@@ -55,7 +55,7 @@ app.delete('/api/product/:product_id', adminMiddleware.adminCheck, adminCtrl.del
 //User Endpoints 
 app.get('/api/userproduct', userCtrl.getUserProducts);
 app.post('/api/userproduct', userCtrl.purchaseProduct, cartCtrl.clearCart)
-app.get('/api/userproduct/download/:product_id', s3Ctrl.downloadProduct);
+app.get('/api/userproduct/download/:product_id', userCtrl.downloadProduct, userCtrl.downloadFile);
 
 //Cart Endpoints 
 app.get('/api/cart', cartCtrl.getCart);
