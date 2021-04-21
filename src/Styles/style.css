@@ -226,6 +226,23 @@ body {
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.3);
 }
 
+.images {
+  margin: 30px auto;
+}
+.images img {
+  width: 90vw;
+}
+
+@media (min-width: 480px) {
+  .images img {
+    width: 80vw;
+  }
+}
+@media (min-width: 800px) {
+  .images img {
+    width: 50vw;
+  }
+}
 .filter {
   margin: 20px;
   display: flex;

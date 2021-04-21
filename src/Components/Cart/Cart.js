@@ -31,6 +31,7 @@ function Cart(props) {
                 // console.log(res.data)
                 props.updateCart(res.data)
                 getCart()
+                props.history.push('/user')
             })
             .catch(err => console.log(err))
     }

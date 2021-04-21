@@ -13,11 +13,19 @@ function UserProfile(props) {
     // console.log(props)
 
     useEffect(() => {
-        setUserProducts(props.userProducts.userProductList)
-        // console.log(userProducts)
+        getUserProducts()
     }, [])
 
-
+    function getUserProducts() {
+        // console.log('axios hit')
+        axios.get('/api/userproduct')
+            .then(res => {
+                // console.log(res.data)
+                props.updateUserProducts(res.data)
+                setUserProducts(res.data)
+            })
+            .catch(err => console.log(err))
+    }
 
     let mappedUserProducts = props.userProducts.userProductList.map((product) => {
         return <div key={product.product_id}>

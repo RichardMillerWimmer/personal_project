@@ -89,7 +89,7 @@ function ProductDisplay(props) {
 
             </div>
             <div className='images'>
-                <img alt={product.name} />
+                <img src={product.image_two} alt={product.name} />
             </div>
         </div >
     );

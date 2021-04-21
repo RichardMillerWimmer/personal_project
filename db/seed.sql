@@ -34,8 +34,3 @@ CREATE TABLE order_items (
   order_id INTEGER REFERENCES orders(order_id),
   product_id INTEGER REFERENCES products(product_id)
 );
-
--- CREATE TABLE cart (
---   user_id INTEGER REFERENCES users(user_id),
---   product_id INTEGER REFERENCES products(product_id)
--- );
