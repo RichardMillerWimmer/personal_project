@@ -17,31 +17,52 @@ const s3 = new AWS.S3({
 
 
 module.exports = {
-    downloadProduct: async (req, res) => {
-        const db = req.app.get('db');
-        const { product_id } = req.params;
 
-        const objectKey = await db.user.download_product(product_id);
+    // downloadProduct: async((req, res) => {
 
-        const params = {
-            Bucket: S3_BUCKET,
-            Key: 'Product_1_Concrete.png'
-        }
+    //     let file = fs.createWriteStream('./download/index.html');
+    //     return new Promise((resolve, reject) => {
+    //         s3.getObject(params).createReadStream()
+    //             .on('end', () => {
+    //                 console.log(chalk.green("File successfully downloaded!"));
+    //                 return resolve();
+    //             })
+    //             .on('error', (error) => {
+    //                 return reject((error));
+    //             }).pipe(file)
+    //     })
+    // })
 
-        // const data = await s3.getObject(download)
-        //     .createReadStream()
-        //     .pipe(res)
 
-        const download = await s3.getObject(params, (error, data) => {
-            if (error) {
-                console.log('error' + error)
-            } else {
-                console.log(data)
-            }
-            // res.sendFile(download)
-        })
-        console.log(download)
-        // .createReadStream()
-        // download.pipe(res)
-    }
+
+
+
+
+    // downloadProduct: async (req, res) => {
+    //     const db = req.app.get('db');
+    //     const { product_id } = req.params;
+
+    //     const objectKey = await db.user.download_product(product_id);
+
+    //     const params = {
+    //         Bucket: S3_BUCKET,
+    //         Key: 'Product_1_Concrete.png'
+    //     }
+
+    //     // const data = await s3.getObject(download)
+    //     //     .createReadStream()
+    //     //     .pipe(res)
+
+    //     const download = await s3.getObject(params, (error, data) => {
+    //         if (error) {
+    //             console.log('error' + error)
+    //         } else {
+    //             console.log(data)
+    //         }
+    //         // res.sendFile(download)
+    //     })
+    //     console.log(download)
+    //     // .createReadStream()
+    //     // download.pipe(res)
+    // }
 }

@@ -5,4 +5,4 @@
 -- WHERE product_id = $1 AND user.user_id = $2;
 
 SELECT name, download_link FROM products
-WHERE product_id = $1;
+WHERE product_id = $1;  

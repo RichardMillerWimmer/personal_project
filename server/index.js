@@ -10,7 +10,7 @@ const userCtrl = require('./controllers/userCtrl')
 const cartCtrl = require('./controllers/cartCtrl');
 const adminMiddleware = require('./controllers/adminMiddleware');
 const duplicateMiddleware = require('./controllers/duplicateMiddleware');
-const s3Ctrl = require('./controllers/s3Ctrl')
+// const s3Ctrl = require('./controllers/s3Ctrl')
 
 const app = express();
 
@@ -55,7 +55,7 @@ app.delete('/api/product/:product_id', adminMiddleware.adminCheck, adminCtrl.del
 //User Endpoints 
 app.get('/api/userproduct', userCtrl.getUserProducts);
 app.post('/api/userproduct', userCtrl.purchaseProduct, cartCtrl.clearCart)
-app.get('/api/userproduct/download/:product_id', userCtrl.downloadProduct, userCtrl.downloadFile);
+// app.get('/api/userproduct/download/:product_id', userCtrl.downloadProduct, userCtrl.downloadFile);
 
 //Cart Endpoints 
 app.get('/api/cart', cartCtrl.getCart);

@@ -1,4 +1,6 @@
 const https = require('https');
+const fs = require('fs');
+const AWS = require('aws-sdk');
 
 module.exports = {
 
@@ -38,29 +40,36 @@ module.exports = {
 
 
         //figure this out with stripe and getUserProducts
-    },
+    }
 
-    downloadProduct: async (req, res, next) => {
-        const db = req.app.get('db');
-        const { product_id } = req.params;
-        // const user = req.session.user
-        //setup with AWS S3//
+    // downloadProduct: async (req, res, next) => {
+    //     const db = req.app.get('db');
+    //     const { product_id } = req.params;
+    //     // const user = req.session.user
+    //     //setup with AWS S3//
 
-        const link = await db.user.download_product(product_id);
-        console.log(link)
+    //     const download = await db.user.download_product(product_id);
+    //     // console.log(download)
 
+    //     // const {name, download_link} = download
 
+    //     req.downloadProduct = download
 
-        next(link)
-    },
+    //     next()
+    // },
 
-    downloadFile: ((req, res) => {
-        https.get('https://www.askideas.com/media/25/American-Shorthair-Cat-Face-Picture.jpg', (response) => {
-            res.setHeader('Content-disposition', 'attachment; filename=' + 'catpicccc.jpg');
-            res.setHeader('Content-type', 'application/octet-stream');
-            response.pipe(res)
-        });
-    })
+    // downloadFile: ((req, res) => {
+    //     // console.log(req.downloadProduct)
+    //     const { name, download_link } = req.downloadProduct[0]
+    //     const name_replaced = name.replace(/ /g, "_")
+    //     // console.log(download_link)
+    //     // console.log(name_replaced)
+    //     https.get(download_link, (response) => {
+    //         res.setHeader('Content-disposition', 'attachment; filename=' + `${name_replaced}.jpg`);
+    //         res.setHeader('Content-type', 'application/octet-stream');
+    //         response.pipe(res)
+    //     });
+    // })
 
     // downloadProduct: async (req, res) => {
     //     const db = req.app.get('db');
