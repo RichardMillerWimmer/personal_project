@@ -16,6 +16,8 @@ const app = express();
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
+app.use(express.static(`${__dirname}/../build`))
+
 app.use(express.json());
 
 app.use(session({
@@ -62,6 +64,7 @@ app.get('/api/cart', cartCtrl.getCart);
 app.post('/api/cart/:product_id', duplicateMiddleware.userDuplicateCheck, cartCtrl.addToCart);
 app.delete('/api/cart/:product_id', cartCtrl.removeFromCart);
 app.delete('/api/cart', cartCtrl.clearCart);
+
 
 
 massive({
