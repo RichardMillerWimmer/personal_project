@@ -82,7 +82,7 @@ function ProductDisplay(props) {
                 <p>{product.description}</p>
                 <p>Works with Octane, Redshift, Arnold, Standard, and Cycles.</p>
                 <p>{product.price}.00</p>
-                {doesOwn ? <p className='doesOwnButton'>You have already purchased this prackage</p> : <Button
+                {!props.auth.firstName ? '' : doesOwn ? <p className='doesOwnButton'>You have already purchased this prackage</p> : <Button
                     className='addBtn'
                     onClick={duplicateCheck}
                 >add</Button>}

@@ -34,7 +34,7 @@ function Header(props) {
         // console.log('getUser hit')
         axios.get('/api/auth/user')
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 const { first_name, id, admin } = res.data
                 props.updateUser({ first_name, id, admin })
             })
