@@ -4,8 +4,8 @@
 .hero
     width: 100vw
     height: 50vh
-    margin-bottom: 140px
-    margin-top: -130px
+    margin-bottom: 170px
+    margin-top: -170px
     // position: relative
     .heroText
         position: relative
@@ -13,11 +13,11 @@
         h1
             font-family: $font-sansserif
             font-weight: 700
-            font-size: 4rem
+            font-size: 3rem
             @include text-shadow()
         h3
             font-family: $font-serif
-            font-size: 1.5rem
+            font-size: 1.2rem
             @include text-shadow()
     .videoTag
         width: 100vw
@@ -26,3 +26,13 @@
         top: 0
         left: 0
         z-index: -1
+
+@media (min-width: $bp-tablet)
+    .hero
+        margin-top: -200px
+        margin-bottom: 200px
+        .heroText
+            h1
+                font-size: 4rem
+            h3
+                font-size: 1.5rem

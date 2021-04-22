@@ -16,7 +16,7 @@ function Hero() {
     return (
         <div className='hero'>
             <div className='heroText'>
-                <h1>POLYMATH VISUALS</h1>
+                <h1>POLYMATH<br></br> VISUALS</h1>
                 <h3>Welcome to our texture packages store</h3>
             </div>
             <video className='videoTag'

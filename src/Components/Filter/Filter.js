@@ -29,18 +29,24 @@ function Filter(props) {
             .catch(err => console.log(err))
     }
 
+    const enterPress = (event) => {
+        if (event.keyCode === 13) {
+            searchProducts()
+        }
+    }
 
     return (
         <div className="filter">
-            <div className='searchBar'>
+            <form className='searchBar'>
                 <input
                     placeholder='search products'
                     onChange={event => setSearchText(event.target.value)}
                     value={searchText}
+                    onKeyPress={enterPress}
                 />
-                <Button onClick={searchProducts} >search</Button>
+                <Button onClick={searchProducts} type='submit'  >search</Button>
                 <Button onClick={clearSearch}>clear</Button>
-            </div>
+            </form>
         </div>
     );
 }

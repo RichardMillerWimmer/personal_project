@@ -40,9 +40,20 @@ function Auth(props) {
             .catch(err => console.log(err))
     }
 
+    const registerEnterPress = (event) => {
+        if (event.keyCode === 13) {
+            register()
+        }
+    }
+    const loginEnterPress = (event) => {
+        if (event.keyCode === 13) {
+            login()
+        }
+    }
+
     return (
         <div className="authContainer">
-            <div className='register box'>
+            <form className='register box'>
                 <h2>Register</h2>
                 <p>email:</p>
                 <input
@@ -63,11 +74,12 @@ function Auth(props) {
                 <input
                     type='password'
                     onChange={event => setPassword(event.target.value)}
-                    value={password} />
+                    value={password}
+                    onKeyPress={registerEnterPress} />
                 <br></br>
-                <Button onClick={register}>register</Button>
-            </div>
-            <div className='login box'>
+                <Button onClick={register} type='submit'>register</Button>
+            </form>
+            <form className='login box'>
                 <h2>Login</h2>
                 <p>email:</p>
                 <input
@@ -79,10 +91,11 @@ function Auth(props) {
                 <input
                     type='password'
                     onChange={event => setLoginPassword(event.target.value)}
-                    value={loginPassword} />
+                    value={loginPassword}
+                    onKeyPress={loginEnterPress} />
                 <br></br>
-                <Button onClick={login}>login</Button>
-            </div>
+                <Button onClick={login} type='submit'>login</Button>
+            </form>
 
         </div>
     );

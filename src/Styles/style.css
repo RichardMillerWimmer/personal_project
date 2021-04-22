@@ -262,9 +262,13 @@ body {
   margin-right: 11px;
 }
 
-@media (max-width: 490px) {
+@media (max-width: 480px) {
   .searchBar {
-    width: 70vw;
+    width: 68vw;
+    padding: 20px 45px 10px 45px;
+  }
+  .searchBar input {
+    margin-right: 0;
   }
 }
 h1 {
@@ -429,8 +433,8 @@ h3 {
 .hero {
   width: 100vw;
   height: 50vh;
-  margin-bottom: 140px;
-  margin-top: -130px;
+  margin-bottom: 170px;
+  margin-top: -170px;
 }
 .hero .heroText {
   position: relative;
@@ -439,12 +443,12 @@ h3 {
 .hero .heroText h1 {
   font-family: "Raleway";
   font-weight: 700;
-  font-size: 4rem;
+  font-size: 3rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.49);
 }
 .hero .heroText h3 {
   font-family: "PT Serif";
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.49);
 }
 .hero .videoTag {
@@ -454,6 +458,19 @@ h3 {
   top: 0;
   left: 0;
   z-index: -1;
+}
+
+@media (min-width: 800px) {
+  .hero {
+    margin-top: -200px;
+    margin-bottom: 200px;
+  }
+  .hero .heroText h1 {
+    font-size: 4rem;
+  }
+  .hero .heroText h3 {
+    font-size: 1.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
