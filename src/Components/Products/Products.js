@@ -69,7 +69,7 @@ function Products(props) {
 
     return (
         <div className="products">
-            {/* <Hero /> */}
+            <Hero />
             <h1>Polymath Texture Packages</h1>
             <Filter />
             <div className='productFlex'>

@@ -427,7 +427,19 @@ h3 {
 
 .hero {
   width: 100vw;
+  height: 50vh;
+  margin-bottom: 20px;
+}
+.hero .heroText {
+  position: relative;
+}
+.hero .videoTag {
+  width: 100vw;
+  height: 50vh;
   object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 /*# sourceMappingURL=style.css.map */
