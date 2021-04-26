@@ -59,7 +59,7 @@ function Admin(props) {
         <div className="admin">
             <h1>Manage Available Packages</h1>
             <h2>Add A New Product</h2>
-            <div className='addBox'>
+            <form className='addBox'>
                 <p>Name:</p>
                 <input
                     onChange={event => setName(event.target.value)}
@@ -93,7 +93,7 @@ function Admin(props) {
                 <br></br>
                 <Button onClick={addProduct}>add</Button>
 
-            </div>
+            </form>
             <div className='editDeleteList'>
                 <h2>Edit Current Products</h2>
                 {mappedProducts}

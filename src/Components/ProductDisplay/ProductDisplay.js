@@ -77,7 +77,7 @@ function ProductDisplay(props) {
             <div className='boxDisplay'>
                 <img src={product.image_one} alt={product.name} />
             </div>
-            <div className='infoDisplay'>
+            <article className='infoDisplay'>
                 <h1>{product.name}</h1>
                 <p>{product.description}</p>
                 <p>Works with Octane, Redshift, Arnold, Standard, and Cycles.</p>
@@ -87,7 +87,7 @@ function ProductDisplay(props) {
                     onClick={duplicateCheck}
                 >add</Button>}
 
-            </div>
+            </article>
             <div className='images'>
                 <img src={product.image_two} alt={product.name} />
             </div>

@@ -73,7 +73,7 @@ function Admin(props) {
                     <div>
                         <img className='adminImg' src={imageOne} />
                     </div>
-                    <div>
+                    <section>
                         <p>Name: {name}</p>
                         <p>Description: {description}</p>
                         <p>Price: {price}</p>
@@ -81,10 +81,10 @@ function Admin(props) {
                         <p>Image Two: {imageTwo}</p>
                         <p>Download Link: {downloadLink}</p>
                         <Button onClick={switchEditing}>edit</Button>
-                    </div>
+                    </section>
                 </div>
                 :
-                <div>
+                <form>
                     <p>Name:</p>
                     <input
                         onChange={event => setName(event.target.value)}
@@ -112,7 +112,7 @@ function Admin(props) {
                     <Button onClick={() => editProduct(props.product.product_id)}>save</Button>
                     <Button className='deleteBtn' onClick={() => deleteProduct(props.product.product_id)}>delete</Button>
                     <Button onClick={() => cancelChanges()}>cancel</Button>
-                </div>}
+                </form>}
         </div>
 
     )
