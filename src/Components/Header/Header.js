@@ -38,6 +38,7 @@ function Header(props) {
                 const { first_name, id, admin } = res.data
                 props.updateUser({ first_name, id, admin })
             })
+            .catch(err => console.log(err))
     }
 
     function logoutUser() {
