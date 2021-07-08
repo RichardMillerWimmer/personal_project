@@ -22,3 +22,5 @@ This appication is designed to create a platform for Polymath Visuals, a 3D and 
 * sass
 
 The project is build using React with Redux on the Frontend, Nodejs on the Backend, and PostgreSQL for the Database.  Thank you for taking a look.    
+
+![Screen Shot 2021-07-08 at 11 15 37 AM](https://user-images.githubusercontent.com/78984588/124948246-83afc380-dfde-11eb-818f-d84db9f7e220.png)
