@@ -1,6 +1,10 @@
-Richard Miller Wimmer Devmountain Personal Project
+# Polymath Visuals Store
 
-Link to live example - https://polymathvisualsstore.com/#/
+## Richard Miller Wimmer 
+
+### DevMountain Personal Project
+
+**Link to live example** - https://polymathvisualsstore.com/#/
 
 The purpose of this project was wo demonstrate building a React app from the ground up.
 
