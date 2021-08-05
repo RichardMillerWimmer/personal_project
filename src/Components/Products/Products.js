@@ -32,7 +32,7 @@ function Products(props) {
 
     function getProducts() {
         // console.log('get products hit')
-        axios.get('/api/product')
+        axios.get('/api/products')
             .then(res => {
                 // console.log(res.data)
                 props.updateProducts(res.data)
@@ -42,7 +42,7 @@ function Products(props) {
 
     function getUserProducts() {
         // console.log('axios hit')
-        axios.get('/api/userproduct')
+        axios.get('/api/userproducts')
             .then(res => {
                 // console.log(res.data)
                 props.updateUserProducts(res.data)

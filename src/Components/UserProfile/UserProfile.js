@@ -18,7 +18,7 @@ function UserProfile(props) {
 
     function getUserProducts() {
         // console.log('axios hit')
-        axios.get('/api/userproduct')
+        axios.get('/api/userproducts')
             .then(res => {
                 // console.log(res.data)
                 props.updateUserProducts(res.data)

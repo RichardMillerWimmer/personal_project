@@ -12,7 +12,7 @@ function Filter(props) {
 
     function searchProducts() {
         // console.log(searchText)
-        axios.get(`/api/product?description=${searchText}`)
+        axios.get(`/api/products?description=${searchText}`)
             .then(res => {
                 props.updateProducts(res.data)
             })
@@ -20,7 +20,7 @@ function Filter(props) {
     }
 
     function clearSearch() {
-        axios.get('/api/product')
+        axios.get('/api/products')
             .then(res => {
                 // console.log(res.data)
                 props.updateProducts(res.data)

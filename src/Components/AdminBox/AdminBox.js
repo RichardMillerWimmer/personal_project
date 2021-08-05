@@ -31,7 +31,7 @@ function Admin(props) {
 
     function editProduct(product_id) {
         // console.log(product_id)
-        axios.put(`/api/product/${product_id}`, { name, description, price, imageOne, imageTwo, downloadLink })
+        axios.put(`/api/products/${product_id}`, { name, description, price, imageOne, imageTwo, downloadLink })
             .then(res => {
                 props.updateProducts(res.data)
                 // console.log(`Product: ${name} edited.`)
@@ -42,7 +42,7 @@ function Admin(props) {
 
     function deleteProduct(product_id) {
         // console.log(product_id)
-        axios.delete(`/api/product/${product_id}`)
+        axios.delete(`/api/products/${product_id}`)
             .then(res => {
                 props.updateProducts(res.data)
 

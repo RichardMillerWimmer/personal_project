@@ -26,7 +26,7 @@ function Cart(props) {
     }
 
     function checkout() {
-        axios.post('/api/userproduct')
+        axios.post('/api/userproducts')
             .then(res => {
                 // console.log(res.data)
                 props.updateCart(res.data)

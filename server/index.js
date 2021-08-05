@@ -46,17 +46,17 @@ app.get('/api/auth/user', authCtrl.getUser);
 app.delete('/api/auth/logout', authCtrl.logout);
 
 //Product Endpoints 
-app.get('/api/product', productCtrl.getProducts);
-app.get('/api/product/:product_id', productCtrl.getProduct);
+app.get('/api/products', productCtrl.getProducts);
+app.get('/api/products/:product_id', productCtrl.getProduct);
 
 //Admin Endpoints 
-app.post('/api/product', adminMiddleware.adminCheck, adminCtrl.addProduct);
-app.put('/api/product/:product_id', adminMiddleware.adminCheck, adminCtrl.editProduct);
-app.delete('/api/product/:product_id', adminMiddleware.adminCheck, adminCtrl.deleteProduct);
+app.post('/api/products', adminMiddleware.adminCheck, adminCtrl.addProduct);
+app.put('/api/products/:product_id', adminMiddleware.adminCheck, adminCtrl.editProduct);
+app.delete('/api/products/:product_id', adminMiddleware.adminCheck, adminCtrl.deleteProduct);
 
 //User Endpoints 
-app.get('/api/userproduct', userCtrl.getUserProducts);
-app.post('/api/userproduct', userCtrl.purchaseProduct, cartCtrl.clearCart)
+app.get('/api/userproducts', userCtrl.getUserProducts);
+app.post('/api/userproducts', userCtrl.purchaseProduct, cartCtrl.clearCart)
 // app.get('/api/userproduct/download/:product_id', userCtrl.downloadProduct, userCtrl.downloadFile);
 
 //Cart Endpoints 

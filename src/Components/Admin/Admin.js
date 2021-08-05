@@ -22,7 +22,7 @@ function Admin(props) {
 
     function getProducts() {
         // console.log('get products hit')
-        axios.get('/api/product')
+        axios.get('/api/products')
             .then(res => {
                 console.log(res.data)
                 props.updateProducts(res.data)
@@ -31,9 +31,9 @@ function Admin(props) {
     }
 
     function addProduct() {
-        axios.post('/api/product', { name, description, price, imageOne, imageTwo, downloadLink })
+        axios.post('/api/products', { name, description, price, imageOne, imageTwo, downloadLink })
             .then(res => {
-                console.log(`Product: ${name} added.`)
+                // console.log(`Product: ${name} added.`)
                 props.updateProducts(res.data)
                 resetFields()
             })

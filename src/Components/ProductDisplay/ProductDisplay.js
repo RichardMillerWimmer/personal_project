@@ -22,7 +22,7 @@ function ProductDisplay(props) {
     }, [product])
 
     function getProduct() {
-        axios.get(`/api/product/${props.match.params.id}`)
+        axios.get(`/api/products/${props.match.params.id}`)
             .then(res => {
                 // console.log(res.data)
                 setProduct(res.data[0])
