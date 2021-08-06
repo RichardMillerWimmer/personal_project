@@ -13,12 +13,12 @@ function Footer() {
         <div className="footer">
             <h2><a href='https://polymathvisuals.com/'>POLYMATH VISUALS</a></h2>
             <div className='socialLinks'>
-                <a className='link' href='https://www.linkedin.com/company/polymathvisuals/?trk=public_profile_topcard_current_company' target="_blank"><img src={linkedin} alt='linkedin link' /></a>
-                <a className='link' href='https://www.facebook.com/PolymathVisuals' target="_blank"><img src={facebook} alt='facebook link' /></a>
-                <a className='link' href='https://www.youtube.com/channel/UCZqYbHW9B4e0wi3RNJo6LVA' target="_blank"><img src={youtube} alt='youtube link' /></a>
-                <a className='link' href='https://vimeo.com/polymathvisuals' target="_blank"><img src={vimeo} alt='vimeo link' /></a>
-                <a className='link' href='https://www.behance.net/ronnyyoung?tracking_source=search-all%7CRonny%20Young' target="_blank"><img src={behance} alt='behance link' /></a>
-                <a className='link' href='https://www.instagram.com/polymathvisuals/?hl=en' target="_blank"><img src={instagram} alt='instagram link' /></a>
+                <a className='link' href='https://www.linkedin.com/company/polymathvisuals/?trk=public_profile_topcard_current_company' target="_blank" rel="noreferrer"><img src={linkedin} alt='linkedin link' /></a>
+                <a className='link' href='https://www.facebook.com/PolymathVisuals' target="_blank" rel="noreferrer"><img src={facebook} alt='facebook link' /></a>
+                <a className='link' href='https://www.youtube.com/channel/UCZqYbHW9B4e0wi3RNJo6LVA' target="_blank" rel="noreferrer"><img src={youtube} alt='youtube link' /></a>
+                <a className='link' href='https://vimeo.com/polymathvisuals' target="_blank" rel="noreferrer"><img src={vimeo} alt='vimeo link' /></a>
+                <a className='link' href='https://www.behance.net/ronnyyoung?tracking_source=search-all%7CRonny%20Young' target="_blank" rel="noreferrer"><img src={behance} alt='behance link' /></a>
+                <a className='link' href='https://www.instagram.com/polymathvisuals/?hl=en' target="_blank" rel="noreferrer"><img src={instagram} alt='instagram link' /></a>
             </div>
             <h3>ronny.young@polymathvisuals.com</h3>
             <h3>© 2017 Polymath, LLC</h3>

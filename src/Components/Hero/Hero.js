@@ -3,15 +3,15 @@ import Demo from '../../images/DemoReel.mp4';
 
 function Hero() {
 
-    const opts = {
-        playerVars: {
-            autoplay: 1,
-            loop: 1,
-            modestBranding: 1,
-            controls: 0,
-            muted: 1
-        }
-    };
+    // const opts = {
+    //     playerVars: {
+    //         autoplay: 1,
+    //         loop: 1,
+    //         modestBranding: 1,
+    //         controls: 0,
+    //         muted: 1
+    //     }
+    // };
 
     return (
         <div className='hero'>

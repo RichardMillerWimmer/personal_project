@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React from 'react';
 import Button from '../Button/Button';
 
@@ -23,7 +22,7 @@ function UserBox(props) {
                 <h2>{props.product.name}</h2>
                 <p>{props.product.description}</p>
                 {/* <Button onClick={downloadProduct}>download</Button> */}
-                <a href={props.product.image_one} download={props.product.name} target='_blank'><Button>download</Button></a>
+                <a href={props.product.image_one} download={props.product.name} target='_blank' rel="noreferrer"><Button>download</Button></a>
             </div>
         </div >
     );

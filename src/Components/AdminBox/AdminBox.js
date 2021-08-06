@@ -71,7 +71,7 @@ function Admin(props) {
             { !isEditing ?
                 <div className='adminFlex'>
                     <div>
-                        <img className='adminImg' src={imageOne} />
+                        <img className='adminImg' src={imageOne} alt={name} />
                     </div>
                     <section>
                         <p>Name: {name}</p>
