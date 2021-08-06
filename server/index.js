@@ -10,6 +10,7 @@ const userCtrl = require('./controllers/userCtrl')
 const cartCtrl = require('./controllers/cartCtrl');
 const adminMiddleware = require('./controllers/adminMiddleware');
 const duplicateMiddleware = require('./controllers/duplicateMiddleware');
+const emailMiddleware = require('./controllers/emailMiddleware')
 // const s3Ctrl = require('./controllers/s3Ctrl')
 
 const app = express();
@@ -38,9 +39,9 @@ app.use((req, res, next) => {
     }
     next();
 })
-
+ 
 //Auth Endpoints 
-app.post('/api/auth/register', authCtrl.register);
+app.post('/api/auth/register', emailMiddleware.emailCheck, authCtrl.register);
 app.post('/api/auth/login', authCtrl.login);
 app.get('/api/auth/user', authCtrl.getUser);
 app.delete('/api/auth/logout', authCtrl.logout);
@@ -56,7 +57,7 @@ app.delete('/api/products/:product_id', adminMiddleware.adminCheck, adminCtrl.de
 
 //User Endpoints 
 app.get('/api/userproducts', userCtrl.getUserProducts);
-app.post('/api/userproducts', userCtrl.purchaseProduct, cartCtrl.clearCart)
+app.post('/api/userproducts', userCtrl.purchaseProduct, cartCtrl.clearCart);
 // app.get('/api/userproduct/download/:product_id', userCtrl.downloadProduct, userCtrl.downloadFile);
 
 //Cart Endpoints 
