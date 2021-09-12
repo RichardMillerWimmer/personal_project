@@ -8,13 +8,13 @@ import { updateUserProducts } from '../../redux/userProductsReducer';
 
 
 function UserProfile(props) {
-    const [userProducts, setUserProducts] = useState([])
+    const [userProducts, setUserProducts] = useState([]);
 
     // console.log(props)
 
     useEffect(() => {
         getUserProducts()
-    }, [])
+    }, []);
 
     function getUserProducts() {
         // console.log('axios hit')
@@ -25,13 +25,13 @@ function UserProfile(props) {
                 setUserProducts(res.data)
             })
             .catch(err => console.log(err))
-    }
+    };
 
     let mappedUserProducts = props.userProducts.userProductList.map((product) => {
         return <div key={product.product_id}>
             <UserBox product={product}></UserBox>
         </div>
-    })
+    });
 
 
     return (
@@ -43,7 +43,7 @@ function UserProfile(props) {
             </div>
         </div>
     );
-}
+};
 
 const mapStateToProps = (reduxState) => reduxState;
 

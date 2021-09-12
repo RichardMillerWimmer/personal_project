@@ -17,7 +17,7 @@ function Filter(props) {
                 props.updateProducts(res.data)
             })
             .catch(err => console.log(err))
-    }
+    };
 
     function clearSearch() {
         axios.get('/api/products')
@@ -27,13 +27,13 @@ function Filter(props) {
                 setSearchText('')
             })
             .catch(err => console.log(err))
-    }
+    };
 
     const enterPress = (event) => {
         if (event.keyCode === 13) {
             searchProducts()
         }
-    }
+    };
 
     return (
         <div className="filter">
@@ -49,7 +49,7 @@ function Filter(props) {
             </form>
         </div>
     );
-}
+};
 
 const mapStateToProps = (reduxState) => reduxState;
 

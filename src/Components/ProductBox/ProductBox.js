@@ -16,7 +16,7 @@ function ProductBox(props) {
             </Link>
         </div>
     );
-}
+};
 
 const mapStateToProps = (reduxState) => reduxState;
 

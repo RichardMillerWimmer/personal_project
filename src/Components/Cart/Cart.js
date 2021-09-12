@@ -14,7 +14,7 @@ function Cart(props) {
 
     useEffect(() => {
         getCart()
-    }, [])
+    }, []);
 
     function getCart() {
         axios.get('/api/cart')
@@ -23,7 +23,7 @@ function Cart(props) {
                 props.updateCart(res.data)
             })
             .catch(err => console.log(err))
-    }
+    };
 
     function checkout() {
         axios.post('/api/userproducts')
@@ -34,13 +34,13 @@ function Cart(props) {
                 props.history.push('/user')
             })
             .catch(err => console.log(err))
-    }
+    };
 
     let cartMapped = props.cart.items.map((product) => {
         return <div key={product.product_id}>
             <CartBox product={product}></CartBox>
         </div>
-    })
+    });
 
     return (
         <div className="cart">
@@ -52,8 +52,8 @@ function Cart(props) {
             <Button onClick={checkout}>checkout</Button>
         </div>
     );
-}
+};
 
-const mapStateToProps = (reduxState) => reduxState
+const mapStateToProps = (reduxState) => reduxState;
 
 export default connect(mapStateToProps, { updateCart })(Cart);

@@ -17,7 +17,7 @@ function Admin(props) {
     useEffect(() => {
         // console.log('useEffect hit')
         captureCurrentProduct()
-    }, [])
+    }, []);
 
     function captureCurrentProduct() {
         setName(props.product.name)
@@ -26,7 +26,7 @@ function Admin(props) {
         setImageOne(props.product.image_one)
         setImageTwo(props.product.image_two)
         setDownloadLink(props.product.download_link)
-    }
+    };
 
 
     function editProduct(product_id) {
@@ -38,7 +38,7 @@ function Admin(props) {
                 switchEditing()
             })
             .catch(err => console.log(err))
-    }
+    };
 
     function deleteProduct(product_id) {
         // console.log(product_id)
@@ -49,7 +49,7 @@ function Admin(props) {
                 // console.log('Product deleted.')
             })
             .catch(err => console.log(err))
-    }
+    };
 
     function cancelChanges() {
         setName(props.product.name)
@@ -59,12 +59,12 @@ function Admin(props) {
         setImageTwo(props.product.image_two)
         setDownloadLink(props.product.download_link)
         setIsEditing(!isEditing)
-    }
+    };
 
     function switchEditing() {
         // console.log(isEditing)
         setIsEditing(!isEditing)
-    }
+    };
 
     return (
         <div className='adminBox'>
@@ -115,9 +115,9 @@ function Admin(props) {
                 </form>}
         </div>
 
-    )
+    );
 
-}
+};
 const mapStateToProps = (reduxState) => reduxState;
 
 export default connect(mapStateToProps, { updateProducts })(Admin);

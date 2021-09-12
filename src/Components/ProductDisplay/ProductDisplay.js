@@ -15,11 +15,11 @@ function ProductDisplay(props) {
 
     useEffect(() => {
         getProduct()
-    }, [])
+    }, []);
 
     useEffect(() => {
         ownershipCheck()
-    }, [product])
+    }, [product]);
 
     function getProduct() {
         axios.get(`/api/products/${props.match.params.id}`)
@@ -28,7 +28,7 @@ function ProductDisplay(props) {
                 setProduct(res.data[0])
             })
             .catch(err => console.log(err))
-    }
+    };
 
     function addToCart() {
         axios.post(`/api/cart/${product.product_id}`)
@@ -36,7 +36,7 @@ function ProductDisplay(props) {
                 // console.log(res.data)
                 props.updateCart(res.data)
             })
-    }
+    };
 
     function ownershipCheck() {
         // console.log(product)
@@ -50,7 +50,7 @@ function ProductDisplay(props) {
         if (check[0]) {
             setDoesOwn(true)
         }
-    }
+    };
     // console.log(doesOwn)
 
 
@@ -69,7 +69,7 @@ function ProductDisplay(props) {
         } else {
             alert("this item is already in your cart")
         }
-    }
+    };
 
 
     return (
@@ -93,7 +93,7 @@ function ProductDisplay(props) {
             </div>
         </div >
     );
-}
+};
 
 const mapStateToProps = (reduxState) => reduxState;
 

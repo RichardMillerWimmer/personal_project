@@ -23,7 +23,7 @@ function Auth(props) {
                 props.history.push('/')
             })
             .catch(err => console.log(err))
-    }
+    };
 
     function login() {
         // console.log('hit login')
@@ -38,18 +38,18 @@ function Auth(props) {
                 props.history.push('/')
             })
             .catch(err => console.log(err))
-    }
+    };
 
     const registerEnterPress = (event) => {
         if (event.keyCode === 13) {
             register()
         }
-    }
+    };
     const loginEnterPress = (event) => {
         if (event.keyCode === 13) {
             login()
         }
-    }
+    };
 
     return (
         <div className="authContainer">
@@ -99,7 +99,7 @@ function Auth(props) {
 
         </div>
     );
-}
+};
 
 const mapStateToProps = (reduxState) => reduxState;
 

@@ -24,6 +24,6 @@ function Footer() {
             <h3>© 2017 Polymath, LLC</h3>
         </div >
     );
-}
+};
 
 export default Footer;

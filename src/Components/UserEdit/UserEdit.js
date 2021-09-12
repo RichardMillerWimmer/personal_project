@@ -1,13 +1,11 @@
 import React from 'react';
 
-
-
-function Edit() {
+function UserEdit() {
     return (
         <div className="App">
             <h1>Edit Component</h1>
         </div>
     );
-}
+};
 
-export default Edit;
+export default UserEdit;

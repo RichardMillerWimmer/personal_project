@@ -18,7 +18,7 @@ function CartBox(props) {
                 props.updateCart(res.data)
             })
             .catch(err => console.log(err))
-    }
+    };
 
     return (
         <div className='cartContainer'>
@@ -34,7 +34,7 @@ function CartBox(props) {
             </div >
         </div>
     );
-}
+};
 
 const mapStateToProps = (reduxState) => reduxState;
 

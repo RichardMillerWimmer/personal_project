@@ -16,7 +16,7 @@ function Products(props) {
 
     useEffect(() => {
         getProducts()
-    }, [])
+    }, []);
 
     useEffect(() => {
         // console.log('user products hit')
@@ -24,11 +24,11 @@ function Products(props) {
             getUserProducts()
             // console.log(props.auth.userId)
         }
-    }, [props.auth])
+    }, [props.auth]);
 
     useEffect(() => {
         getUserCart()
-    }, [])
+    }, []);
 
     function getProducts() {
         // console.log('get products hit')
@@ -38,7 +38,7 @@ function Products(props) {
                 props.updateProducts(res.data)
             })
             .catch(err => console.log(err))
-    }
+    };
 
     function getUserProducts() {
         // console.log('axios hit')
@@ -48,14 +48,14 @@ function Products(props) {
                 props.updateUserProducts(res.data)
             })
             .catch(err => console.log(err))
-    }
+    };
 
     function getUserCart() {
         axios.get('/api/cart')
             .then(res => {
                 props.updateCart(res.data)
             })
-    }
+    };
 
 
     // console.log(props.products.productList)
@@ -65,7 +65,7 @@ function Products(props) {
         return <div key={product.product_id}>
             <ProductBox product={product}></ProductBox>
         </div>
-    })
+    });
 
     return (
         <div className="products">
@@ -77,7 +77,7 @@ function Products(props) {
             </div>
         </div>
     );
-}
+};
 
 const mapStateToProps = (reduxState) => reduxState;
 

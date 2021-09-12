@@ -26,6 +26,6 @@ function UserBox(props) {
             </div>
         </div >
     );
-}
+};
 
 export default UserBox;

@@ -11,6 +11,6 @@ const rootReducer = combineReducers({
     cart: cartReducer,
     products: productsReducer,
     userProducts: userProductsReducer
-})
+});
 
 export default createStore(rootReducer, composeWithDevTools(applyMiddleware()));

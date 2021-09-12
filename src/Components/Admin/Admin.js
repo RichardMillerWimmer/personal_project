@@ -18,7 +18,7 @@ function Admin(props) {
 
     useEffect(() => {
         getProducts()
-    }, [])
+    }, []);
 
     function getProducts() {
         // console.log('get products hit')
@@ -28,7 +28,7 @@ function Admin(props) {
                 props.updateProducts(res.data)
             })
             .catch(err => console.log(err))
-    }
+    };
 
     function addProduct() {
         axios.post('/api/products', { name, description, price, imageOne, imageTwo, downloadLink })
@@ -38,7 +38,7 @@ function Admin(props) {
                 resetFields()
             })
             .catch(err => console.log(err))
-    }
+    };
 
     function resetFields() {
         setName('')
@@ -47,13 +47,13 @@ function Admin(props) {
         setImageOne('')
         setImageTwo('')
         setDownloadLink('')
-    }
+    };
 
 
     let mappedProducts = props.products.productList.map((product) => {
         // console.log(product)
         return <div key={product.product_id}><AdminBox product={product}></AdminBox></div>
-    })
+    });
 
     return (
         <div className="admin">
@@ -100,7 +100,7 @@ function Admin(props) {
             </div>
         </div>
     );
-}
+};
 
 const mapStateToProps = (reduxState) => reduxState;
 

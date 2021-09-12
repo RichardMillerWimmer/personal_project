@@ -28,7 +28,7 @@ function Header(props) {
 
     useEffect(() => {
         getUser()
-    }, [])
+    }, []);
 
     function getUser() {
         // console.log('getUser hit')
@@ -39,7 +39,7 @@ function Header(props) {
                 props.updateUser({ first_name, id, admin })
             })
             .catch(err => console.log(err))
-    }
+    };
 
     function logoutUser() {
         axios.delete('/api/auth/logout')
@@ -48,7 +48,7 @@ function Header(props) {
                 props.resetProducts()
             })
             .catch(err => console.log(err))
-    }
+    };
 
     return (
         <div className="headerContainer">
@@ -64,7 +64,7 @@ function Header(props) {
             </div>
         </div>
     );
-}
+};
 
 const mapStateToProps = (reduxState) => reduxState;
 
