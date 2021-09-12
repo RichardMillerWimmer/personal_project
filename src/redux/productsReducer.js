@@ -1,6 +1,6 @@
 const initialState = {
     productList: []
-}
+};
 
 const UPDATE_PRODUCTS = 'UPDATE_PRODUCTS';
 
@@ -22,4 +22,4 @@ export default function productsReducer(state = initialState, action) {
             }
         default: return state
     }
-}
+};

@@ -1,10 +1,10 @@
 const initialState = {
     userProductList: []
-}
+};
 
 const UPDATE_USER_PRODUCTS = 'UPDATE_USER_PRODUCTS';
 
-const RESET_PRODUCTS = 'RESET_PRODUCTS'
+const RESET_PRODUCTS = 'RESET_PRODUCTS';
 
 export function updateUserProducts(userProductList) {
     return {
@@ -17,7 +17,7 @@ export function resetProducts() {
     return {
         type: RESET_PRODUCTS,
     }
-}
+};
 
 export default function userProductsReducer(state = initialState, action) {
     // console.log(action)
@@ -31,4 +31,4 @@ export default function userProductsReducer(state = initialState, action) {
             return initialState
         default: return state
     }
-}
+};

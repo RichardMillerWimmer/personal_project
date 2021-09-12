@@ -2,7 +2,7 @@ const initialState = {
     firstName: '',
     userId: null,
     admin: null
-}
+};
 
 const UPDATE_USER = 'UPDATE_USER';
 const LOGOUT = 'LOGOUT';
@@ -36,4 +36,4 @@ export default function authReducer(state = initialState, action) {
             return initialState;
         default: return state
     }
-}
+};
