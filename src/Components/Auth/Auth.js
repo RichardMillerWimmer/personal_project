@@ -37,7 +37,7 @@ function Auth(props) {
                 props.updateUser({ first_name, id, admin })
                 props.history.push('/')
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err, err.message))
     };
 
     const registerEnterPress = (event) => {
