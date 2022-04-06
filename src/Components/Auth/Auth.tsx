@@ -1,11 +1,11 @@
 import { updateUser } from '../../redux/authReducer';
 import axios from 'axios';
-import React, { useState } from 'react';
+import { useState, KeyboardEvent } from 'react';
 import { connect } from 'react-redux';
 import Button from '../Button/Button';
 
 
-function Auth(props) {
+function Auth(props: { updateUser: (arg0: { first_name: any; id: any; admin?: any; }) => void; history: string[]; }) {
     const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -14,7 +14,7 @@ function Auth(props) {
     const [loginPassword, setLoginPassword] = useState('');
 
 
-    function register() {
+    function register(): void {
         axios.post('/api/auth/register', { email, firstName, lastName, password })
             .then(res => {
                 const { first_name, id } = res.data
@@ -25,7 +25,7 @@ function Auth(props) {
             .catch(err => console.log(err))
     };
 
-    function login() {
+    function login(): void {
         // console.log('hit login')
         // console.log(loginEmail)
         // console.log(loginPassword)
@@ -40,13 +40,13 @@ function Auth(props) {
             .catch(err => console.log(err, err.message))
     };
 
-    const registerEnterPress = (event) => {
-        if (event.keyCode === 13) {
+    const registerEnterPress = (event: KeyboardEvent<HTMLInputElement>): void => {
+        if (event.key === '13') {
             register()
         }
     };
-    const loginEnterPress = (event) => {
-        if (event.keyCode === 13) {
+    const loginEnterPress = (event: KeyboardEvent<HTMLInputElement>): void => {
+        if (event.key === '13') {
             login()
         }
     };
@@ -101,6 +101,6 @@ function Auth(props) {
     );
 };
 
-const mapStateToProps = (reduxState) => reduxState;
+const mapStateToProps = (reduxState: any) => reduxState;
 
 export default connect(mapStateToProps, { updateUser })(Auth);
