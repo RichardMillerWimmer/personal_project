@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&family=Raleway:wght@400;800&display=swap");
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -10,9 +11,16 @@ body {
 
 .headerContainer {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .logo {
@@ -36,24 +44,35 @@ body {
 }
 
 .userBtns {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin: 30px 5px 20px 5px;
 }
 
 .authContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .authContainer h2 {
   font-family: "PT Serif";
   font-size: 1.5em;
   margin-bottom: 10px;
   margin-top: 0;
 }
+
 .authContainer p {
   font-family: "Raleway";
 }
+
 .authContainer input {
   margin: 5px 0;
 }
@@ -66,6 +85,7 @@ body {
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
 }
+
 .box Button {
   margin-top: 10px;
   margin-left: 0;
@@ -73,29 +93,37 @@ body {
 
 @media (min-width: 800px) {
   .authContainer {
-    flex-direction: row;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
-
   .box {
     width: 350px;
     margin: 30px;
   }
 }
+
 .admin h1 {
   font-family: "PT Serif";
   padding-top: 30px;
 }
+
 .admin h2 {
   font-family: "Raleway";
   text-align: center;
   padding-top: 5px;
   font-size: 1.5rem;
 }
+
 .admin p {
   font-family: "Raleway";
   line-height: 1.4;
 }
+
 .admin input {
   width: 100%;
   margin: 5px 0;
@@ -125,14 +153,20 @@ body {
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
 }
+
 .adminBox .adminFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 .adminBox .adminFlex .adminImg {
   height: 200px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   margin-right: 5px;
 }
+
 .adminBox input {
   width: 100%;
   margin: 5px 0;
@@ -143,10 +177,12 @@ body {
     display: none;
   }
 }
+
 .products {
   text-align: center;
   margin-top: 20px;
 }
+
 .products h1 {
   font-family: "PT Serif";
   text-align: center;
@@ -155,49 +191,73 @@ body {
 }
 
 .productFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .productBox img {
   display: block;
   height: 350px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin: 0 auto;
   cursor: pointer;
 }
 
 @media (min-width: 480px) {
   .productFlex {
-    flex-flow: row wrap;
-    justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     margin: 0;
   }
 }
+
 @media (min-width: 800px) {
   .productBox img {
-    transition: 0.5s;
-    filter: brightness(60%) grayscale(50%);
+    -webkit-transition: .5s;
+    transition: .5s;
+    -webkit-filter: brightness(60%) grayscale(50%);
+            filter: brightness(60%) grayscale(50%);
   }
   .productBox img:hover {
-    filter: brightness(100%) grayscale(0%);
+    -webkit-filter: brightness(100%) grayscale(0%);
+            filter: brightness(100%) grayscale(0%);
   }
 }
+
 .productDisplay {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
+
 .productDisplay img {
   display: block;
   width: 325px;
   margin: 0 auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
+
 .productDisplay .infoDisplay {
   text-align: center;
   margin: 0 20px;
   line-height: 1.4rem;
 }
+
 .productDisplay .infoDisplay h1 {
   font-family: "PT Serif";
   display: inline-block;
@@ -207,6 +267,7 @@ body {
   -webkit-box-shadow: 0px 10px 13px -10px #000000, 0px 28px 0px 26px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -10px #000000, 0px 28px 0px 26px rgba(0, 0, 0, 0);
 }
+
 .productDisplay .infoDisplay p {
   font-family: "Raleway";
   margin-bottom: 5px;
@@ -222,12 +283,14 @@ body {
   border-radius: 4px;
   padding: 10px;
   margin: 0 10px;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.3);
+          box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.3);
 }
 
 .images {
   margin: 30px auto;
 }
+
 .images img {
   width: 90vw;
 }
@@ -237,13 +300,17 @@ body {
     width: 80vw;
   }
 }
+
 @media (min-width: 800px) {
   .images img {
     width: 50vw;
   }
 }
+
 .filter {
   margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -255,6 +322,7 @@ body {
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
 }
+
 .searchBar input {
   margin-bottom: 20px;
   margin-right: 11px;
@@ -269,6 +337,7 @@ body {
     margin-right: 0;
   }
 }
+
 h1 {
   text-align: center;
   font-size: 2rem;
@@ -278,54 +347,81 @@ h1 {
 }
 
 .flexUserBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 
 @media (min-width: 800px) {
   .flexUserBox {
-    flex-flow: row wrap;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
+
 .userBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
   margin: 30px;
   padding: 5px;
 }
+
 .userBox img {
   height: 250px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .textBox {
   text-align: center;
   padding-bottom: 10px;
 }
+
 .textBox h2 {
   font-size: 1.5rem;
   margin: 17px 0;
   font-family: "PT Serif";
   line-height: 1.4;
 }
+
 .textBox p {
   margin: 10px;
   font-family: "Raleway";
   line-height: 1.4;
 }
+
 .textBox button {
   margin: 5px 45px;
 }
 
 @media (min-width: 480px) {
   .userBox {
-    flex-direction: row;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
+
 @media (min-width: 800px) {
   .userBox {
     width: 450px;
@@ -333,19 +429,21 @@ h1 {
   .userBox img {
     height: 300px;
   }
-
   .textBox {
     margin-top: 15px;
   }
 }
+
 .cart {
   text-align: center;
 }
+
 .cart h1 {
   font-family: "PT Serif";
   font-size: 1.5rem;
   padding: 15px;
 }
+
 .cart h3 {
   font-family: "Raleway";
   font-size: 1.2rem;
@@ -353,29 +451,51 @@ h1 {
 }
 
 .flexCartBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (min-width: 800px) {
   .flexCartBox {
-    flex-flow: row wrap;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
+
 .cartBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 20px 10px;
   padding: 15px;
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
 }
+
 .cartBox img {
   height: 150px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   margin-left: 15px;
 }
 
@@ -385,11 +505,13 @@ h1 {
     margin: 20px auto;
   }
 }
+
 @media (min-width: 800px) {
   .cartBox {
     margin: 20px;
   }
 }
+
 .footer {
   text-align: center;
   height: 215px;
@@ -403,12 +525,15 @@ h2 {
   cursor: pointer;
   margin-top: 35px;
 }
+
 h2 a {
   text-decoration: none;
 }
+
 h2 a:link {
   color: white;
 }
+
 h2 a:visited {
   color: white;
 }
@@ -425,6 +550,7 @@ h3 {
 .link {
   margin: 10px;
 }
+
 .link img {
   height: 40px;
 }
@@ -435,25 +561,30 @@ h3 {
   margin-bottom: 170px;
   margin-top: -170px;
 }
+
 .hero .heroText {
   position: relative;
   top: 70%;
 }
+
 .hero .heroText h1 {
   font-family: "Raleway";
   font-weight: 700;
   font-size: 3rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.49);
 }
+
 .hero .heroText h3 {
   font-family: "PT Serif";
   font-size: 1.2rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.49);
 }
+
 .hero .videoTag {
   width: 100vw;
   height: 50vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   top: 0;
   left: 0;
   z-index: -1;
@@ -471,5 +602,4 @@ h3 {
     font-size: 1.5rem;
   }
 }
-
 /*# sourceMappingURL=style.css.map */

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Button from '../Button/Button';
 
 
-function Auth(props: { updateUser: (arg0: { first_name: any; id: any; admin?: any; }) => void; history: string[]; }) {
+function Auth(props: { updateUser: (arg0: { firstName: any; userId: any; admin?: any; }) => void; history: string[]; }) {
     const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -17,9 +17,9 @@ function Auth(props: { updateUser: (arg0: { first_name: any; id: any; admin?: an
     function register(): void {
         axios.post('/api/auth/register', { email, firstName, lastName, password })
             .then(res => {
-                const { first_name, id } = res.data
+                const { firstName, userId } = res.data
 
-                props.updateUser({ first_name, id })
+                props.updateUser({ firstName, userId })
                 props.history.push('/')
             })
             .catch(err => console.log(err))
@@ -31,10 +31,10 @@ function Auth(props: { updateUser: (arg0: { first_name: any; id: any; admin?: an
         // console.log(loginPassword)
         axios.post('/api/auth/login', { loginEmail, loginPassword })
             .then(res => {
-                // console.log(res.data)
-                const { first_name, id, admin } = res.data
+                console.log(res.data)
+                const { firstName, userId, admin } = res.data
 
-                props.updateUser({ first_name, id, admin })
+                props.updateUser({ firstName, userId, admin })
                 props.history.push('/')
             })
             .catch(err => console.log(err, err.message))
