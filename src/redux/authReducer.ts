@@ -1,3 +1,14 @@
+type User = {
+    firstName: string;
+    userId: number;
+    admin?: boolean;
+}
+
+type AuthAction = {
+    type: 'UPDATE_USER' | 'LOGOUT';
+    payload: User;
+}
+
 const initialState = {
     firstName: '',
     userId: null,
@@ -7,7 +18,7 @@ const initialState = {
 const UPDATE_USER = 'UPDATE_USER';
 const LOGOUT = 'LOGOUT';
 
-export function updateUser(user) {
+export function updateUser(user: User) {
     console.log(user)
     return {
         type: UPDATE_USER,
@@ -22,7 +33,7 @@ export function logoutUser() {
 };
 
 
-export default function authReducer(state = initialState, action) {
+export default function authReducer(state = initialState, action: AuthAction) {
     console.log(action)
     switch (action.type) {
         case UPDATE_USER:
