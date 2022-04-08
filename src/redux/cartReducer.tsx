@@ -1,3 +1,13 @@
+type Cart = {
+    items: any[];
+    total: Number;
+}
+
+type CartAction = {
+    type: 'UPDATE_CART' | 'CLEAR_CART';
+    payload: Cart;
+}
+
 const initialState = {
     items: [],
     total: 0
@@ -6,7 +16,7 @@ const initialState = {
 const UPDATE_CART = 'UPDATE_CART';
 const CLEAR_CART = 'CLEAR_CART';
 
-export function updateCart(cartArray) {
+export function updateCart(cartArray: any[]) {
     // console.log(cartArray)
     return {
         type: UPDATE_CART,
@@ -20,7 +30,7 @@ export function clearCart() {
     }
 };
 
-export default function cartReducer(state = initialState, action) {
+export default function cartReducer(state = initialState, action: CartAction) {
     // console.log(action)
     switch (action.type) {
         case UPDATE_CART:

@@ -34,7 +34,7 @@ export function logoutUser() {
 
 
 export default function authReducer(state = initialState, action: AuthAction) {
-    console.log(action)
+    // console.log(action)
     switch (action.type) {
         case UPDATE_USER:
             return {
