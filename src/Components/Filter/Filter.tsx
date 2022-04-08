@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, KeyboardEvent } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { updateProducts } from '../../redux/productsReducer';
@@ -6,11 +6,11 @@ import Button from '../Button/Button'
 
 
 
-function Filter(props) {
-    const [searchText, setSearchText] = useState('');
+function Filter(props: { updateProducts: (arg0: any) => void; }) {
+    const [searchText, setSearchText] = useState<string>('');
 
 
-    function searchProducts() {
+    function searchProducts(): void {
         // console.log(searchText)
         axios.get(`/api/products?description=${searchText}`)
             .then(res => {
@@ -19,7 +19,7 @@ function Filter(props) {
             .catch(err => console.log(err))
     };
 
-    function clearSearch() {
+    function clearSearch(): void {
         axios.get('/api/products')
             .then(res => {
                 // console.log(res.data)
@@ -29,8 +29,8 @@ function Filter(props) {
             .catch(err => console.log(err))
     };
 
-    const enterPress = (event) => {
-        if (event.keyCode === 13) {
+    const enterPress = (event: KeyboardEvent<HTMLInputElement>): void => {
+        if (event.key === '13') {
             searchProducts()
         }
     };
@@ -51,6 +51,6 @@ function Filter(props) {
     );
 };
 
-const mapStateToProps = (reduxState) => reduxState;
+const mapStateToProps = (reduxState: any) => reduxState;
 
 export default connect(mapStateToProps, { updateProducts })(Filter);
