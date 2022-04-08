@@ -1,17 +1,25 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { updateCart } from '../../redux/cartReducer';
+import { Product } from '../../redux/productsReducer';
 import { updateUserProducts } from '../../redux/userProductsReducer';
 import Button from '../Button/Button';
 
+type ProductDisplayProps = {
+    product: Product;
+}
 
+type TypeFromRedux = ReturnType<typeof mapStateToProps>
 
-function ProductDisplay(props) {
-    const [product, setProduct] = useState({})
+type Type = ProductDisplayProps & TypeFromRedux
+
+function ProductDisplay(props: Type) {
+    const [product, setProduct] = useState<Product | null>(null)
     const [doesOwn, setDoesOwn] = useState(false)
 
-    // console.log(product)
+    console.log(product)
+    console.log(props.match.params.id)
 
     useEffect(() => {
         getProduct()
@@ -24,14 +32,14 @@ function ProductDisplay(props) {
     function getProduct() {
         axios.get(`/api/products/${props.match.params.id}`)
             .then(res => {
-                // console.log(res.data)
+                console.log(res.data)
                 setProduct(res.data[0])
             })
             .catch(err => console.log(err))
     };
 
     function addToCart() {
-        axios.post(`/api/cart/${product.product_id}`)
+        axios.post(`/api/cart/${props.product_id}`)
             .then(res => {
                 // console.log(res.data)
                 props.updateCart(res.data)
@@ -41,10 +49,11 @@ function ProductDisplay(props) {
     function ownershipCheck() {
         // console.log(product)
 
-        let check = props.userProducts.userProductList.filter(function (elem) {
-            if (elem.product_id === product.product_id) {
+        let check = props.userProducts.userProductList.filter(function (elem: Product) {
+            if (elem.product_id === props.product_id) {
                 return elem
             }
+            else return null
         })
         // console.log(check)
         if (check[0]) {
@@ -60,7 +69,7 @@ function ProductDisplay(props) {
     function duplicateCheck() {
         let passed = true
         for (let i = 0; i < props.cart.items.length; i++) {
-            if (props.cart.items[i].product_id === product.product_id) {
+            if (props.cart.items[i].product_id === props.product_id) {
                 passed = false
             }
         }
@@ -82,7 +91,7 @@ function ProductDisplay(props) {
                 <p>{product.description}</p>
                 <p>Works with Octane, Redshift, Arnold, Standard, and Cycles.</p>
                 <p>{product.price}.00</p>
-                {!props.auth.firstName ? '' : doesOwn ? <p className='doesOwnButton'>You have already purchased this prackage</p> : <Button
+                {!product.auth.firstName ? '' : doesOwn ? <p className='doesOwnButton'>You have already purchased this prackage</p> : <Button
                     className='addBtn'
                     onClick={duplicateCheck}
                 >add</Button>}
@@ -95,6 +104,6 @@ function ProductDisplay(props) {
     );
 };
 
-const mapStateToProps = (reduxState) => reduxState;
+const mapStateToProps = (reduxState: any) => reduxState;
 
 export default connect(mapStateToProps, { updateCart, updateUserProducts })(ProductDisplay);
