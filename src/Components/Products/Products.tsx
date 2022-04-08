@@ -1,18 +1,24 @@
-import React, { useEffect } from 'react';
+import { Key, useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { updateCart } from '../../redux/cartReducer';
-import { updateProducts } from '../../redux/productsReducer';
+import { Product, updateProducts } from '../../redux/productsReducer';
 import { updateUserProducts } from '../../redux/userProductsReducer';
 
 
 import Filter from '../Filter/Filter';
 import ProductBox from '../ProductBox/ProductBox';
-import Hero from '..//Hero/Hero';
+import Hero from '../Hero/Hero';
 
+type ProductProps = {
+    products: Product[]
+}
 
+type TypeFromRedux = ReturnType<typeof mapStateToProps>
 
-function Products(props) {
+type Type = ProductProps & TypeFromRedux
+
+function Products(props: Type) {
 
     useEffect(() => {
         getProducts()
@@ -30,7 +36,7 @@ function Products(props) {
         getUserCart()
     }, []);
 
-    function getProducts() {
+    function getProducts(): void {
         // console.log('get products hit')
         axios.get('/api/products')
             .then(res => {
@@ -40,7 +46,7 @@ function Products(props) {
             .catch(err => console.log(err))
     };
 
-    function getUserProducts() {
+    function getUserProducts(): void {
         // console.log('axios hit')
         axios.get('/api/userproducts')
             .then(res => {
@@ -50,7 +56,7 @@ function Products(props) {
             .catch(err => console.log(err))
     };
 
-    function getUserCart() {
+    function getUserCart(): void {
         axios.get('/api/cart')
             .then(res => {
                 props.updateCart(res.data)
@@ -60,11 +66,11 @@ function Products(props) {
 
     // console.log(props.products.productList)
 
-    let mappedProducts = props.products.productList.map((product) => {
+    let mappedProducts = props.products.productList.map((product: Product) => {
         // console.log(product)
-        return <div key={product.product_id}>
-            <ProductBox product={product}></ProductBox>
-        </div>
+        return <div key={product.product_id as Key}>
+            <ProductBox {...product}></ProductBox>
+        </div >
     });
 
     return (
@@ -79,6 +85,6 @@ function Products(props) {
     );
 };
 
-const mapStateToProps = (reduxState) => reduxState;
+const mapStateToProps = (reduxState: any) => reduxState;
 
 export default connect(mapStateToProps, { updateProducts, updateUserProducts, updateCart })(Products);
