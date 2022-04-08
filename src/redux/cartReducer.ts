@@ -1,4 +1,4 @@
-type Cart = {
+export type Cart = {
     items: any[];
     total: Number;
 }

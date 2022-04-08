@@ -1,18 +1,26 @@
 import axios from 'axios';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { connect } from 'react-redux'
-import { updateUser, logoutUser } from '../../redux/authReducer';
+import { updateUser, logoutUser, User } from '../../redux/authReducer';
 import { resetProducts } from '../../redux/userProductsReducer';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import logo from '../../images/Polymath_Logo_White.png';
 import styled from '@emotion/styled';
+import { Cart } from '../../redux/cartReducer';
 
 
+type HeaderProps = {
+    auth: User;
+    cart: Cart;
+}
+type TypeFromRedux = ReturnType<typeof mapStateToProps>
 
-function Header(props) {
+type Type = HeaderProps & TypeFromRedux
 
-    // console.log(props)
+function Header(props: Type) {
+
+    console.log(props)
 
     const Logo = styled.img`
         height: 80px;
@@ -30,18 +38,18 @@ function Header(props) {
         getUser()
     }, []);
 
-    function getUser() {
+    function getUser(): void {
         // console.log('getUser hit')
         axios.get('/api/auth/user')
             .then(res => {
-                // console.log(res.data)
-                const { first_name, id, admin } = res.data
-                props.updateUser({ first_name, id, admin })
+                console.log(res.data)
+                const { firstName, userId, admin } = res.data
+                props.updateUser({ firstName, userId, admin })
             })
             .catch(err => console.log(err))
     };
 
-    function logoutUser() {
+    function logoutUser(): void {
         axios.delete('/api/auth/logout')
             .then(res => {
                 props.logoutUser()
@@ -66,6 +74,6 @@ function Header(props) {
     );
 };
 
-const mapStateToProps = (reduxState) => reduxState;
+const mapStateToProps = (reduxState: any) => reduxState;
 
 export default connect(mapStateToProps, { updateUser, logoutUser, resetProducts })(Header);
