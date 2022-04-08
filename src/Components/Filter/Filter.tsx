@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { updateProducts } from '../../redux/productsReducer';
 import Button from '../Button/Button'
 
+type TypeFromRedux = ReturnType<typeof mapStateToProps>
 
-
-function Filter(props: { updateProducts: (arg0: any) => void; }) {
+function Filter(props: TypeFromRedux) {
     const [searchText, setSearchText] = useState<string>('');
 
 
