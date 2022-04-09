@@ -4,14 +4,13 @@ import { connect } from 'react-redux';
 import { updateProducts } from '../../redux/productsReducer';
 import Button from '../Button/Button';
 
-function Admin(props) {
+function Admin(props: any) {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
-    const [price, setPrice] = useState(null);
+    const [price, setPrice] = useState('');
     const [imageOne, setImageOne] = useState('');
     const [imageTwo, setImageTwo] = useState('');
     const [downloadLink, setDownloadLink] = useState('');
-
     const [isEditing, setIsEditing] = useState(false);
 
     useEffect(() => {
@@ -29,7 +28,7 @@ function Admin(props) {
     };
 
 
-    function editProduct(product_id) {
+    function editProduct(product_id: number) {
         // console.log(product_id)
         axios.put(`/api/products/${product_id}`, { name, description, price, imageOne, imageTwo, downloadLink })
             .then(res => {
@@ -40,7 +39,7 @@ function Admin(props) {
             .catch(err => console.log(err))
     };
 
-    function deleteProduct(product_id) {
+    function deleteProduct(product_id: number) {
         // console.log(product_id)
         axios.delete(`/api/products/${product_id}`)
             .then(res => {
@@ -68,7 +67,7 @@ function Admin(props) {
 
     return (
         <div className='adminBox'>
-            { !isEditing ?
+            {!isEditing ?
                 <div className='adminFlex'>
                     <div>
                         <img className='adminImg' src={imageOne} alt={name} />
@@ -118,6 +117,6 @@ function Admin(props) {
     );
 
 };
-const mapStateToProps = (reduxState) => reduxState;
+const mapStateToProps = (reduxState: any) => reduxState;
 
 export default connect(mapStateToProps, { updateProducts })(Admin);
