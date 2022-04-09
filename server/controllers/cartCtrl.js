@@ -20,7 +20,7 @@ module.exports = {
         // console.log(total)
         const { product_id } = req.params;
 
-        product = await db.product.get_product(product_id);
+        const product = await db.product.get_product(product_id);
         cart.items.push(product[0]);
         // console.log(product[0].price)
         cart.total += product[0].price

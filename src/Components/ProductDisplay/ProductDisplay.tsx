@@ -25,7 +25,7 @@ function ProductDisplay(props: Type) {
 
 
     function addToCart(): void {
-        axios.post(`/api/cart/${props.product_id}`)
+        axios.post(`/api/cart/${product.product_id}`)
             .then(res => {
                 props.updateCart(res.data)
             })
@@ -34,7 +34,7 @@ function ProductDisplay(props: Type) {
 
     function ownershipCheck(): void {
         let check = props.userProducts.userProductList.filter(function (elem: Product) {
-            if (elem.product_id === props.product_id) {
+            if (elem.product_id === product.product_id) {
                 return elem
             }
             else return null
