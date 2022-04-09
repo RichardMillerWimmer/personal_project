@@ -15,59 +15,34 @@ type TypeFromRedux = ReturnType<typeof mapStateToProps>
 type Type = ProductDisplayProps & TypeFromRedux
 
 function ProductDisplay(props: Type) {
-    // const [product, setProduct] = useState()
     const [doesOwn, setDoesOwn] = useState(false)
 
     const { location: { state: { product } } } = props
-    console.log(props)
-    console.log(product)
-
-    // console.log(props.match.params.id)
-
-    // useEffect(() => {
-    //     getProduct()
-    // }, []);
 
     useEffect(() => {
         ownershipCheck()
     }, [product]);
 
-    // function getProduct() {
-    //     axios.get(`/api/products/${props.match.params.id}`)
-    //         .then(res => {
-    //             console.log(res.data)
-    //             setProduct(res.data[0])
-    //         })
-    //         .catch(err => console.log(err))
-    // };
 
-    function addToCart() {
+    function addToCart(): void {
         axios.post(`/api/cart/${props.product_id}`)
             .then(res => {
-                // console.log(res.data)
                 props.updateCart(res.data)
             })
+            .catch(err => console.log(err))
     };
 
-    function ownershipCheck() {
-        // console.log(product)
-
+    function ownershipCheck(): void {
         let check = props.userProducts.userProductList.filter(function (elem: Product) {
             if (elem.product_id === props.product_id) {
                 return elem
             }
             else return null
         })
-        // console.log(check)
         if (check[0]) {
             setDoesOwn(true)
         }
     };
-    // console.log(doesOwn)
-
-
-
-
 
     function duplicateCheck() {
         let passed = true
