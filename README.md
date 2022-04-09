@@ -1,6 +1,10 @@
+## This repo is currently under construction 🏗️
+
+🚧 Updating to Typescript, overhaul, refactor, and redesign. 🚧
+
 # Polymath Visuals Store
 
-## Richard Miller Wimmer 
+## Richard Miller Wimmer
 
 ### DevMountain Personal Project
 
@@ -8,22 +12,23 @@
 
 **Link to video demo** - https://www.youtube.com/watch?v=GpambqICENw&t=10s
 
-The purpose of this project was to demonstrate building a React app from the ground up.  The timeline for this project was just under three weeks.  
+The purpose of this project was to demonstrate building a React app from the ground up. The timeline for this project was just under three weeks.
 
-This appication is designed to create a platform for Polymath Visuals, a 3D and motion design company, giving the ability to dispribute and sell plugin and texture packages for use with Cinema4D.  There are two sides of the appication.  The admin side which controls products and the user side which has the ability to browse and purchase those products.  Restful api used to control admin and user functionality.  
+This appication is designed to create a platform for Polymath Visuals, a 3D and motion design company, giving the ability to dispribute and sell plugin and texture packages for use with Cinema4D. There are two sides of the appication. The admin side which controls products and the user side which has the ability to browse and purchase those products. Restful api used to control admin and user functionality.
 
 ### Some Technologies Used:
-* react
-* redux
-* axios
-* bcryptjs
-* express
-* express-session
-* massive
-* emotion
-* sass
 
-The project is build using React with Redux on the Frontend, Nodejs on the Backend, and PostgreSQL for the Database.  Thank you for taking a look.    
+- react
+- redux
+- axios
+- bcryptjs
+- express
+- express-session
+- massive
+- emotion
+- sass
+
+The project is build using React with Redux on the Frontend, Nodejs on the Backend, and PostgreSQL for the Database. Thank you for taking a look.
 
 ![Screen Shot 2021-07-08 at 11 15 37 AM](https://user-images.githubusercontent.com/78984588/124948246-83afc380-dfde-11eb-818f-d84db9f7e220.png)
 ![Screen Shot 2021-07-08 at 11 16 02 AM](https://user-images.githubusercontent.com/78984588/124949330-77783600-dfdf-11eb-85c1-c64034ef45f5.png)
