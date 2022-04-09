@@ -1,6 +1,6 @@
 import React from 'react';
 
-function UserEdit() {
+function UserEdit(): JSX.Element {
     return (
         <div className="App">
             <h1>Edit Component</h1>
