@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, Key } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import UserBox from '../UserBox/UserBox';
 import { updateUserProducts } from '../../redux/userProductsReducer';
+import { Product } from '../../redux/productsReducer';
 
 
 
-
-function UserProfile(props) {
+function UserProfile(props: any) {
     const [userProducts, setUserProducts] = useState([]);
 
     // console.log(props)
@@ -27,8 +27,8 @@ function UserProfile(props) {
             .catch(err => console.log(err))
     };
 
-    let mappedUserProducts = props.userProducts.userProductList.map((product) => {
-        return <div key={product.product_id}>
+    let mappedUserProducts = props.userProducts.userProductList.map((product: Product) => {
+        return <div key={product.product_id as Key}>
             <UserBox product={product}></UserBox>
         </div>
     });
@@ -45,6 +45,6 @@ function UserProfile(props) {
     );
 };
 
-const mapStateToProps = (reduxState) => reduxState;
+const mapStateToProps = (reduxState: any) => reduxState;
 
 export default connect(mapStateToProps, { updateUserProducts })(UserProfile);
