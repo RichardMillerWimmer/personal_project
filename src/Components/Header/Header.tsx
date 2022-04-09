@@ -20,7 +20,7 @@ type Type = HeaderProps & TypeFromRedux
 
 function Header(props: Type) {
 
-    console.log(props)
+    // console.log(props)
 
     const Logo = styled.img`
         height: 80px;

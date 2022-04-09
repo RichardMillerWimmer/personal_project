@@ -14,12 +14,11 @@ type Type = ProductBoxProps & TypeFromRedux
 
 function ProductBox(props: Type) {
 
-    // const { product } = props
     console.log(props)
 
     return (
         <div className="productBox">
-            <Link to={`/product/${props.product_id}`}>
+            <Link to={{ pathname: `/product/${props.product_id}`, state: { product: props } }}>
                 <img src={props.image_one} alt={props.name} />
             </Link>
         </div>
