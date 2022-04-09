@@ -3,17 +3,9 @@ import Button from '../Button/Button';
 
 
 
-function UserBox(props) {
+function UserBox(props: any) {
 
-    // console.log(props)
-
-    // function downloadProduct() {
-    //     axios.get(`/api/userproduct/download/${props.product.product_id}`)
-    //         .then(res => {
-    //             console.log(res.data)
-    //         })
-    //         .catch(err => console.log(err))
-    // }
+    console.log(props)
 
     return (
         <div className="userBox">

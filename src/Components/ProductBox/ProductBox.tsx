@@ -14,8 +14,6 @@ type Type = ProductBoxProps & TypeFromRedux
 
 function ProductBox(props: Type) {
 
-    console.log(props)
-
     return (
         <div className="productBox">
             <Link to={{ pathname: `/product/${props.product_id}`, state: { product: props } }}>
