@@ -1,16 +1,22 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, Key } from 'react';
 import { connect } from 'react-redux';
-import { updateProducts } from '../../redux/productsReducer';
+import { Product, updateProducts } from '../../redux/productsReducer';
 import AdminBox from '../AdminBox/AdminBox';
 import Button from '../Button/Button';
 
+type AdminProps = {
+    products: Product[];
+}
 
+type TypeFromRedux = ReturnType<typeof mapStateToProps>
 
-function Admin(props) {
+type Type = AdminProps & TypeFromRedux
+
+function Admin(props: Type) {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
-    const [price, setPrice] = useState(null);
+    const [price, setPrice] = useState(0);
     const [imageOne, setImageOne] = useState('');
     const [imageTwo, setImageTwo] = useState('');
     const [downloadLink, setDownloadLink] = useState('');
@@ -43,16 +49,16 @@ function Admin(props) {
     function resetFields() {
         setName('')
         setDescription('')
-        setPrice(null)
+        setPrice(0)
         setImageOne('')
         setImageTwo('')
         setDownloadLink('')
     };
 
 
-    let mappedProducts = props.products.productList.map((product) => {
+    let mappedProducts = props.products.productList.map((product: Product) => {
         // console.log(product)
-        return <div key={product.product_id}><AdminBox product={product}></AdminBox></div>
+        return <div key={product.product_id as Key}><AdminBox {...product}></AdminBox></div>
     });
 
     return (
@@ -72,7 +78,7 @@ function Admin(props) {
                 />
                 <p>Price:</p>
                 <input
-                    onChange={event => setPrice(event.target.value)}
+                    onChange={event => setPrice(+event.target.value)}
                     value={price}
                 />
                 <p>Image One:</p>
@@ -102,6 +108,6 @@ function Admin(props) {
     );
 };
 
-const mapStateToProps = (reduxState) => reduxState;
+const mapStateToProps = (reduxState: any) => reduxState;
 
 export default connect(mapStateToProps, { updateProducts })(Admin);
