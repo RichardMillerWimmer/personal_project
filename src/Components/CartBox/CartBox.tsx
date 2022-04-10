@@ -4,10 +4,13 @@ import { connect } from 'react-redux';
 import { updateCart } from '../../redux/cartReducer';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
+import { Product } from '../../redux/productsReducer';
 
+type TypeFromRedux = ReturnType<typeof mapStateToProps>
 
+type Type = Product & TypeFromRedux
 
-function CartBox(props) {
+function CartBox(props: Type) {
 
     // console.log(props)
 
@@ -36,6 +39,6 @@ function CartBox(props) {
     );
 };
 
-const mapStateToProps = (reduxState) => reduxState;
+const mapStateToProps = (reduxState: any) => reduxState;
 
 export default connect(mapStateToProps, { updateCart })(CartBox);
