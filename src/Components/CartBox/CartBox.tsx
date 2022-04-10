@@ -12,10 +12,10 @@ type Type = Product & TypeFromRedux
 
 function CartBox(props: Type) {
 
-    // console.log(props)
+    console.log(props)
 
     function removeFromCart() {
-        axios.delete(`/api/cart/${props.product.product_id}`)
+        axios.delete(`/api/cart/${props.product_id}`)
             .then(res => {
                 console.log(res.data)
                 props.updateCart(res.data)
@@ -27,11 +27,11 @@ function CartBox(props: Type) {
         <div className='cartContainer'>
             <div className="cartBox">
                 <div></div>
-                <Link to={`/product/${props.product.product_id}`}  >
-                    <img src={props.product.image_one} alt={props.product.name} />
+                <Link to={`/product/${props.product_id}`}  >
+                    <img src={props.image_one} alt={props.name} />
                 </Link>
                 <div className='cartBoxInfo'>
-                    <h3>{props.product.name}</h3>
+                    <h3>{props.name}</h3>
                     <Button onClick={removeFromCart}>remove</Button>
                 </div>
             </div >
