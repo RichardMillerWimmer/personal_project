@@ -1,14 +1,21 @@
 import axios from 'axios';
-import React, { useEffect } from 'react';
+import React, { Key, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { updateCart } from '../../redux/cartReducer';
 import CartBox from '../CartBox/CartBox';
 import Button from '../Button/Button';
+import { Product } from '../../redux/productsReducer';
+
+type CartProps = {
+    product: Product;
+}
+
+type TypeFromRedux = ReturnType<typeof mapStateToProps>
+
+type Type = CartProps & TypeFromRedux
 
 
-
-
-function Cart(props) {
+function Cart(props: Type) {
 
     // console.log(props)
 
@@ -36,9 +43,9 @@ function Cart(props) {
             .catch(err => console.log(err))
     };
 
-    let cartMapped = props.cart.items.map((product) => {
-        return <div key={product.product_id}>
-            <CartBox product={product}></CartBox>
+    let cartMapped = props.cart.items.map((product: Product) => {
+        return <div key={product.product_id as Key}>
+            <CartBox {...product}></CartBox>
         </div>
     });
 
@@ -54,6 +61,6 @@ function Cart(props) {
     );
 };
 
-const mapStateToProps = (reduxState) => reduxState;
+const mapStateToProps = (reduxState: any) => reduxState;
 
 export default connect(mapStateToProps, { updateCart })(Cart);
