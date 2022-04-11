@@ -30,7 +30,7 @@ function Admin(props: Type) {
         // console.log('get products hit')
         axios.get('/api/products')
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 props.updateProducts(res.data)
             })
             .catch(err => console.log(err))

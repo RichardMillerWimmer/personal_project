@@ -13,18 +13,20 @@ function Admin(props: any) {
     const [downloadLink, setDownloadLink] = useState('');
     const [isEditing, setIsEditing] = useState(false);
 
+    // console.log(props)
+
     useEffect(() => {
         // console.log('useEffect hit')
         captureCurrentProduct()
     }, []);
 
     function captureCurrentProduct() {
-        setName(props.product.name)
-        setDescription(props.product.description)
-        setPrice(props.product.price)
-        setImageOne(props.product.image_one)
-        setImageTwo(props.product.image_two)
-        setDownloadLink(props.product.download_link)
+        setName(props.name)
+        setDescription(props.description)
+        setPrice(props.price)
+        setImageOne(props.image_one)
+        setImageTwo(props.image_two)
+        setDownloadLink(props.download_link)
     };
 
 
@@ -51,12 +53,12 @@ function Admin(props: any) {
     };
 
     function cancelChanges() {
-        setName(props.product.name)
-        setDescription(props.product.description)
-        setPrice(props.product.price)
-        setImageOne(props.product.image_one)
-        setImageTwo(props.product.image_two)
-        setDownloadLink(props.product.download_link)
+        setName(props.name)
+        setDescription(props.description)
+        setPrice(props.price)
+        setImageOne(props.image_one)
+        setImageTwo(props.image_two)
+        setDownloadLink(props.download_link)
         setIsEditing(!isEditing)
     };
 

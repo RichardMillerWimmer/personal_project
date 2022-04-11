@@ -19,6 +19,8 @@ function ProductDisplay(props: Type) {
 
     const { location: { state: { product } } } = props
 
+    console.log(props)
+
     useEffect(() => {
         ownershipCheck()
     }, [product]);
