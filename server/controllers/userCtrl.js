@@ -13,7 +13,7 @@ module.exports = {
             return res.sendStatus(200)
         }
 
-        const userProducts = await db.user.get_user_products(user.id);
+        const userProducts = await db.user.get_user_products(user.userId);
         // console.log(userProducts)
         res.status(200).send(userProducts);
     },

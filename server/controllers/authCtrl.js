@@ -25,15 +25,15 @@ module.exports = {
     },
 
     login: async (req, res) => {
-        console.log('server login hit')
+        // console.log('server login hit')
         const db = req.app.get('db');
         const { loginEmail, loginPassword } = req.body;
-        console.log(req.body)
+        // console.log(req.body)
 
         const existingUser = await db.auth.find_user_by_email(loginEmail);
         console.log(existingUser)
         const user = existingUser[0]
-        console.log(user)
+        // console.log(user)
         if (!user) {
             return res.status(400).send('email not registered');
         }

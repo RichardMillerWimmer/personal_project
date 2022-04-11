@@ -17,10 +17,10 @@ function UserProfile(props: any) {
     }, []);
 
     function getUserProducts() {
-        // console.log('axios hit')
+        console.log('axios hit')
         axios.get('/api/userproducts')
             .then(res => {
-                // console.log(res.data)
+                console.log(res.data)
                 props.updateUserProducts(res.data)
                 setUserProducts(res.data)
             })
