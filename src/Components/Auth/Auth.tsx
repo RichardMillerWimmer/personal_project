@@ -55,23 +55,27 @@ function Auth(props: { updateUser: (arg0: { firstName: any; userId: any; admin?:
         <div className="authContainer">
             <form className='register box'>
                 <h2>Register</h2>
-                <p>email:</p>
+                <label htmlFor='email'>email:</label>
                 <input
+                    id='email'
                     onChange={event => setEmail(event.target.value)}
                     value={email} />
                 <br></br>
-                <p>first name:</p>
+                <label htmlFor='firstName'>first name:</label>
                 <input
+                    id='firstName'
                     onChange={event => setFirstName(event.target.value)}
                     value={firstName} />
                 <br></br>
-                <p>last name:</p>
+                <label htmlFor='lastName'>last name:</label>
                 <input
+                    id='lastName'
                     onChange={event => setLastName(event.target.value)}
                     value={lastName} />
                 <br></br>
-                <p>password:</p>
+                <label htmlFor='password'>password:</label>
                 <input
+                    id='password'
                     type='password'
                     onChange={event => setPassword(event.target.value)}
                     value={password}
@@ -81,14 +85,16 @@ function Auth(props: { updateUser: (arg0: { firstName: any; userId: any; admin?:
             </form>
             <form className='login box'>
                 <h2>Login</h2>
-                <p>email:</p>
+                <label htmlFor='loginEmail'>email:</label>
                 <input
+                    id='loginEmail'
                     onChange={event => setLoginEmail(event.target.value)}
                     value={loginEmail}
                 />
                 <br></br>
-                <p>password:</p>
+                <label htmlFor='loginPassword'>password:</label>
                 <input
+                    id='loginPassword'
                     type='password'
                     onChange={event => setLoginPassword(event.target.value)}
                     value={loginPassword}
