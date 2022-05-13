@@ -73,8 +73,13 @@ body {
   font-family: "Raleway";
 }
 
+.authContainer label {
+  font-family: "Raleway";
+}
+
 .authContainer input {
   margin: 5px 0;
+  width: 100%;
 }
 
 .box {
