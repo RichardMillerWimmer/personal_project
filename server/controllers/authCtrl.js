@@ -31,7 +31,7 @@ module.exports = {
         // console.log(req.body)
 
         const existingUser = await db.auth.find_user_by_email(loginEmail);
-        console.log(existingUser)
+        // console.log(existingUser)
         const user = existingUser[0]
         // console.log(user)
         if (!user) {
