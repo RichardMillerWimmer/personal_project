@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { Key, useEffect } from 'react';
+import { Key, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { updateCart } from '../../redux/cartReducer';
 import CartBox from '../CartBox/CartBox';

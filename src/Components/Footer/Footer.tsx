@@ -1,4 +1,3 @@
-import React from 'react';
 import facebook from '../../images/facebook-3-64.png'
 import linkedin from '../../images/linkedin-3-64.png'
 import youtube from '../../images/youtube-3-64.png'

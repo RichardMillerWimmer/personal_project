@@ -1,5 +1,4 @@
 import axios from 'axios';
-import React from 'react';
 import { connect } from 'react-redux';
 import { updateCart } from '../../redux/cartReducer';
 import { Link } from 'react-router-dom';
