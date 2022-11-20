@@ -1,9 +1,9 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import authReducer from './authReducer';
-import cartReducer from './cartReducer';
-import productsReducer from './productsReducer'
+import authReducer, { User } from './authReducer';
+import cartReducer, { Cart } from './cartReducer';
+import productsReducer, { Product } from './productsReducer'
 import userProductsReducer from './userProductsReducer';
 
 const rootReducer = combineReducers({
@@ -12,5 +12,12 @@ const rootReducer = combineReducers({
     products: productsReducer,
     userProducts: userProductsReducer
 });
+
+export interface ReduxState {
+    authReducer: User;
+    cartReducer: Cart;
+    productsReducer: Product[];
+    userProductsReducer: Product[];
+}
 
 export default createStore(rootReducer, composeWithDevTools(applyMiddleware()));
