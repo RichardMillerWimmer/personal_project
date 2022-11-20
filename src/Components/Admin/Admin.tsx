@@ -2,11 +2,13 @@ import axios from 'axios';
 import { useState, useEffect, Key } from 'react';
 import { connect } from 'react-redux';
 import { Product, updateProducts } from '../../redux/productsReducer';
+import { ReduxState } from '../../redux/store';
 import AdminBox from '../AdminBox/AdminBox';
 import Button from '../Button/Button';
 
 type AdminProps = {
     products: Product[];
+    updateProducts: (products: Product[]) => void;
 }
 
 type TypeFromRedux = ReturnType<typeof mapStateToProps>
@@ -55,7 +57,7 @@ function Admin(props: Type) {
         setDownloadLink('')
     };
 
-
+    // @ts-ignore
     let mappedProducts = props.products.productList.map((product: Product) => {
         // console.log(product)
         return <div key={product.product_id as Key}><AdminBox {...product}></AdminBox></div>
@@ -108,6 +110,6 @@ function Admin(props: Type) {
     );
 };
 
-const mapStateToProps = (reduxState: any) => reduxState;
+const mapStateToProps = (reduxState: ReduxState) => reduxState;
 
 export default connect(mapStateToProps, { updateProducts })(Admin);
