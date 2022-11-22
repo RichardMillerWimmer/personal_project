@@ -1,11 +1,6 @@
-import React from 'react';
 import Button from '../Button/Button';
 
-
-
 function UserBox(props: any) {
-
-    console.log(props)
 
     return (
         <div className="userBox">

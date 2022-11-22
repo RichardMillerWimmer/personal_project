@@ -1,4 +1,3 @@
-import React from 'react';
 import Demo from '../../images/DemoReel.mp4';
 
 function Hero() {

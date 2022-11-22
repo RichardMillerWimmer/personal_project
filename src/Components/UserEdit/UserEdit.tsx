@@ -1,5 +1,3 @@
-import React from 'react';
-
 function UserEdit(): JSX.Element {
     return (
         <div className="App">
