@@ -42,7 +42,7 @@ function Header(props: Type) {
         // console.log('getUser hit')
         axios.get('/api/auth/user')
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 const { firstName, userId, admin } = res.data
                 props.updateUser({ firstName, userId, admin })
             })
@@ -51,7 +51,7 @@ function Header(props: Type) {
 
     function logoutUser(): void {
         axios.delete('/api/auth/logout')
-            .then(res => {
+            .then(() => {
                 props.logoutUser()
                 props.resetProducts()
             })
