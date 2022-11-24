@@ -1,8 +1,9 @@
 import { updateUser } from '../../redux/authReducer';
 import axios from 'axios';
-import { useState, KeyboardEvent } from 'react';
+import { useState } from 'react';
 import { connect } from 'react-redux';
 import Button from '../Button/Button';
+import Input from '../Input/Input';
 
 
 function Auth(props: { updateUser: (arg0: { firstName: any; userId: any; admin?: any; }) => void; history: string[]; }) {
@@ -40,65 +41,71 @@ function Auth(props: { updateUser: (arg0: { firstName: any; userId: any; admin?:
             .catch(err => console.log(err, err.message))
     };
 
-    const registerEnterPress = (event: KeyboardEvent<HTMLInputElement>): void => {
-        if (event.key === '13') {
-            register()
-        }
-    };
-    const loginEnterPress = (event: KeyboardEvent<HTMLInputElement>): void => {
-        if (event.key === '13') {
-            login()
-        }
-    };
+    // const registerEnterPress = (event: KeyboardEvent<HTMLInputElement>): void => {
+    //     if (event.key === '13') {
+    //         register()
+    //     }
+    // };
+    // const loginEnterPress = (event: KeyboardEvent<HTMLInputElement>): void => {
+    //     if (event.key === '13') {
+    //         login()
+    //     }
+    // };
 
     return (
         <div className="authContainer">
             <form className='register box'>
                 <h2>Register</h2>
-                <label htmlFor='email'>email:</label>
+                <Input value={email} label='email' handler={setEmail} />
+                {/* <label htmlFor='email'>email:</label>
                 <input
                     id='email'
                     onChange={event => setEmail(event.target.value)}
-                    value={email} />
+                    value={email} /> */}
                 <br></br>
-                <label htmlFor='firstName'>first name:</label>
+                <Input value={firstName} label='firstName' handler={setFirstName} />
+                {/* <label htmlFor='firstName'>first name:</label>
                 <input
                     id='firstName'
                     onChange={event => setFirstName(event.target.value)}
-                    value={firstName} />
+                    value={firstName} /> */}
                 <br></br>
-                <label htmlFor='lastName'>last name:</label>
+                <Input value={lastName} label='lastName' handler={setLastName} />
+                {/* <label htmlFor='lastName'>last name:</label>
                 <input
                     id='lastName'
                     onChange={event => setLastName(event.target.value)}
-                    value={lastName} />
+                    value={lastName} /> */}
                 <br></br>
-                <label htmlFor='password'>password:</label>
+                <Input value={password} label='password' handler={setPassword} type='password' />
+                {/* <label htmlFor='password'>password:</label>
                 <input
                     id='password'
                     type='password'
                     onChange={event => setPassword(event.target.value)}
                     value={password}
-                    onKeyPress={registerEnterPress} />
+                    onKeyPress={registerEnterPress} /> */}
                 <br></br>
                 <Button onClick={register} type='submit'>register</Button>
             </form>
             <form className='login box'>
                 <h2>Login</h2>
-                <label htmlFor='loginEmail'>email:</label>
+                <Input value={loginEmail} label='loginEmail' text='email' handler={setLoginEmail} />
+                {/* <label htmlFor='loginEmail'>email:</label>
                 <input
                     id='loginEmail'
                     onChange={event => setLoginEmail(event.target.value)}
                     value={loginEmail}
-                />
+                /> */}
                 <br></br>
-                <label htmlFor='loginPassword'>password:</label>
+                <Input value={loginPassword} label={'loginPassword'} text='password' handler={setLoginPassword} type='password' />
+                {/* <label htmlFor='loginPassword'>password:</label>
                 <input
                     id='loginPassword'
                     type='password'
                     onChange={event => setLoginPassword(event.target.value)}
                     value={loginPassword}
-                    onKeyPress={loginEnterPress} />
+                    onKeyPress={loginEnterPress} /> */}
                 <br></br>
                 <Button onClick={login} type='submit'>login</Button>
             </form>

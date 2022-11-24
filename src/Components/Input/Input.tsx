@@ -1,17 +1,20 @@
 type InputProps = {
     value: string;
     label: string;
+    text?: string;
+    type?: string;
     handler: (input: string) => void
 }
 
-const Input = ({ value, label, handler }: InputProps) => {
+const Input = ({ value, label, text, type, handler }: InputProps) => {
     return (
         <>
-            <label htmlFor={label}>{label}</label>
+            <label htmlFor={label}>{text ? text : label}</label>
             <input
                 id={label}
                 onChange={event => handler(event.target.value)}
-                value={value} />
+                value={value}
+                type={type} />
         </>
     )
 }
