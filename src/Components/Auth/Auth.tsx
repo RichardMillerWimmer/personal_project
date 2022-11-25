@@ -1,12 +1,13 @@
-import { updateUser } from '../../redux/authReducer';
+import { updateUser, User } from '../../redux/authReducer';
 import axios from 'axios';
 import { useState } from 'react';
 import { connect } from 'react-redux';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
+import { ReduxState } from '../../redux/store';
 
 
-function Auth(props: { updateUser: (arg0: { firstName: any; userId: any; admin?: any; }) => void; history: string[]; }) {
+function Auth(props: { updateUser: ({ firstName, userId, admin }: User) => void; history: string[]; }) {
     const [email, setEmail] = useState<string>('');
     const [firstName, setFirstName] = useState<string>('');
     const [lastName, setLastName] = useState<string>('');
@@ -63,6 +64,6 @@ function Auth(props: { updateUser: (arg0: { firstName: any; userId: any; admin?:
     );
 };
 
-const mapStateToProps = (reduxState: any) => reduxState;
+const mapStateToProps = (reduxState: ReduxState) => reduxState;
 
 export default connect(mapStateToProps, { updateUser })(Auth);
