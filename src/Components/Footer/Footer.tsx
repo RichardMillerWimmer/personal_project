@@ -9,7 +9,7 @@ import instagram from '../../images/instagram-3-64.png'
 
 function Footer() {
     return (
-        <div className="footer">
+        <footer className="footer">
             <h2><a href='https://polymathvisuals.com/'>POLYMATH VISUALS</a></h2>
             <div className='socialLinks'>
                 <a className='link' href='https://www.linkedin.com/company/polymathvisuals/?trk=public_profile_topcard_current_company' target="_blank" rel="noreferrer"><img src={linkedin} alt='linkedin link' /></a>
@@ -21,7 +21,7 @@ function Footer() {
             </div>
             <h3>ronny.young@polymathvisuals.com</h3>
             <h3>© 2017 Polymath, LLC</h3>
-        </div >
+        </footer >
     );
 };
 
