@@ -59,7 +59,7 @@ function Header(props: Type) {
     };
 
     return (
-        <div className="headerContainer">
+        <nav className="headerContainer">
             <Link to='/'><Logo className='logo' alt='Polymath Logo' src={logo} ></Logo></Link>
             <div className='userBtns'>
                 {!props.auth.firstName ? <Link to='/auth'><Button className='loginBtn'>register/login</Button></Link> : ''}
@@ -70,7 +70,7 @@ function Header(props: Type) {
                     {props.auth.firstName ? <Link to='/'><Button className='logoutBtn' onClick={logoutUser}>logout</Button> </Link> : ''}
                 </div> : ''}
             </div>
-        </div>
+        </nav>
     );
 };
 
