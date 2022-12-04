@@ -74,14 +74,14 @@ function Products(props: Type) {
     });
 
     return (
-        <div className="products">
+        <main className="products">
             <Hero />
             <h1>Polymath Texture Packages</h1>
             <Filter />
-            <div className='productFlex'>
+            <section className='productFlex'>
                 {mappedProducts}
-            </div>
-        </div>
+            </section>
+        </main>
     );
 };
 
