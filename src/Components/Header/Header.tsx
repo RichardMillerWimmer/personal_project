@@ -60,7 +60,7 @@ function Header(props: Type) {
 
     return (
         <div className="headerContainer">
-            <Link to='/'><Logo className='logo' src={logo} ></Logo></Link>
+            <Link to='/'><Logo className='logo' alt='Polymath Logo' src={logo} ></Logo></Link>
             <div className='userBtns'>
                 {!props.auth.firstName ? <Link to='/auth'><Button className='loginBtn'>register/login</Button></Link> : ''}
                 {props.auth.admin === true ? <Link to='/admin'><Button>manage</Button></Link> : ''}
