@@ -76,7 +76,7 @@ function Products(props: Type) {
     return (
         <main className="products">
             <Hero />
-            <h1>Polymath Texture Packages</h1>
+            <h1>Texture Packages</h1>
             <Filter />
             <section className='productFlex'>
                 {mappedProducts}
