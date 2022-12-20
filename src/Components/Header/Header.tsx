@@ -5,7 +5,8 @@ import { updateUser, logoutUser, User } from '../../redux/authReducer';
 import { resetProducts } from '../../redux/userProductsReducer';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
-import logo from '../../images/Polymath_Logo_White.png';
+// import logo from '../../images/Polymath_Logo_White.png';
+import logo from '../../images/3d-house-svgrepo-com.svg';
 import styled from '@emotion/styled';
 import { Cart } from '../../redux/cartReducer';
 
@@ -60,7 +61,7 @@ function Header(props: Type) {
 
     return (
         <nav className="headerContainer">
-            <Link to='/'><Logo className='logo' alt='Polymath Logo' src={logo} ></Logo></Link>
+            <Link to='/'><Logo className='logo' alt='House 3D Logo' src={logo} ></Logo></Link>
             <div className='userBtns'>
                 {!props.auth.firstName ? <Link to='/auth'><Button className='loginBtn'>register/login</Button></Link> : ''}
                 {props.auth.admin === true ? <Link to='/admin'><Button>manage</Button></Link> : ''}

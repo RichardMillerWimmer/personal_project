@@ -38,29 +38,32 @@ function Auth(props: { updateUser: ({ firstName, userId, admin }: User) => void;
     };
 
     return (
-        <div className="authContainer">
-            <form className='register box'>
-                <h2>Register</h2>
-                <Input value={email} label='email' handler={setEmail} />
-                <br></br>
-                <Input value={firstName} label='firstName' handler={setFirstName} />
-                <br></br>
-                <Input value={lastName} label='lastName' handler={setLastName} />
-                <br></br>
-                <Input value={password} label='password' handler={setPassword} type='password' />
-                <br></br>
-                <Button onClick={register} type='submit'>register</Button>
-            </form>
-            <form className='login box'>
-                <h2>Login</h2>
-                <Input value={loginEmail} label='loginEmail' text='email' handler={setLoginEmail} />
-                <br></br>
-                <Input value={loginPassword} label={'loginPassword'} text='password' handler={setLoginPassword} type='password' />
-                <br></br>
-                <Button onClick={login} type='submit'>login</Button>
-            </form>
+        <main>
+            <div className="authContainer">
+                <form className='register box'>
+                    <h2>Register</h2>
+                    <Input value={email} label='email' handler={setEmail} />
+                    <br></br>
+                    <Input value={firstName} label='firstName' handler={setFirstName} />
+                    <br></br>
+                    <Input value={lastName} label='lastName' handler={setLastName} />
+                    <br></br>
+                    <Input value={password} label='password' handler={setPassword} type='password' />
+                    <br></br>
+                    <Button onClick={register} type='submit'>register</Button>
+                </form>
+                <form className='login box'>
+                    <h2>Login</h2>
+                    <Input value={loginEmail} label='loginEmail' text='email' handler={setLoginEmail} />
+                    <br></br>
+                    <Input value={loginPassword} label={'loginPassword'} text='password' handler={setLoginPassword} type='password' />
+                    <br></br>
+                    <Button onClick={login} type='submit'>login</Button>
+                </form>
 
-        </div>
+            </div>
+        </main>
+
     );
 };
 

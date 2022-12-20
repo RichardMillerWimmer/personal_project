@@ -5,7 +5,7 @@ function Hero() {
     return (
         <div className='hero'>
             <div className='heroText'>
-                <h1>POLYMATH<br></br> VISUALS</h1>
+                <h1>HOUSE<br></br> 3D</h1>
                 <h2>Welcome to our texture packages store</h2>
             </div>
             <video className='videoTag'

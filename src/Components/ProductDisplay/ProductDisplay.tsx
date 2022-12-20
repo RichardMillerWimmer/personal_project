@@ -62,25 +62,27 @@ function ProductDisplay(props: Type) {
 
 
     return (
-        <div className="productDisplay">
-            <div className='boxDisplay'>
-                <img src={product.image_one} alt={product.name} />
-            </div>
-            <article className='infoDisplay'>
-                <h1>{product.name}</h1>
-                <p>{product.description}</p>
-                <p>Works with Octane, Redshift, Arnold, Standard, and Cycles.</p>
-                <p>{product.price}.00</p>
-                {!product.auth.firstName ? '' : doesOwn ? <p className='doesOwnButton'>You have already purchased this prackage</p> : <Button
-                    className='addBtn'
-                    onClick={duplicateCheck}
-                >add</Button>}
+        <main>
+            <div className="productDisplay">
+                <div className='boxDisplay'>
+                    <img src={product.image_one} alt={product.name} />
+                </div>
+                <article className='infoDisplay'>
+                    <h1>{product.name}</h1>
+                    <p>{product.description}</p>
+                    <p>Works with Octane, Redshift, Arnold, Standard, and Cycles.</p>
+                    <p>{product.price}.00</p>
+                    {!product.auth.firstName ? '' : doesOwn ? <p className='doesOwnButton'>You have already purchased this prackage</p> : <Button
+                        className='addBtn'
+                        onClick={duplicateCheck}
+                    >add</Button>}
 
-            </article>
-            <div className='images'>
-                <img src={product.image_two} alt={product.name} />
-            </div>
-        </div >
+                </article>
+                <div className='images'>
+                    <img src={product.image_two} alt={product.name} />
+                </div>
+            </div >
+        </main>
     );
 };
 
