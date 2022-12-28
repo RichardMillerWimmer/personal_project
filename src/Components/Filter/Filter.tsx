@@ -1,4 +1,4 @@
-import { useState, KeyboardEvent } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { updateProducts } from '../../redux/productsReducer';
@@ -29,12 +29,6 @@ function Filter(props: TypeFromRedux) {
             .catch(err => console.log(err))
     };
 
-    const enterPress = (event: KeyboardEvent<HTMLInputElement>): void => {
-        if (event.key === '13') {
-            searchProducts()
-        }
-    };
-
     return (
         <div className="filter">
             <form className='searchBar'>
@@ -42,9 +36,8 @@ function Filter(props: TypeFromRedux) {
                     placeholder='search products'
                     onChange={event => setSearchText(event.target.value)}
                     value={searchText}
-                    onKeyPress={enterPress}
                 />
-                <Button onClick={searchProducts} type='submit'  >search</Button>
+                <Button onClick={searchProducts} type='submit'>search</Button>
                 <Button onClick={clearSearch}>clear</Button>
             </form>
         </div>
