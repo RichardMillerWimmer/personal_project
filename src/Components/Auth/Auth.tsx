@@ -28,7 +28,7 @@ function Auth(props: { updateUser: ({ firstName, userId, admin }: User) => void;
     function login(): void {
         axios.post('/api/auth/login', { loginEmail, loginPassword })
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 const { firstName, userId, admin } = res.data
 
                 props.updateUser({ firstName, userId, admin })
