@@ -7,7 +7,7 @@ type InputProps = {
     handler?: (input: string) => void
 }
 
-const Input = ({ value, label, text, type, handler = () => { } }: InputProps) => {
+const Input = ({ value, label, text, type, placeholder handler = () => { } }: InputProps) => {
     return (
         <>
             <label htmlFor={label}>{text ? text : label}</label>
@@ -15,7 +15,8 @@ const Input = ({ value, label, text, type, handler = () => { } }: InputProps) =>
                 id={label}
                 onChange={event => handler(event.target.value)}
                 value={value}
-                type={type} />
+                type={type}
+                placeholder={placeholder} />
         </>
     )
 }
