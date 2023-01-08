@@ -3,10 +3,11 @@ type InputProps = {
     label: string;
     text?: string;
     type?: string;
-    handler: (input: string) => void
+    placeholder?: string;
+    handler?: (input: string) => void
 }
 
-const Input = ({ value, label, text, type, handler }: InputProps) => {
+const Input = ({ value, label, text, type, handler = () => { } }: InputProps) => {
     return (
         <>
             <label htmlFor={label}>{text ? text : label}</label>
