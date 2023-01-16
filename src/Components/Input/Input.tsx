@@ -2,7 +2,7 @@
 
 type InputProps = {
     value: string;
-    label: string;
+    label?: string;
     text?: string;
     type?: string;
     placeholder?: string;
@@ -12,7 +12,7 @@ type InputProps = {
 const Input = ({ value, label, text, type, placeholder, handler = () => { } }: InputProps) => {
     return (
         <>
-            <label htmlFor={label}>{text ? text : label}</label>
+            <label htmlFor={label}>{text ? text : ""}</label>
             <input
                 id={label}
                 onChange={event => handler(event.target.value)}
