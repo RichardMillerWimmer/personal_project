@@ -10,8 +10,6 @@ type TypeFromRedux = ReturnType<typeof mapStateToProps>
 function Filter(props: TypeFromRedux) {
     const [searchText, setSearchText] = useState<string>('');
 
-    console.log(searchText)
-
     function searchProducts(event: React.FormEvent) {
         event?.preventDefault()
         axios.get(`/api/products?description=${searchText}`)

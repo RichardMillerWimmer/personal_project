@@ -25,10 +25,8 @@ function Products(props: Type) {
     }, []);
 
     useEffect(() => {
-        // console.log('user products hit')
         if (props.auth.userId) {
             getUserProducts()
-            // console.log(props.auth.userId)
         }
     }, [props.auth]);
 
@@ -37,20 +35,16 @@ function Products(props: Type) {
     }, []);
 
     function getProducts(): void {
-        // console.log('get products hit')
         axios.get('/api/products')
             .then(res => {
-                // console.log(res.data)
                 props.updateProducts(res.data)
             })
             .catch(err => console.log(err))
     };
 
     function getUserProducts(): void {
-        // console.log('axios hit')
         axios.get('/api/userproducts')
             .then(res => {
-                // console.log(res.data)
                 props.updateUserProducts(res.data)
             })
             .catch(err => console.log(err))
@@ -63,11 +57,7 @@ function Products(props: Type) {
             })
     };
 
-
-    // console.log(props.products.productList)
-
     let mappedProducts = props.products.productList.map((product: Product) => {
-        // console.log(product)
         return <div key={product.product_id as Key}>
             <ProductBox {...product}></ProductBox>
         </div >

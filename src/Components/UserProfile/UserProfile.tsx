@@ -10,17 +10,13 @@ import { Product } from '../../redux/productsReducer';
 function UserProfile(props: any) {
     const [userProducts, setUserProducts] = useState([]);
 
-    // console.log(props)
-
     useEffect(() => {
         getUserProducts()
     }, []);
 
     function getUserProducts() {
-        console.log('axios hit')
         axios.get('/api/userproducts')
             .then(res => {
-                console.log(res.data)
                 props.updateUserProducts(res.data)
                 setUserProducts(res.data)
             })

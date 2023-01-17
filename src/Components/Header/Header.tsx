@@ -21,8 +21,6 @@ type Type = HeaderProps & TypeFromRedux
 
 function Header(props: Type) {
 
-    // console.log(props)
-
     const Logo = styled.img`
         height: 80px;
         margin-left: 10px;
@@ -40,10 +38,8 @@ function Header(props: Type) {
     }, []);
 
     function getUser(): void {
-        // console.log('getUser hit')
         axios.get('/api/auth/user')
             .then(res => {
-                // console.log(res.data)
                 const { firstName, userId, admin } = res.data
                 props.updateUser({ firstName, userId, admin })
             })

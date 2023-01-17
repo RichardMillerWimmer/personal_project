@@ -30,10 +30,8 @@ function Admin(props: Type) {
     }, []);
 
     function getProducts() {
-        // console.log('get products hit')
         axios.get('/api/products')
             .then(res => {
-                // console.log(res.data)
                 props.updateProducts(res.data)
             })
             .catch(err => console.log(err))
@@ -42,7 +40,6 @@ function Admin(props: Type) {
     function addProduct() {
         axios.post('/api/products', { name, description, price, imageOne, imageTwo, downloadLink })
             .then(res => {
-                // console.log(`Product: ${name} added.`)
                 props.updateProducts(res.data)
                 resetFields()
             })
@@ -60,7 +57,6 @@ function Admin(props: Type) {
 
     // @ts-ignore
     let mappedProducts = props.products.productList.map((product: Product) => {
-        // console.log(product)
         return <div key={product.product_id as Key}><AdminBox {...product}></AdminBox></div>
     });
 

@@ -11,12 +11,9 @@ type Type = Product & TypeFromRedux
 
 function CartBox(props: Type) {
 
-    console.log(props)
-
     function removeFromCart() {
         axios.delete(`/api/cart/${props.product_id}`)
             .then(res => {
-                console.log(res.data)
                 props.updateCart(res.data)
             })
             .catch(err => console.log(err))

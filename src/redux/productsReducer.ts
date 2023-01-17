@@ -20,7 +20,6 @@ const initialState = {
 const UPDATE_PRODUCTS = 'UPDATE_PRODUCTS';
 
 export function updateProducts(productList: Product[]) {
-    // console.log(productList)
     return {
         type: UPDATE_PRODUCTS,
         payload: productList
@@ -28,7 +27,6 @@ export function updateProducts(productList: Product[]) {
 };
 
 export default function productsReducer(state = initialState, action: ProductAction) {
-    // console.log(action)
     switch (action.type) {
         case UPDATE_PRODUCTS:
             return {

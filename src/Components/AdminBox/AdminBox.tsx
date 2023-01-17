@@ -13,10 +13,7 @@ function Admin(props: any) {
     const [downloadLink, setDownloadLink] = useState('');
     const [isEditing, setIsEditing] = useState(false);
 
-    // console.log(props)
-
     useEffect(() => {
-        // console.log('useEffect hit')
         captureCurrentProduct()
     }, []);
 
@@ -31,23 +28,18 @@ function Admin(props: any) {
 
 
     function editProduct(product_id: number) {
-        // console.log(product_id)
         axios.put(`/api/products/${product_id}`, { name, description, price, imageOne, imageTwo, downloadLink })
             .then(res => {
                 props.updateProducts(res.data)
-                // console.log(`Product: ${name} edited.`)
                 switchEditing()
             })
             .catch(err => console.log(err))
     };
 
     function deleteProduct(product_id: number) {
-        // console.log(product_id)
         axios.delete(`/api/products/${product_id}`)
             .then(res => {
                 props.updateProducts(res.data)
-
-                // console.log('Product deleted.')
             })
             .catch(err => console.log(err))
     };
@@ -63,7 +55,6 @@ function Admin(props: any) {
     };
 
     function switchEditing() {
-        // console.log(isEditing)
         setIsEditing(!isEditing)
     };
 

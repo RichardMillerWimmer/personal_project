@@ -27,7 +27,6 @@ export function resetProducts() {
 };
 
 export default function userProductsReducer(state = initialState, action: UserProductAction) {
-    // console.log(action)
     switch (action.type) {
         case UPDATE_USER_PRODUCTS:
             return {

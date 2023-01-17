@@ -17,8 +17,6 @@ type Type = CartProps & TypeFromRedux
 
 function Cart(props: Type) {
 
-    // console.log(props)
-
     useEffect(() => {
         getCart()
     }, []);
@@ -26,7 +24,6 @@ function Cart(props: Type) {
     function getCart() {
         axios.get('/api/cart')
             .then(res => {
-                // console.log(res.data)
                 props.updateCart(res.data)
             })
             .catch(err => console.log(err))
@@ -35,7 +32,6 @@ function Cart(props: Type) {
     function checkout() {
         axios.post('/api/userproducts')
             .then(res => {
-                // console.log(res.data)
                 props.updateCart(res.data)
                 getCart()
                 props.history.push('/user')
