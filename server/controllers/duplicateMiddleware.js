@@ -6,9 +6,7 @@ module.exports = {
         const { product_id } = req.params;
 
         const userProducts = await db.user.duplicate_check(user.id)
-        // console.log(userProducts)
         for (let i = 0; i < userProducts.length; i++) {
-            // console.log(userProducts[i].product_id)
             if (userProducts[i].product_id === +product_id) {
                 return res.status(400).send('You have already purchased this product.')
             }

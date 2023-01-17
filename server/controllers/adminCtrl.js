@@ -2,8 +2,6 @@ module.exports = {
 
     addProduct: async (req, res) => {
         const db = req.app.get('db');
-        // const { user_id, admin } = req.session.user;
-        // console.log(req.body)
         const { name, description, price, imageOne, imageTwo, downloadLink } = req.body;
 
 
@@ -13,10 +11,8 @@ module.exports = {
 
         res.status(201).send(products);
     },
-    // revist for editing only protions of product
     editProduct: async (req, res) => {
         const db = req.app.get('db');
-        // const { user_id, admin } = req.session.user;
         const { name, description, price, imageOne, imageTwo, downloadLink } = req.body;
         const { product_id } = req.params;
 
@@ -29,7 +25,6 @@ module.exports = {
 
     deleteProduct: async (req, res) => {
         const db = req.app.get('db');
-        // const { user_id, admin } = req.session.user;
         const { product_id } = req.params;
 
         await db.admin.delete_product(product_id);

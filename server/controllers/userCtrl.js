@@ -7,14 +7,11 @@ module.exports = {
     getUserProducts: async (req, res) => {
         const db = req.app.get('db');
         const user = req.session.user;
-        // console.log(user)
-
         if (!user) {
             return res.sendStatus(200)
         }
 
         const userProducts = await db.user.get_user_products(user.userId);
-        // console.log(userProducts)
         res.status(200).send(userProducts);
     },
 
@@ -23,23 +20,14 @@ module.exports = {
         const cart = req.session.cart;
         const user = req.session.user;
 
-        // console.log("user id " + user.id)
-        // console.log(cart.items)
         const order = await db.user.add_order(user.id);
-        // console.log(order[0].order_id)
+
 
         for (let i = 0; i < cart.items.length; i++) {
-            // console.log(order[0].order_id)
-            // console.log(cart.items[i].product_id)
             await db.user.purchase_products(order[0].order_id, cart.items[i].product_id)
         }
 
         next()
-
-        // res.status(200).send('something here')
-
-
-        //figure this out with stripe and getUserProducts
     }
 
     // downloadProduct: async (req, res, next) => {
