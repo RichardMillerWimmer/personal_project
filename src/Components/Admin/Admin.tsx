@@ -5,6 +5,7 @@ import { Product, updateProducts } from '../../redux/productsReducer';
 import { ReduxState } from '../../redux/store';
 import AdminBox from '../AdminBox/AdminBox';
 import Button from '../Button/Button';
+import Input from '../Input/Input';
 
 type AdminProps = {
     products: Product[];
@@ -18,7 +19,7 @@ type Type = AdminProps & TypeFromRedux
 function Admin(props: Type) {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
-    const [price, setPrice] = useState(0);
+    const [price, setPrice] = useState('');
     const [imageOne, setImageOne] = useState('');
     const [imageTwo, setImageTwo] = useState('');
     const [downloadLink, setDownloadLink] = useState('');
@@ -51,7 +52,7 @@ function Admin(props: Type) {
     function resetFields() {
         setName('')
         setDescription('')
-        setPrice(0)
+        setPrice('')
         setImageOne('')
         setImageTwo('')
         setDownloadLink('')
@@ -69,33 +70,33 @@ function Admin(props: Type) {
             <h2>Add A New Product</h2>
             <form className='addBox'>
                 <p>Name:</p>
-                <input
-                    onChange={event => setName(event.target.value)}
+                <Input
+                    handler={setName}
                     value={name}
                 />
                 <p>Description:</p>
-                <input
-                    onChange={event => setDescription(event.target.value)}
+                <Input
+                    handler={setDescription}
                     value={description}
                 />
                 <p>Price:</p>
-                <input
-                    onChange={event => setPrice(+event.target.value)}
+                <Input
+                    handler={setPrice}
                     value={price}
                 />
                 <p>Image One:</p>
-                <input
-                    onChange={event => setImageOne(event.target.value)}
+                <Input
+                    handler={setImageOne}
                     value={imageOne}
                 />
                 <p>Image Two:</p>
-                <input
-                    onChange={event => setImageTwo(event.target.value)}
+                <Input
+                    handler={setImageTwo}
                     value={imageTwo}
                 />
                 <p>Download Link:</p>
-                <input
-                    onChange={event => setDownloadLink(event.target.value)}
+                <Input
+                    handler={setDownloadLink}
                     value={downloadLink}
                 />
                 <br></br>
