@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { updateProducts } from '../../redux/productsReducer';
 import Button from '../Button/Button';
+import Input from '../Input/Input'
 
 function Admin(props: any) {
     const [name, setName] = useState('');
@@ -78,28 +79,28 @@ function Admin(props: any) {
                 :
                 <form>
                     <p>Name:</p>
-                    <input
-                        onChange={event => setName(event.target.value)}
+                    <Input
+                        handler={setName}
                         value={name} />
                     <p>Description:</p>
-                    <input
-                        onChange={event => setDescription(event.target.value)}
+                    <Input
+                        handler={setDescription}
                         value={description} />
                     <p>Price:</p>
-                    <input
-                        onChange={event => setPrice(event.target.value)}
+                    <Input
+                        handler={setPrice}
                         value={price} />
                     <p>Image One:</p>
-                    <input
-                        onChange={event => setImageOne(event.target.value)}
+                    <Input
+                        handler={setImageOne}
                         value={imageOne} />
                     <p>Image Two:</p>
-                    <input
-                        onChange={event => setImageTwo(event.target.value)}
+                    <Input
+                        handler={setImageTwo}
                         value={imageTwo} />
                     <p>Download Link:</p>
-                    <input
-                        onChange={event => setDownloadLink(event.target.value)}
+                    <Input
+                        handler={setDownloadLink}
                         value={downloadLink} />
                     <Button onClick={() => editProduct(props.product.product_id)}>save</Button>
                     <Button className='deleteBtn' onClick={() => deleteProduct(props.product.product_id)}>delete</Button>
