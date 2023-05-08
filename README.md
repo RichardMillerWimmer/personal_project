@@ -2,7 +2,7 @@
 
 🚧 Updating to Typescript, overhaul, refactor, and redesign. 🚧
 
-# Polymath Visuals Store
+# House 3D
 
 ## Richard Miller Wimmer
 
@@ -14,7 +14,7 @@
 
 The purpose of this project was to demonstrate building a React app from the ground up. The timeline for this project was just under three weeks.
 
-This application is designed to create a platform for Polymath Visuals, a 3D and motion design company, giving the ability to distribute and sell plugin and texture packages for use with Cinema4D. There are two sides of the application. The admin side which controls products and the user side which has the ability to browse and purchase those products. Restful api used to control admin and user functionality.
+This application is designed to create a platform for House 3D, a 3D and motion design company, giving the ability to distribute and sell plugin and texture packages for use with Cinema4D. There are two sides of the application. The admin side which controls products and the user side which has the ability to browse and purchase those products. Restful api used to control admin and user functionality.
 
 ### Some Technologies Used:
 
