@@ -8,7 +8,7 @@
 
 ### DevMountain Personal Project
 
-**Link to live example** - https://polymathvisualsstore.com/#/
+**Link to live example** - https://house3d.dev/#/
 
 **Link to video demo** - https://www.youtube.com/watch?v=GpambqICENw&t=10s
 
