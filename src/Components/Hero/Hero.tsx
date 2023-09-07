@@ -4,11 +4,11 @@ function Hero() {
 
     return (
         <div className='hero'>
-            <div className='heroText'>
+            <div className='hero__text'>
                 <h1>HOUSE<br></br> 3D</h1>
                 <h2>Welcome to our texture packages store</h2>
             </div>
-            <video className='videoTag'
+            <video className='hero__video'
                 autoPlay
                 loop
                 muted
