@@ -251,7 +251,7 @@ body {
   display: flex;
 }
 
-.searchBar {
+.filter__form {
   display: inline-block;
   margin: 0 auto;
   text-align: center;
@@ -259,17 +259,17 @@ body {
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
 }
-.searchBar input {
+.filter__form input {
   margin-bottom: 20px;
   margin-right: 11px;
 }
 
 @media (max-width: 480px) {
-  .searchBar {
+  .filter__form {
     width: 68vw;
     padding: 20px 45px 10px 45px;
   }
-  .searchBar input {
+  .filter__form input {
     margin-right: 0;
   }
 }

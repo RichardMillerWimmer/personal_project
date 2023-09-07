@@ -30,7 +30,7 @@ function Filter(props: TypeFromRedux) {
 
     return (
         <div className="filter">
-            <form className='searchBar' onSubmit={searchProducts}>
+            <form className='filter__form' onSubmit={searchProducts}>
                 <Input placeholder='search products' value={searchText} type='text' label='Search Products' handler={setSearchText} />
                 <Button type='submit'>search</Button>
                 <Button onClick={clearSearch}>clear</Button>
