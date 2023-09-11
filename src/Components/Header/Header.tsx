@@ -56,15 +56,15 @@ function Header(props: Type) {
     };
 
     return (
-        <nav className="headerContainer">
-            <Link to='/'><Logo className='logo' alt='House 3D Logo' src={logo} ></Logo></Link>
-            <div className='userBtns'>
-                {!props.auth.firstName ? <Link to='/auth'><Button className='loginBtn'>register/login</Button></Link> : ''}
+        <nav className="header">
+            <Link to='/'><Logo className='header__logo' alt='House 3D Logo' src={logo} ></Logo></Link>
+            <div className='header__buttons'>
+                {!props.auth.firstName ? <Link to='/auth'><Button className='header__button-login'>register/login</Button></Link> : ''}
                 {props.auth.admin === true ? <Link to='/admin'><Button>manage</Button></Link> : ''}
                 {props.auth.firstName ? <div>
-                    {props.auth.firstName && !props.auth.admin ? <Link to='/user'><Button className='userBtn' >{props.auth.firstName}</Button></Link> : ''}
-                    {props.auth.firstName && !props.auth.admin ? <Link to='/cart'><Button className='cartBtn'>cart:{props.cart.items.length}</Button></Link> : ''}
-                    {props.auth.firstName ? <Link to='/'><Button className='logoutBtn' onClick={logoutUser}>logout</Button> </Link> : ''}
+                    {props.auth.firstName && !props.auth.admin ? <Link to='/user'><Button className='header__button-user' >{props.auth.firstName}</Button></Link> : ''}
+                    {props.auth.firstName && !props.auth.admin ? <Link to='/cart'><Button className='header__button-cart'>cart:{props.cart.items.length}</Button></Link> : ''}
+                    {props.auth.firstName ? <Link to='/'><Button className='header__button-logout' onClick={logoutUser}>logout</Button> </Link> : ''}
                 </div> : ''}
             </div>
         </nav>
