@@ -11,14 +11,26 @@ function Footer() {
     return (
         <footer className="footer">
             <h2>HOUSE 3D</h2>
-            <div className='socialLinks'>
-                <a className='link' href='https://www.linkedin.com/' target="_blank" rel="noreferrer"><img src={linkedin} alt='linkedin link' /></a>
-                <a className='link' href='https://www.facebook.com/' target="_blank" rel="noreferrer"><img src={facebook} alt='facebook link' /></a>
-                <a className='link' href='https://www.youtube.com/' target="_blank" rel="noreferrer"><img src={youtube} alt='youtube link' /></a>
-                <a className='link' href='https://vimeo.com/' target="_blank" rel="noreferrer"><img src={vimeo} alt='vimeo link' /></a>
-                <a className='link' href='https://www.behance.net/' target="_blank" rel="noreferrer"><img src={behance} alt='behance link' /></a>
-                <a className='link' href='https://www.instagram.com/' target="_blank" rel="noreferrer"><img src={instagram} alt='instagram link' /></a>
-            </div>
+            <ul className='footer__social-links'>
+                <li>
+                    <a className='link' href='https://www.linkedin.com/' target="_blank" rel="noreferrer"><img src={linkedin} alt='linkedin link' /></a>
+                </li>
+                <li>
+                    <a className='link' href='https://www.facebook.com/' target="_blank" rel="noreferrer"><img src={facebook} alt='facebook link' /></a>
+                </li>
+                <li>
+                    <a className='link' href='https://www.youtube.com/' target="_blank" rel="noreferrer"><img src={youtube} alt='youtube link' /></a>
+                </li>
+                <li>
+                    <a className='link' href='https://vimeo.com/' target="_blank" rel="noreferrer"><img src={vimeo} alt='vimeo link' /></a>
+                </li>
+                <li>
+                    <a className='link' href='https://www.behance.net/' target="_blank" rel="noreferrer"><img src={behance} alt='behance link' /></a>
+                </li>
+                <li>
+                    <a className='link' href='https://www.instagram.com/' target="_blank" rel="noreferrer"><img src={instagram} alt='instagram link' /></a>
+                </li>
+            </ul>
             <h3>© HOUSE 3D</h3>
         </footer >
     );
