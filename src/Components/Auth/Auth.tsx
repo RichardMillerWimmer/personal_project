@@ -41,13 +41,13 @@ function Auth(props: { updateUser: ({ firstName, userId, admin }: User) => void;
             <div className="auth">
                 <form className='auth__form'>
                     <h2>Register</h2>
-                    <Input value={email} label='email' handler={setEmail} />
+                    <Input value={email} label='email' text='email' handler={setEmail} />
                     <br></br>
-                    <Input value={firstName} label='firstName' handler={setFirstName} />
+                    <Input value={firstName} label='firstName' text='first name' handler={setFirstName} />
                     <br></br>
-                    <Input value={lastName} label='lastName' handler={setLastName} />
+                    <Input value={lastName} label='lastName' text='last name' handler={setLastName} />
                     <br></br>
-                    <Input value={password} label='password' handler={setPassword} type='password' />
+                    <Input value={password} label='password' text='password' handler={setPassword} type='password' />
                     <br></br>
                     <Button onClick={register} type='submit'>register</Button>
                 </form>
