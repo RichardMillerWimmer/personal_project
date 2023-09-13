@@ -41,28 +41,28 @@ body {
   margin: 30px 5px 20px 5px;
 }
 
-.authContainer {
+.auth {
   display: flex;
   flex-direction: column;
 }
-.authContainer h2 {
+.auth h2 {
   font-family: "PT Serif";
   font-size: 1.5em;
   margin-bottom: 10px;
   margin-top: 0;
 }
-.authContainer p {
+.auth p {
   font-family: "Raleway";
 }
-.authContainer label {
+.auth label {
   font-family: "Raleway";
 }
-.authContainer input {
+.auth input {
   margin: 5px 0;
   width: 100%;
 }
 
-.box {
+.auth__form {
   text-align: left;
   width: 80%;
   margin: 30px auto;
@@ -70,18 +70,18 @@ body {
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.8);
 }
-.box Button {
+.auth__form Button {
   margin-top: 10px;
   margin-left: 0;
 }
 
 @media (min-width: 800px) {
-  .authContainer {
+  .auth {
     flex-direction: row;
     justify-content: center;
   }
 
-  .box {
+  .auth__form {
     width: 350px;
     margin: 30px;
   }

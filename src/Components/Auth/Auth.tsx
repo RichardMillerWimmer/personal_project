@@ -38,8 +38,8 @@ function Auth(props: { updateUser: ({ firstName, userId, admin }: User) => void;
 
     return (
         <main>
-            <div className="authContainer">
-                <form className='register box'>
+            <div className="auth">
+                <form className='auth__form'>
                     <h2>Register</h2>
                     <Input value={email} label='email' handler={setEmail} />
                     <br></br>
@@ -51,7 +51,7 @@ function Auth(props: { updateUser: ({ firstName, userId, admin }: User) => void;
                     <br></br>
                     <Button onClick={register} type='submit'>register</Button>
                 </form>
-                <form className='login box'>
+                <form className='auth__form'>
                     <h2>Login</h2>
                     <Input value={loginEmail} label='loginEmail' text='email' handler={setLoginEmail} />
                     <br></br>
@@ -59,7 +59,6 @@ function Auth(props: { updateUser: ({ firstName, userId, admin }: User) => void;
                     <br></br>
                     <Button onClick={login} type='submit'>login</Button>
                 </form>
-
             </div>
         </main>
 
