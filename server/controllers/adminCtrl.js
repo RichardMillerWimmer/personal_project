@@ -4,7 +4,6 @@ module.exports = {
         const db = req.app.get('db');
         const { name, description, price, imageOne, imageTwo, downloadLink } = req.body;
 
-
         await db.admin.add_product(name, description, price, imageOne, imageTwo, downloadLink);
 
         const products = await db.product.get_all_products();
