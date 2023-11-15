@@ -1,6 +1,5 @@
-const https = require('https');
-const fs = require('fs');
-const AWS = require('aws-sdk');
+// const https = require('https');
+// const AWS = require('aws-sdk');
 
 module.exports = {
 
