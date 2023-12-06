@@ -1,15 +1,16 @@
 import Button from '../Button/Button';
+import { Product } from '../../redux/productsReducer';
 
-function UserBox(props: any) {
-
+function UserBox(props: Product) {
+    const { image_one, name, description } = props
     return (
         <div className="userBox">
-            <img src={props.product.image_one} alt={props.product.name} />
+            <img src={image_one} alt={name} />
             <div className='textBox'>
-                <h2>{props.product.name}</h2>
-                <p>{props.product.description}</p>
+                <h2>{name}</h2>
+                <p>{description}</p>
                 {/* <Button onClick={downloadProduct}>download</Button> */}
-                <a href={props.product.image_one} download={props.product.name} target='_blank' rel="noreferrer"><Button>download</Button></a>
+                <a href={image_one} download={name} target='_blank' rel="noreferrer"><Button>download</Button></a>
             </div>
         </div >
     );

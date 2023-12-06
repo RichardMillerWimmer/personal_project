@@ -25,7 +25,7 @@ function UserProfile(props: any) {
 
     let mappedUserProducts = props.userProducts.userProductList.map((product: Product) => {
         return <div key={product.product_id as Key}>
-            <UserBox product={product}></UserBox>
+            <UserBox {...product}></UserBox>
         </div>
     });
 
